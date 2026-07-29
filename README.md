@@ -6,7 +6,7 @@ Escola SENAI "Santo Paschoal Crepaldi" — Turma 1-2026-SESI_DEV_OC_1
 - Nome Completo 1 — Vitor Hugo Dos Santos Campos
 - Nome Completo 2 — Guilherme De Souza Barbosa
 - Nome Completo 3 — Isadora Costa Campanari
-- Nome Completo 4 — Gabriel NUnues Lopes
+- Nome Completo 4 — Gabriel Nunes Lopes
 ## Divisão de responsabilidades
 | Bloco | Integrante | O que ficou sob responsabilidade dele(a) |
 |---|---|---|
