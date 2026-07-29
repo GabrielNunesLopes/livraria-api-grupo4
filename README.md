@@ -3,10 +3,10 @@
 Projeto da UC de Programação Back-End — Curso Técnico em Desenvolvimento de Sistemas
 Escola SENAI "Santo Paschoal Crepaldi" — Turma 1-2026-SESI_DEV_OC_1
 ## Integrantes
-- Nome Completo 1 — @usuario-github
-- Nome Completo 2 — @usuario-github
-- Nome Completo 3 — @usuario-github
-- Nome Completo 4 — @usuario-github
+- Nome Completo 1 — Vitor Hugo Dos Santos Campos
+- Nome Completo 2 — Guilherme De Souza Barbosa
+- Nome Completo 3 —  Isadora campanari
+- Nome Completo 4 — Gabriel NUnues Lopes
 ## Divisão de responsabilidades
 | Bloco | Integrante | O que ficou sob responsabilidade dele(a) |
 |---|---|---|
