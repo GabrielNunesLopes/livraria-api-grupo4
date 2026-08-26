@@ -2,14 +2,18 @@
   "name": "livraria-api-grupo4",
   "version": "1.0.0",
   "description": "API de Livraria - Projeto em Grupo",
-  "main": "server.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "keywords": ["livraria", "api"],
   "author": "Grupo 4",
   "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
 }
