@@ -10,9 +10,17 @@ class Pessoa {
     return this.#email;
   }
 
-  apresentar() {
+  exibirNome() {
     console.log(`Nome: ${this.nome}`);
+  }
+
+  exibirEmail() {
     console.log(`Email: ${this.#email}`);
+  }
+
+  apresentar() {
+    this.exibirNome();
+    this.exibirEmail();
   }
 }
 

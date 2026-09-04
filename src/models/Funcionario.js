@@ -1,11 +1,13 @@
-const Pessoa = require("./Pessoa");
+const Pessoa = require('./Pessoa');
+
+const PERCENTUAL_BONUS = 0.1;
+const CASAS_DECIMAIS_MOEDA = 2;
 
 class Funcionario extends Pessoa {
   #salario;
 
   constructor(nome, email, salario) {
     super(nome, email);
-    // LACUNA 3: Guarda o salário no atributo privado
     this.#salario = salario;
   }
 
@@ -14,14 +16,17 @@ class Funcionario extends Pessoa {
   }
 
   calcularBonus() {
-    // LACUNA 4: Retorna 10% do salário
-    return this.#salario * 0.1;
+    return this.#salario * PERCENTUAL_BONUS;
+  }
+
+  exibirDadosProfissionais() {
+    console.log('Tipo: Funcionario');
+    console.log(`Bonus: R$ ${this.calcularBonus().toFixed(CASAS_DECIMAIS_MOEDA)}`);
   }
 
   apresentar() {
     super.apresentar();
-    console.log("Tipo: Funcionario");
-    console.log("Bonus: R$ " + this.calcularBonus().toFixed(2));
+    this.exibirDadosProfissionais();
   }
 }
 

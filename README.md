@@ -10,81 +10,104 @@ Escola SENAI "Santo Paschoal Crepaldi" — Turma 1-2026-SESI_DEV_OC_1
 - Isadora Costa Campanari
 - Gabriel Nunes Lopes
 
-## Atividade 06 — Esqueleto MVC da Livraria
+## Atividade 09 — Entrega Consolidada do Bloco 2
 
-Objetivo: montar o esqueleto MVC da API da Livraria com servidor Express, organização em camadas e consolidação dos models do projeto.
+Esta entrega consolida o diagrama UML, o esqueleto MVC, a aplicação dos critérios de Clean Code e a preparação do projeto para execução com Express.
 
-### Divisão de responsabilidades
+## Diagrama UML final
 
-| Integrante | Responsabilidade |
-|---|---|
-| Vitor Hugo dos Santos Campos | Configuração do servidor Express e execução inicial da API |
-| Guilherme de Souza Barbosa | Criação das camadas `routes`, `controllers` e `services` para Livro |
-| Isadora Costa Campanari | Consolidação do model `Livro.js` em `src/models/` |
-| Gabriel Nunes Lopes | Consolidação do model `Categoria.js`, extras da atividade e documentação no README |
+![Diagrama UML final](docs/diagrama-Classes.png)
 
-> Esta tabela registra a divisão de responsabilidades definida pelo grupo para a atividade.
+O diagrama representa as classes do domínio e seus relacionamentos. Conforme solicitado na atividade, `Pedido` e `ItemPedido` permanecem somente no diagrama e ainda não possuem implementação em `src/models/`.
 
-## Estrutura MVC
+## Estrutura do projeto
 
 ```text
-src/
-├── index.js
-├── routes/
-│   ├── livroRoutes.js
-│   └── categoriaRoutes.js
-├── controllers/
-│   ├── livroController.js
-│   └── categoriaController.js
-├── services/
-│   ├── livroService.js
-│   └── categoriaService.js
-└── models/
-    ├── Livro.js
-    ├── Categoria.js
-    ├── Pessoa.js
-    ├── Cliente.js
-    └── Funcionario.js
+livraria-api-grupo4/
+├── server.js
+├── package.json
+├── docs/
+│   └── diagrama-Classes.png
+├── src/
+│   ├── index.js
+│   ├── routes/
+│   │   ├── livroRoutes.js
+│   │   └── categoriaRoutes.js
+│   ├── controllers/
+│   │   ├── livroController.js
+│   │   └── categoriaController.js
+│   ├── services/
+│   │   ├── livroService.js
+│   │   └── categoriaService.js
+│   └── models/
+│       ├── Livro.js
+│       ├── Categoria.js
+│       ├── Pessoa.js
+│       ├── Cliente.js
+│       └── Funcionario.js
+└── tests/
+    ├── models.test.js
+    └── services.test.js
 ```
 
 ### Função de cada camada
 
-- **Routes:** recebem as requisições HTTP e representam os endpoints da API.
-- **Controllers:** decidem o que deve ser feito com cada requisição.
-- **Services:** concentram a lógica de negócio da aplicação.
-- **Models:** representam as entidades e seus dados.
+- **Routes:** recebem as requisições HTTP e encaminham para os controllers.
+- **Controllers:** recebem a requisição, acionam o service correspondente e enviam a resposta.
+- **Services:** concentram a lógica usada pelas rotas; nesta etapa utilizam estruturas simples em memória, sem banco de dados.
+- **Models:** representam as entidades do domínio da livraria.
 
-## Extras realizados
+## Referências MVC implementadas
 
-### A. Esqueleto de Categoria
-
-Também foi replicado o padrão MVC para Categoria com os arquivos:
-
-- `src/routes/categoriaRoutes.js`
-- `src/controllers/categoriaController.js`
-- `src/services/categoriaService.js`
-
-### B. Rota `/sobre`
-
-Além da rota principal, o servidor possui:
+### Livro
 
 ```text
+GET /livros
+```
+
+Fluxo:
+
+```text
+livroRoutes -> livroController -> livroService
+```
+
+### Categoria
+
+```text
+GET /categorias
+```
+
+Fluxo:
+
+```text
+categoriaRoutes -> categoriaController -> categoriaService
+```
+
+As duas rotas retornam listas em memória e funcionam apenas como referência do padrão MVC solicitado nesta etapa.
+
+## Rotas gerais
+
+```text
+GET /
 GET /sobre
 ```
 
-Resposta esperada:
+Respostas esperadas:
 
-```text
-Livraria SENAI - Trabalho de PBE, turma 1-2026-SESI_DEV_OC_1
-```
+- `/` — `API da Livraria no ar!`
+- `/sobre` — `Livraria SENAI - Trabalho de PBE, turma 1-2026-SESI_DEV_OC_1`
 
-### C. Discussão sobre Funcionario
+## Clean Code — refatoração de 02/09
 
-Se a API também precisasse gerenciar funcionários, seguindo o mesmo padrão MVC seriam criados:
+Em 02/09, o código foi refatorado com extração de constantes nomeadas e divisão de responsabilidades em métodos menores, reduzindo números mágicos e melhorando a legibilidade.
 
-- `src/routes/funcionarioRoutes.js`
-- `src/controllers/funcionarioController.js`
-- `src/services/funcionarioService.js`
+Principais ajustes consolidados nesta entrega:
+
+- percentual de bônus e casas decimais extraídos para constantes nomeadas em `Funcionario.js`;
+- porta padrão extraída para a constante `DEFAULT_PORT`;
+- apresentação de `Pessoa` dividida nos métodos `exibirNome()`, `exibirEmail()` e `apresentar()`;
+- apresentação específica de `Funcionario` separada em `exibirDadosProfissionais()`;
+- arquivos de routes, controllers e services deixaram de ser placeholders vazios e passaram a formar um fluxo MVC executável.
 
 ## Como executar
 
@@ -95,8 +118,31 @@ npm run dev
 
 Depois, acesse:
 
-- `http://localhost:3000` — mensagem `API da Livraria no ar!`
-- `http://localhost:3000/sobre` — informações do trabalho
+- `http://localhost:3000`
+- `http://localhost:3000/sobre`
+- `http://localhost:3000/livros`
+- `http://localhost:3000/categorias`
+
+## Testes
+
+O projeto usa o test runner nativo do Node.js, sem dependência adicional para testes.
+
+```bash
+npm test
+```
+
+## Checklist da Atividade 09
+
+- [x] Diagrama UML referenciado na entrega
+- [x] Models existentes com `module.exports`
+- [x] `Pedido` e `ItemPedido` mantidos somente no UML
+- [x] Estrutura `routes/`, `controllers/`, `services/` e `models/`
+- [x] Referência MVC de Livro
+- [x] Referência MVC de Categoria
+- [x] Números mágicos substituídos por constantes nomeadas
+- [x] Responsabilidades de métodos divididas em métodos menores
+- [x] README atualizado com diagrama, estrutura e refatoração
+- [x] Comandos de instalação, desenvolvimento e testes documentados
 
 ## Tecnologias
 
@@ -104,3 +150,4 @@ Depois, acesse:
 - npm
 - Express
 - Nodemon
+- node:test

@@ -1,5 +1,8 @@
-// ROTA (o "garcom"): recebe a requisicao HTTP.
-// Aqui vao ficar os caminhos (endpoints) relacionados a Categoria.
-// Ex: GET /categorias, POST /categorias
-// Implementacao chega no Bloco 3, quando o banco de dados entrar.
-module.exports = {};
+const express = require('express');
+const categoriaController = require('../controllers/categoriaController');
+
+const router = express.Router();
+
+router.get('/', categoriaController.listar);
+
+module.exports = router;
