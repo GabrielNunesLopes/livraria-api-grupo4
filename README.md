@@ -24,10 +24,12 @@ O diagrama representa as classes do domínio e seus relacionamentos. Conforme so
 
 ```text
 livraria-api-grupo4/
-├── server.js
 ├── package.json
 ├── docs/
-│   └── diagrama-Classes.png
+│   ├── diagrama-Classes.png
+│   └── superpowers/
+│       ├── specs/
+│       └── plans/
 ├── src/
 │   ├── index.js
 │   ├── routes/
@@ -115,6 +117,8 @@ Principais ajustes consolidados nesta entrega:
 npm install
 npm run dev
 ```
+
+O ponto de entrada da aplicação é `src/index.js`.
 
 Depois, acesse:
 
