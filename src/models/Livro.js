@@ -1,36 +1,21 @@
 class Livro {
-  #titulo;
-  #autor;
   #preco;
+  #estoque;
 
-  constructor(titulo, autor, preco) {
-    this.#titulo = titulo;
-    this.#autor = autor;
+  constructor(titulo, autor, preco, estoque) {
+    this.titulo = titulo;
+    this.autor = autor;
     this.#preco = preco;
+    this.#estoque = estoque;
   }
 
-  get titulo() {
-    return this.#titulo;
-  }
-
-  set titulo(novoTitulo) {
-    this.#titulo = novoTitulo;
-  }
-
-  get autor() {
-    return this.#autor;
-  }
-
-  set autor(novoAutor) {
-    this.#autor = novoAutor;
-  }
-
-  get preco() {
-    return this.#preco;
-  }
-
-  set preco(novoPreco) {
-    this.#preco = novoPreco;
+  toJSON() {
+    return {
+      titulo: this.titulo,
+      autor: this.autor,
+      preco: this.#preco,
+      estoque: this.#estoque,
+    };
   }
 }
 

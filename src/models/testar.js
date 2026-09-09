@@ -6,4 +6,4 @@ const f1 = new Funcionario("Joao Souza", "joao@livraria.com", 2500);
 
 c1.apresentar();
 console.log("");
-f1.apresentar();    
+f1.apresentar();
