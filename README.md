@@ -10,6 +10,31 @@ Escola SENAI "Santo Paschoal Crepaldi" — Turma 1-2026-SESI_DEV_OC_1
 - Isadora Costa Campanari
 - Gabriel Nunes Lopes
 
+# Atualização Bloco 3 — Express dentro do MVC
+
+Arquivos preparados conforme `02-guia-alunos-express-mvc.pdf`:
+
+- `src/routes/livroRoutes.js`: GET `/` e GET `/:indice`
+- `src/controllers/livroController.js`: `listar` e `buscarPorIndice`, com 404
+- `src/services/livroService.js`: array em memória, `listarLivros` e `buscarLivroPorIndice`
+- `src/models/Livro.js`: `toJSON()` expondo `preco` e `estoque`
+- `index-additions.txt`: linhas que devem existir em `src/index.js`
+- `tests/bloco3.test.js`: testes automatizados usados para validar a atualização
+
+## Verificação local deste pacote
+
+Comando:
+
+```bash
+node --test tests/bloco3.test.js
+```
+
+Resultado verificado: 4 testes, 4 aprovados, 0 falhas.
+
+## Importante
+
+Este pacote é uma atualização de referência porque a conexão de escrita com o GitHub ficou indisponível durante a execução. Ele não substitui automaticamente o repositório e não deve apagar `Categoria`, `/sobre`, outros models ou o README existente.
+
 ## Atividade 09 — Entrega Consolidada do Bloco 2
 
 Esta entrega consolida o diagrama UML, o esqueleto MVC, a aplicação dos critérios de Clean Code e a preparação do projeto para execução com Express.
