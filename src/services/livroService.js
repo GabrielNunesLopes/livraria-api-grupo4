@@ -10,7 +10,10 @@ function listarLivros() {
 }
 
 function buscarLivroPorIndice(indice) {
+  if (!/^(0|[1-9]\d*)$/.test(String(indice))) {
+    return undefined;
+  }
   return livros[indice];
 }
 
-module.exports = { listarLivros, buscarLivroPorIndice };
+module.exports = { listar: listarLivros, listarLivros, buscarLivroPorIndice };
