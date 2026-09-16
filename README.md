@@ -19,17 +19,6 @@ Arquivos preparados conforme `02-guia-alunos-express-mvc.pdf`:
 - `src/services/livroService.js`: array em memória, `listarLivros` e `buscarLivroPorIndice`
 - `src/models/Livro.js`: `toJSON()` expondo `preco` e `estoque`
 - `index-additions.txt`: linhas que devem existir em `src/index.js`
-- `tests/bloco3.test.js`: testes automatizados usados para validar a atualização
-
-## Verificação local deste pacote
-
-Comando:
-
-```bash
-node --test tests/bloco3.test.js
-```
-
-Resultado verificado: 4 testes, 4 aprovados, 0 falhas.
 
 ## Importante
 
@@ -72,9 +61,6 @@ livraria-api-grupo4/
 │       ├── Pessoa.js
 │       ├── Cliente.js
 │       └── Funcionario.js
-└── tests/
-    ├── models.test.js
-    └── services.test.js
 ```
 
 ### Função de cada camada
@@ -152,13 +138,11 @@ Depois, acesse:
 - `http://localhost:3000/livros`
 - `http://localhost:3000/categorias`
 
-## Testes
+## Verificação manual
 
-O projeto usa o test runner nativo do Node.js, sem dependência adicional para testes.
-
-```bash
-npm test
-```
+Com o servidor iniciado, acesse as rotas acima no navegador. A rota
+`/livros/0` retorna o primeiro livro e `/livros/99` retorna status 404
+com a mensagem `Livro nao encontrado`.
 
 ## Checklist da Atividade 09
 
@@ -171,7 +155,7 @@ npm test
 - [x] Números mágicos substituídos por constantes nomeadas
 - [x] Responsabilidades de métodos divididas em métodos menores
 - [x] README atualizado com diagrama, estrutura e refatoração
-- [x] Comandos de instalação, desenvolvimento e testes documentados
+- [x] Comandos de instalação, desenvolvimento e verificação manual documentados
 
 ## Tecnologias
 
@@ -179,4 +163,3 @@ npm test
 - npm
 - Express
 - Nodemon
-- node:test
