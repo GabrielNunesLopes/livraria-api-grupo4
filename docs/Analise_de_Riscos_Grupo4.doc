@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Análise de Riscos — API de Gestão da Livraria (Grupo 4)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm 12mm 15mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1e293b;
+      background: #ffffff;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .header-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 14px;
+    }
+
+    .header-table td {
+      vertical-align: top;
+    }
+
+    .main-title {
+      font-size: 19pt;
+      font-weight: 700;
+      color: #0369a1;
+      margin-bottom: 3px;
+      letter-spacing: -0.5px;
+    }
+
+    .sub-title {
+      font-size: 12.5pt;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 8px;
+    }
+
+    .institution-box {
+      text-align: right;
+      font-size: 9pt;
+      color: #475569;
+      line-height: 1.35;
+    }
+
+    .institution-box strong {
+      color: #d90429;
+      font-size: 12pt;
+      display: block;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 8pt;
+      font-weight: 500;
+    }
+
+    .badge-blue {
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+    }
+
+    .badge-gray {
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #e2e8f0;
+    }
+
+    .divider {
+      height: 2px;
+      background: #0284c7;
+      margin-bottom: 14px;
+      border-radius: 2px;
+    }
+
+    .section-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 14px 0 8px 0;
+      display: flex;
+      align-items: center;
+      border-left: 4px solid #0284c7;
+      padding-left: 8px;
+    }
+
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .member-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 7px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .member-name {
+      font-size: 9pt;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .member-role {
+      font-size: 7.5pt;
+      color: #64748b;
+      background: #ffffff;
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .swot-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .swot-card {
+      border-radius: 6px;
+      padding: 10px 12px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .swot-strengths {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+
+    .swot-weaknesses {
+      background: #fef2f2;
+      border-color: #fecaca;
+    }
+
+    .swot-opportunities {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+    }
+
+    .swot-threats {
+      background: #fffbeb;
+      border-color: #fde68a;
+    }
+
+    .swot-header {
+      font-size: 9.5pt;
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .swot-strengths .swot-header { color: #166534; }
+    .swot-weaknesses .swot-header { color: #991b1b; }
+    .swot-opportunities .swot-header { color: #1e40af; }
+    .swot-threats .swot-header { color: #92400e; }
+
+    .swot-subtitle {
+      font-size: 7.5pt;
+      font-weight: normal;
+      color: #64748b;
+      display: block;
+      margin-top: 1px;
+    }
+
+    .swot-list {
+      list-style-type: decimal;
+      padding-left: 16px;
+      font-size: 8.5pt;
+      color: #334155;
+    }
+
+    .swot-list li {
+      margin-bottom: 5px;
+      line-height: 1.35;
+    }
+
+    .swot-list li strong {
+      color: #0f172a;
+    }
+
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+    }
+
+    .risk-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      margin-bottom: 12px;
+      font-size: 8pt;
+    }
+
+    .risk-table th {
+      background: #f1f5f9;
+      color: #334155;
+      font-weight: 600;
+      text-align: left;
+      padding: 6px 7px;
+      border: 1px solid #cbd5e1;
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .risk-table td {
+      padding: 6px 7px;
+      border: 1px solid #e2e8f0;
+      vertical-align: middle;
+      line-height: 1.3;
+    }
+
+    .risk-table tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .font-bold {
+      font-weight: 700;
+    }
+
+    .tag-risk {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 7.5pt;
+      text-align: center;
+    }
+
+    .tag-medium {
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+    }
+
+    .score-badge {
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .checklist-box {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin-top: 10px;
+      font-size: 8pt;
+    }
+
+    .checklist-title {
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+      font-size: 8.5pt;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      margin-bottom: 4px;
+      color: #334155;
+      line-height: 1.3;
+    }
+
+    .check-icon {
+      color: #16a34a;
+      font-weight: bold;
+    }
+
+    .doc-footer {
+      margin-top: 14px;
+      padding-top: 8px;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.5pt;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <table class="header-table">
+    <tr>
+      <td>
+        <div class="main-title">Análise de Riscos do Projeto</div>
+        <div class="sub-title">API de Gestão da Livraria — Grupo 4</div>
+        <div class="badges">
+          <span class="badge badge-blue">UC: Projetos de Software (PSOF) — Bloco 3</span>
+          <span class="badge badge-gray">UC: Programação Back-End (PBE)</span>
+          <span class="badge badge-gray">Turma: 1-2026-SESI_DEV_OC_1</span>
+        </div>
+      </td>
+      <td style="width: 260px;">
+        <div class="institution-box">
+          <strong>SENAI</strong>
+          Escola "Santo Paschoal Crepaldi"<br>
+          Técnico em Desenvolvimento de Sistemas<br>
+          Repositório: <em>github.com/GabrielNunesLopes/livraria-api-grupo4</em>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="divider"></div>
+
+  <!-- IDENTIFICAÇÃO DOS INTEGRANTES -->
+  <div class="section-title">1. Identificação da Equipe do Projeto</div>
+  <div class="members-grid">
+    <div class="member-card">
+      <span class="member-name">Gabriel Nunes Lopes (N° 09)</span>
+      <span class="member-role">Desenvolvimento / Planejamento</span>
+    </div>
+    <div class="member-card">
+      <span class="member-name">Guilherme de Souza Barbosa (N° 10)</span>
+      <span class="member-role">Desenvolvimento / Planejamento</span>
+    </div>
+    <div class="member-card">
+      <span class="member-name">Vitor Hugo dos Santos Campos (N° 29)</span>
+      <span class="member-role">Desenvolvimento / Planejamento</span>
+    </div>
+    <div class="member-card">
+      <span class="member-name">Isadora Costa Campanari (N° 32)</span>
+      <span class="member-role">Desenvolvimento / Planejamento</span>
+    </div>
+  </div>
+
+  <!-- PARTE 1 - SWOT -->
+  <div class="section-title">2. Parte 1 — Matriz SWOT do Projeto da API</div>
+  <p style="font-size: 8pt; color: #64748b; margin-bottom: 8px; font-style: italic;">
+    * Análise voltada estritamente para os fatores da equipe técnica, requisitos de software e governança do projeto na SA1 (não sobre o comércio de livros como negócio).
+  </p>
+
+  <div class="swot-grid">
+    <!-- FORÇAS -->
+    <div class="swot-card swot-strengths">
+      <div class="swot-header">
+        <span>FORÇAS (Internas)</span>
+        <span class="swot-subtitle">— O que o grupo já tem a favor</span>
+      </div>
+      <ol class="swot-list">
+        <li><strong>Arquitetura MVC consolidada:</strong> Esqueleto em camadas (routes, controllers, services, models) já estruturado e rotas básicas operacionais em memória desde o Bloco 2.</li>
+        <li><strong>Padronização de Versionamento no GitHub:</strong> Repositório centralizado ativo, fluxo de branches por funcionalidade e commits padronizados evitando retrabalho.</li>
+        <li><strong>Escopo formal e limites bem delimitados:</strong> Documento de escopo formal aprovado contendo exclusões claras (sem gateway de pagamento, app mobile ou frontend B2C).</li>
+      </ol>
+    </div>
+
+    <!-- FRAQUEZAS -->
+    <div class="swot-card swot-weaknesses">
+      <div class="swot-header">
+        <span>FRAQUEZAS (Internas)</span>
+        <span class="swot-subtitle">— O que o grupo não domina ou não tem</span>
+      </div>
+      <ol class="swot-list">
+        <li><strong>Inexperiência em persistência estruturada:</strong> Dados atualmente armazenados em memória nos services; transição para banco de dados relacional é um desafio técnico.</li>
+        <li><strong>Pouca vivência em autenticação/segurança:</strong> Implementação do requisito RNF002 (bloqueio via middleware de operações CUD sem token) ainda não é dominada pelo grupo.</li>
+        <li><strong>Validação predominantemente manual:</strong> Falta de rotinas completas de testes automatizados, dependendo quase que exclusivamente de requisições manuais via Insomnia.</li>
+      </ol>
+    </div>
+
+    <!-- OPORTUNIDADES -->
+    <div class="swot-card swot-opportunities">
+      <div class="swot-header">
+        <span>OPORTUNIDADES (Externas)</span>
+        <span class="swot-subtitle">— O que, fora do controle, pode ajudar</span>
+      </div>
+      <ol class="swot-list">
+        <li><strong>Mentoria docente no SENAI:</strong> Acompanhamento presencial contínuo e plantões de dúvidas com os professores de PSOF e Back-End.</li>
+        <li><strong>Maturidade do ecossistema Node.js:</strong> Ampla disponibilidade de bibliotecas gratuitas e consagradas (ex: JWT, validação de esquemas) com farta documentação online.</li>
+        <li><strong>Integração curricular direta:</strong> Sinergia entre as UCs de PSOF e Programação Back-End, permitindo que a mesma base de código atenda a ambas as disciplinas.</li>
+      </ol>
+    </div>
+
+    <!-- AMEAÇAS -->
+    <div class="swot-card swot-threats">
+      <div class="swot-header">
+        <span>AMEAÇAS (Externas)</span>
+        <span class="swot-subtitle">— O que, fora do controle, pode atrapalhar</span>
+      </div>
+      <ol class="swot-list">
+        <li><strong>Prazo acadêmico rígido da SA1:</strong> Concorrência direta de prazos com provas, projetos e atividades avaliativas de outros componentes curriculares.</li>
+        <li><strong>Vulnerabilidade a imprevistos na equipe fixa:</strong> Limitação obrigatória a 4 integrantes sem possibilidade de substituição caso alguém adoeça ou se ausente.</li>
+        <li><strong>Instabilidades de rede no laboratório:</strong> Quedas eventuais de internet ou bloqueios em portas de rede no laboratório escolar que afetem o npm ou sincronização remota.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <span>Documento de Gestão de Riscos de Software — SENAI Santo Paschoal Crepaldi</span>
+    <span>Grupo 4 • Turma 1-2026-SESI_DEV_OC_1 • Página 1 de 2</span>
+  </div>
+
+  <!-- PÁGINA 2: MATRIZ DE RISCOS -->
+  <div class="page-break"></div>
+
+  <div class="section-title">3. Parte 2 — Matriz de Riscos do Projeto</div>
+  <p style="font-size: 8pt; color: #64748b; margin-bottom: 6px;">
+    Escala: <strong>Probabilidade (1 a 5)</strong> × <strong>Impacto (1 a 5)</strong> = <strong>Pontuação (1 a 25)</strong>. Classificação: Baixo (1-6) | Médio (7-14) | Alto (15-25).
+  </p>
+
+  <table class="risk-table">
+    <thead>
+      <tr>
+        <th style="width: 22px;" class="text-center">#</th>
+        <th style="width: 175px;">Risco (Nomeado Claramente)</th>
+        <th style="width: 36px;" class="text-center">Prob. (1-5)</th>
+        <th style="width: 36px;" class="text-center">Imp. (1-5)</th>
+        <th style="width: 38px;" class="text-center">Pont.</th>
+        <th style="width: 58px;" class="text-center">Classif.</th>
+        <th>Ideia de Mitigação Registrada</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-center font-bold">1</td>
+        <td><strong>Conflitos de integração (merge conflicts) no GitHub por alterações em arquivos centrais</strong> (ex: routes ou services)</td>
+        <td class="text-center">4</td>
+        <td class="text-center">3</td>
+        <td class="text-center score-badge">12</td>
+        <td class="text-center"><span class="tag-risk tag-medium">Médio</span></td>
+        <td>Adotar fluxo de Git com branches isoladas por funcionalidade (<code>feature/</code>), commits atômicos e pull requests diários com code review rápido entre os pares antes do merge na <code>main</code>.</td>
+      </tr>
+      <tr>
+        <td class="text-center font-bold">2</td>
+        <td><strong>Atraso e falha técnica na migração de dados em memória para banco de dados relacional</strong></td>
+        <td class="text-center">3</td>
+        <td class="text-center">4</td>
+        <td class="text-center score-badge">12</td>
+        <td class="text-center"><span class="tag-risk tag-medium">Médio</span></td>
+        <td>Manter o desacoplamento estrito da camada <code>services/</code> sem afetar os controllers; preservar uma branch de contingência com a persistência em memória funcional para assegurar os critérios mínimos da SA1.</td>
+      </tr>
+      <tr>
+        <td class="text-center font-bold">3</td>
+        <td><strong>Falhas na implementação do middleware de Autenticação Básica (RNF002)</strong>, quebrando rotas de escrita ou expondo a API</td>
+        <td class="text-center">3</td>
+        <td class="text-center">4</td>
+        <td class="text-center score-badge">12</td>
+        <td class="text-center"><span class="tag-risk tag-medium">Médio</span></td>
+        <td>Implementar e homologar o middleware de autenticação inicialmente em uma rota mockada isolada; elaborar bateria de testes no Insomnia cobrindo requisições sem token, com token inválido e autorizado (401/403/200).</td>
+      </tr>
+      <tr>
+        <td class="text-center font-bold">4</td>
+        <td><strong>Sobrecarga e atraso por absenteísmo imprevisto de integrante da equipe em período crítico</strong></td>
+        <td class="text-center">3</td>
+        <td class="text-center">4</td>
+        <td class="text-center score-badge">12</td>
+        <td class="text-center"><span class="tag-risk tag-medium">Médio</span></td>
+        <td>Praticar pareamento rotativo (pair programming) e manter a distribuição de tarefas atualizada no GitHub Projects, garantindo conhecimento distribuído sobre todo o código (mitigação do fator-ônibus).</td>
+      </tr>
+      <tr>
+        <td class="text-center font-bold">5</td>
+        <td><strong>Divergência entre o comportamento dos endpoints e os critérios de aceitação perante a banca</strong></td>
+        <td class="text-center">3</td>
+        <td class="text-center">3</td>
+        <td class="text-center score-badge">9</td>
+        <td class="text-center"><span class="tag-risk tag-medium">Médio</span></td>
+        <td>Realizar congelamento de código (<em>code freeze</em>) 48h antes da apresentação, exportar a collection atualizada do Insomnia para a pasta <code>docs/</code> e fazer simulação da arguição oral entre o grupo.</td>
+      </tr>
+      <tr>
+        <td class="text-center font-bold">6</td>
+        <td><strong>Inconsistência de dados cadastrados por ausência de validação preventiva de payloads</strong> (ex: estoque negativo, preço zerado)</td>
+        <td class="text-center">3</td>
+        <td class="text-center">3</td>
+        <td class="text-center score-badge">9</td>
+        <td class="text-center"><span class="tag-risk tag-medium">Médio</span></td>
+        <td>Inserir validações de schema e campos obrigatórios diretamente nos controllers antes de invocar os services, devolvendo <code>400 Bad Request</code> padronizado conforme RNF001 e RF006.</td>
+      </tr>
+      <tr>
+        <td class="text-center font-bold">7</td>
+        <td><strong>Falha de execução do projeto na máquina da banca por divergência de versão do Node ou pacotes</strong></td>
+        <td class="text-center">2</td>
+        <td class="text-center">4</td>
+        <td class="text-center score-badge">8</td>
+        <td class="text-center"><span class="tag-risk tag-medium">Médio</span></td>
+        <td>Versionar rigorosamente o <code>package-lock.json</code>, fixar comandos no README.md e testar clonagem e execução limpa (<code>git clone</code> e <code>npm install</code>) em outro computador do laboratório.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- CHECKLIST DE CONFERÊNCIA -->
+  <div class="checklist-box">
+    <div class="checklist-title">
+      <span>✔</span> Verificação dos Requisitos da Atividade (Critérios de Aceite)
+    </div>
+    <div class="checklist-item">
+      <span class="check-icon">✓</span>
+      <span><strong>Foco no Projeto de Software:</strong> Os 4 quadrantes da matriz SWOT foram preenchidos considerando a equipe, o código, as UCs e o escopo da API, e não a operação de uma livraria física.</span>
+    </div>
+    <div class="checklist-item">
+      <span class="check-icon">✓</span>
+      <span><strong>Riscos Claros e Específicos:</strong> Foram nomeados 7 riscos técnicos e de gestão concretos (superando a meta mínima de 5), evitando formulações vagas.</span>
+    </div>
+    <div class="checklist-item">
+      <span class="check-icon">✓</span>
+      <span><strong>Pontuação e Classificação Exatas:</strong> Cada risco apresenta Probabilidade (1 a 5), Impacto (1 a 5), Pontuação calculada matematicamente (P × I) e Classificação correta.</span>
+    </div>
+    <div class="checklist-item">
+      <span class="check-icon">✓</span>
+      <span><strong>Mitigação para Riscos Médios e Altos:</strong> Todos os riscos identificados contam com ideias práticas e exequíveis de mitigação registradas.</span>
+    </div>
+    <div class="checklist-item">
+      <span class="check-icon">✓</span>
+      <span><strong>Armazenamento Compartilhado:</strong> Matriz salva no mesmo diretório compartilhado dos documentos de escopo e requisitos (<code>livraria-api-grupo4/docs/</code>).</span>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <span>Documento de Gestão de Riscos de Software — SENAI Santo Paschoal Crepaldi</span>
+    <span>Grupo 4 • Turma 1-2026-SESI_DEV_OC_1 • Página 2 de 2</span>
+  </div>
+
+</body>
+</html>
