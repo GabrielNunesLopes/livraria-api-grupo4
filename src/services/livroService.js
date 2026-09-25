@@ -16,4 +16,44 @@ function buscarLivroPorIndice(indice) {
   return livros[indice];
 }
 
-module.exports = { listar: listarLivros, listarLivros, buscarLivroPorIndice };
+function criarLivro(dados) {
+  const novoLivro = new Livro(
+    dados.titulo,
+    dados.autor,
+    dados.preco,
+    dados.estoque,
+  );
+  livros.push(novoLivro);
+  return novoLivro;
+}
+
+function atualizarLivro(indice, dados) {
+  const livro = buscarLivroPorIndice(indice);
+  if (!livro) return undefined;
+  livro.titulo = dados.titulo;
+  livro.autor = dados.autor;
+  livro.preco = dados.preco;
+  livro.estoque = dados.estoque;
+  return livro;
+}
+
+function atualizarParcialLivro(indice, dados) {
+  const livro = buscarLivroPorIndice(indice);
+  if (!livro) return undefined;
+  if (dados.titulo !== undefined) livro.titulo = dados.titulo;
+  if (dados.autor !== undefined) livro.autor = dados.autor;
+  if (dados.preco !== undefined) livro.preco = dados.preco;
+  if (dados.estoque !== undefined) livro.estoque = dados.estoque;
+  return livro;
+}
+
+function deletarLivro(indice) {
+  if (!buscarLivroPorIndice(indice)) return false;
+  livros.splice(Number(indice), 1);
+  return true;
+}
+
+module.exports = {
+  listar: listarLivros, listarLivros, buscarLivroPorIndice, criarLivro,
+  atualizarLivro, atualizarParcialLivro, deletarLivro,
+};

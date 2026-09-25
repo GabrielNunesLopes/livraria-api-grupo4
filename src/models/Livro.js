@@ -9,6 +9,14 @@ class Livro {
     this.#estoque = estoque;
   }
 
+  set preco(valor) {
+    this.#preco = valor;
+  }
+
+  set estoque(valor) {
+    this.#estoque = valor;
+  }
+
   toJSON() {
     return {
       titulo: this.titulo,

@@ -8,7 +8,6 @@ const DEFAULT_PORT = 3000;
 const PORT = process.env.PORT || DEFAULT_PORT;
 
 app.use(logger);
-app.use(routes);
 
 app.use(express.json());
 

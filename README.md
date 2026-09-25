@@ -163,3 +163,31 @@ com a mensagem `Livro nao encontrado`.
 - npm
 - Express
 - Nodemon
+
+## Atividade 12 — Os 5 Métodos HTTP
+
+Implementados POST, PUT, PATCH e DELETE de livros, com os setters `preco` e `estoque` na classe `Livro`.
+
+### Tabela de verificação
+
+Testes executados por requisições HTTP com Node.js, sem usar o Postman.
+POST e PUT enviaram `titulo`, `autor`, `preco` e `estoque` com `Content-Type: application/json`.
+PATCH enviou `preco: 0` e `estoque: 0`, mantendo título e autor.
+
+| Método | URL | Status esperado | Status obtido |
+| --- | --- | --- | --- |
+| GET | /livros | 200 | 200 |
+| GET | /livros/0 | 200 | 200 |
+| GET | /livros/99 | 404 | 404 |
+| POST | /livros | 201 | 201 |
+| PUT | /livros/0 | 200 | 200 |
+| PATCH | /livros/0 | 200 | 200 |
+| DELETE | /livros/0 | 204 | 204 |
+| GET | /livros/0 (depois do DELETE) | 404 | 404 |
+
+Antes de testar DELETE `/livros/0`, foram excluídos `/livros/2` e `/livros/1`, deixando somente um livro. Como `splice` reorganiza os índices, excluir o índice 0 com outros livros presentes faz o próximo livro ocupar essa posição.
+O DELETE retornou corpo vazio; PUT, PATCH e DELETE em `/livros/99` retornaram 404.
+
+### Experimento do cabeçalho
+
+POST `/livros` com corpo JSON, sem o cabeçalho `Content-Type: application/json`, retornou **500**: o `express.json()` não interpreta esse corpo, deixando `req.body` indefinido e causando erro ao acessar `dados.titulo`.
