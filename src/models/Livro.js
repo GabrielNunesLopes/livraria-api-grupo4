@@ -9,6 +9,10 @@ class Livro {
     this.#estoque = estoque;
   }
 
+  get preco() {
+    return this.#preco;
+  }
+
   set preco(valor) {
     this.#preco = valor;
   }
