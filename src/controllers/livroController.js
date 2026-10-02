@@ -1,10 +1,5 @@
 const livroService = require("../services/livroService");
 
-function listar(req, res) {
-  const livros = livroService.listarLivros();
-  res.json(livros);
-}
-
 function buscarPorIndice(req, res) {
   //req, res são os parâmetros que representam a requisição e a resposta do Express.js. O parâmetro req contém informações sobre a requisição HTTP, como parâmetros de rota, corpo da requisição, cabeçalhos, etc. O parâmetro res é usado para enviar a resposta de volta ao cliente.
   const indice = req.params.indice; //req.params.indice é usado para acessar o valor do parâmetro de rota chamado "indice" na URL da requisição. Por exemplo, se a rota for definida como "/livros/:indice", e a requisição for feita para "/livros/2", então req.params.indice terá o valor "2".
@@ -41,4 +36,17 @@ function deletar(req, res) {
   res.status(204).send();
 }
 
-module.exports = { listar, buscarPorIndice, criar, atualizar, atualizarParcial, deletar };
+function listar(req, res) {
+  const filtros = req.query;
+  const livros = livroService.listarLivros(filtros);
+  res.status(200).json(livros);
+}
+
+module.exports = {
+  listar,
+  buscarPorIndice,
+  criar,
+  atualizar,
+  atualizarParcial,
+  deletar,
+};
