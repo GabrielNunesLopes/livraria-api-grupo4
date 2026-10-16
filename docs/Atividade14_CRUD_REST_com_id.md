@@ -97,7 +97,3 @@ O filtro ignora maiúsculas e minúsculas e procura o texto em qualquer parte do
 - `201 Created`: recurso criado.
 - `204 No Content`: recurso excluído.
 - `404 Not Found`: ID não encontrado.
-
-## Verificação automatizada
-
-Execute `npm test` para conferir IDs, serialização JSON, filtro por nome e operações do serviço de categorias.
