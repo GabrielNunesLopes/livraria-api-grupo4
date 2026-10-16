@@ -22,6 +22,14 @@ class Categoria {
   set descricao(novaDescricao) {
     this.#descricao = novaDescricao;
   }
+
+  toJSON() {
+    return {
+      id: this.id,
+      nome: this.#nome,
+      descricao: this.#descricao,
+    };
+  }
 }
 
 module.exports = Categoria;

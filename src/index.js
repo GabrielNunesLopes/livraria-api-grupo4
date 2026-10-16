@@ -1,6 +1,5 @@
 const express = require("express");
 const routes = require("./routes");
-const categoriaRoutes = require("./routes/categoriaRoutes");
 const logger = require("./middlewares/logger");
 
 const app = express();
@@ -20,7 +19,6 @@ app.get("/sobre", (req, res) => {
 });
 
 app.use(routes);
-app.use("/categorias", categoriaRoutes);
 
 if (require.main === module) {
   app.listen(PORT, () => {
