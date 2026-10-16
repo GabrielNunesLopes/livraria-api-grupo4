@@ -5,6 +5,15 @@
 
 Este guia registra as respostas da atividade e como conferir o CRUD de livros e categorias. Os dados ficam em memória: ao reiniciar o servidor, as categorias e os livros voltam aos dados iniciais.
 
+## Divisão de trabalho
+
+| Integrante | Responsável por |
+|---|---|
+| Vitor Hugo dos Santos Campos | Parte 1 + Parte 2 (model e service do Livro) |
+| Guilherme de Souza Barbosa | Parte 2 (controller e rotas do Livro) |
+| Isadora Costa Campanari | Parte 3 (testes no Postman) + Parte 4 (model e service da Categoria) |
+| Gabriel Nunes Lopes | Parte 4 (controller e rotas da Categoria) + testes |
+
 ## Parte 1 — URLs REST
 
 | URL | REST? | Forma recomendada |
