@@ -1,9 +1,20 @@
 const Livro = require("../models/Livro");
 
-const livros = [
-  new Livro("Clean Code", "Robert C. Martin", 89.9, 12),
-  new Livro("Eloquent JavaScript", "Marijn Haverbeke", 45.0, 20),
-];
+const livros = [];
+let proximoId = 1;
+
+criarLivro({
+  titulo: "Clean Code",
+  autor: "Robert C. Martin",
+  preco: 89.9,
+  estoque: 12,
+});
+criarLivro({
+  titulo: "Eloquent JavaScript",
+  autor: "Marijn Haverbeke",
+  preco: 45.0,
+  estoque: 20,
+});
 
 function listarTodos() {
   return livros;
@@ -16,6 +27,10 @@ function buscarLivroPorIndice(indice) {
   return livros[indice];
 }
 
+function buscarLivroPorId(id) {
+  return livros.find((livro) => livro.id === Number(id));
+}
+
 function criarLivro(dados) {
   const novoLivro = new Livro(
     dados.titulo,
@@ -23,12 +38,14 @@ function criarLivro(dados) {
     dados.preco,
     dados.estoque,
   );
+  novoLivro.id = proximoId;
+  proximoId++;
   livros.push(novoLivro);
   return novoLivro;
 }
 
-function atualizarLivro(indice, dados) {
-  const livro = buscarLivroPorIndice(indice);
+function atualizarLivro(id, dados) {
+  const livro = buscarLivroPorId(id);
   if (!livro) return undefined;
   livro.titulo = dados.titulo;
   livro.autor = dados.autor;
@@ -37,8 +54,8 @@ function atualizarLivro(indice, dados) {
   return livro;
 }
 
-function atualizarParcialLivro(indice, dados) {
-  const livro = buscarLivroPorIndice(indice);
+function atualizarParcialLivro(id, dados) {
+  const livro = buscarLivroPorId(id);
   if (!livro) return undefined;
   if (dados.titulo !== undefined) livro.titulo = dados.titulo;
   if (dados.autor !== undefined) livro.autor = dados.autor;
@@ -47,9 +64,10 @@ function atualizarParcialLivro(indice, dados) {
   return livro;
 }
 
-function deletarLivro(indice) {
-  if (!buscarLivroPorIndice(indice)) return false;
-  livros.splice(Number(indice), 1);
+function deletarLivro(id) {
+  const posicao = livros.findIndex((livro) => livro.id === Number(id));
+  if (posicao === -1) return false;
+  livros.splice(posicao, 1);
   return true;
 }
 
@@ -71,6 +89,7 @@ module.exports = {
   listar: listarLivros,
   listarLivros,
   buscarLivroPorIndice,
+  buscarLivroPorId,
   criarLivro,
   atualizarLivro,
   atualizarParcialLivro,
