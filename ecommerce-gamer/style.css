@@ -1982,3 +1982,10 @@ body {
         display: none;
     }
 }
+
+/* texto fixo dentro do banner, sem animação */
+.slide__texto,
+.slide__texto > * {
+    opacity: 1 !important;
+    animation: none !important;
+}
