@@ -294,7 +294,7 @@ ul {
 
 .carrossel__trilho {
     display: flex;
-    animation: carrossel 18s infinite;
+    animation: carrossel 13.5s infinite;
 }
 
 @keyframes carrossel {
@@ -551,11 +551,11 @@ ul {
     height: 10px;
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.55);
-    animation: ponto 18s infinite both;
+    animation: ponto 13.5s infinite both;
 }
 
-.carrossel__pontos span:nth-child(2) { animation-delay: 6s; }
-.carrossel__pontos span:nth-child(3) { animation-delay: 12s; }
+.carrossel__pontos span:nth-child(2) { animation-delay: 4.5s; }
+.carrossel__pontos span:nth-child(3) { animation-delay: 9s; }
 
 @keyframes ponto {
     0%, 32% { width: 28px; background: var(--laranja); }
@@ -1395,14 +1395,17 @@ ul {
         transition: none !important;
     }
 
-    .carrossel {
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
+    /* o carrossel continua passando sozinho */
+    .carrossel__trilho {
+        animation: carrossel 13.5s infinite !important;
     }
 
-    .slide {
-        scroll-snap-align: start;
+    .carrossel__pontos span {
+        animation: ponto 13.5s infinite both !important;
     }
+
+    .carrossel__pontos span:nth-child(2) { animation-delay: 4.5s !important; }
+    .carrossel__pontos span:nth-child(3) { animation-delay: 9s !important; }
 }
 
 /* ajustes finos */
@@ -1451,4 +1454,14 @@ ul {
     .vitrine-banner__item figcaption {
         font-size: 10px;
     }
+}
+
+/* banner nunca mostra barra de rolagem */
+.carrossel {
+    overflow: hidden !important;
+    scrollbar-width: none;
+}
+
+.carrossel::-webkit-scrollbar {
+    display: none;
 }
