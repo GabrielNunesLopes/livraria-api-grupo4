@@ -985,3 +985,72 @@ ul {
 .redes a:hover {
     color: var(--destaque);
 }
+
+/* ===== Navegação por âncoras ===== */
+/* desconta a altura do cabeçalho fixo ao pular para uma âncora */
+html {
+    scroll-padding-top: 130px;
+}
+
+.alvo {
+    display: block;
+}
+
+/* Filtro de categoria só com CSS (:target) */
+.filtro-ativo {
+    display: none;
+    margin-bottom: 12px;
+    color: var(--branco);
+    font-weight: 600;
+}
+
+.filtro-ativo a {
+    color: #ff9fb2;
+    text-decoration: underline;
+}
+
+.alvo:target ~ .filtro-ativo {
+    display: block;
+}
+
+#cat-perifericos:target ~ .grade .produto:not(.cat-perifericos) {
+    display: none;
+}
+
+#cat-consoles:target ~ .grade .produto:not(.cat-consoles) {
+    display: none;
+}
+
+#cat-teclados:target ~ .grade .produto:not(.cat-teclados) {
+    display: none;
+}
+
+#cat-headsets:target ~ .grade .produto:not(.cat-headsets) {
+    display: none;
+}
+
+#cat-mouses:target ~ .grade .produto:not(.cat-mouses) {
+    display: none;
+}
+
+#cat-controles:target ~ .grade .produto:not(.cat-controles) {
+    display: none;
+}
+
+#cat-cadeiras:target ~ .grade .produto:not(.cat-cadeiras) {
+    display: none;
+}
+
+.alvo:target ~ .grade .produto {
+    animation: aparecer-card 0.35s ease both;
+}
+
+@keyframes aparecer-card {
+    from { opacity: 0; transform: translateY(12px); }
+}
+
+.departamentos a:focus-visible,
+.categorias a:focus-visible {
+    outline: 2px solid var(--destaque);
+    outline-offset: 2px;
+}

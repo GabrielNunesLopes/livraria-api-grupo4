@@ -13,13 +13,13 @@
 <body>
 
     <!-- Barra superior -->
-    <div class="barra-topo">
+    <div class="barra-topo" id="topo">
         <div class="container barra-topo__conteudo">
             <p><strong>Frete grátis</strong> para Sul e Sudeste em compras acima de R$ 299*</p>
             <ul>
-                <li><a href="#">Atendimento</a></li>
-                <li><a href="#">Rastrear pedido</a></li>
-                <li><a href="#">Venda no Forge</a></li>
+                <li><a href="#ajuda">Atendimento</a></li>
+                <li><a href="#ajuda">Rastrear pedido</a></li>
+                <li><a href="#institucional">Venda no Forge</a></li>
             </ul>
         </div>
     </div>
@@ -27,7 +27,7 @@
     <!-- 1. Cabeçalho -->
     <header class="cabecalho">
         <div class="container cabecalho__linha">
-            <a href="#" class="marca">
+            <a href="#topo" class="marca">
                 <img src="img/logo.svg" alt="Logotipo Pixel Forge: bigorna laranja com um pixel em cima" width="44" height="44">
                 <span class="marca__nome">PIXEL<b>FORGE</b></span>
             </a>
@@ -56,12 +56,11 @@
 
         <nav class="departamentos" aria-label="Departamentos">
             <ul class="container">
-                <li><a href="#" class="departamentos__todos"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg> Departamentos</a></li>
-                <li><a href="#categorias">Hardware</a></li>
-                <li><a href="#categorias">Periféricos</a></li>
-                <li><a href="#categorias">Consoles</a></li>
-                <li><a href="#categorias">Colecionáveis</a></li>
-                <li><a href="#vitrine">Cadeiras</a></li>
+                <li><a href="#categorias" class="departamentos__todos"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg> Departamentos</a></li>
+                <li><a href="#cat-perifericos">Periféricos</a></li>
+                <li><a href="#cat-headsets">Headsets</a></li>
+                <li><a href="#cat-consoles">Consoles</a></li>
+                <li><a href="#cat-cadeiras">Cadeiras</a></li>
                 <li><a href="#vitrine" class="destaque-menu">Oferta Relâmpago</a></li>
             </ul>
         </nav>
@@ -119,12 +118,12 @@
                 </div>
 
                 <aside class="mini-banners" aria-label="Destaques rápidos">
-                    <a href="#" class="mini-banner mini-banner--grafite">
+                    <a href="#vitrine" class="mini-banner mini-banner--grafite">
                         <span>Cupom</span>
                         <b>FORGE10</b>
                         <small>10% OFF na 1ª compra</small>
                     </a>
-                    <a href="#" class="mini-banner mini-banner--destaque">
+                    <a href="#vitrine" class="mini-banner mini-banner--destaque">
                         <span>Pix</span>
                         <b>15% OFF</b>
                         <small>em todo o site</small>
@@ -145,43 +144,43 @@
         <section id="categorias" class="container bloco">
             <div class="bloco__titulo">
                 <h2>Navegue por categoria</h2>
-                <a href="#">Ver todas ›</a>
+                <a href="#vitrine">Ver todas ›</a>
             </div>
             <ul class="categorias">
                 <li>
-                    <a href="#">
-                        <img src="https://loremflickr.com/320/320/playstation,console?lock=21" alt="Console de videogame moderno com controle sem fio" width="120" height="120">
+                    <a href="#cat-consoles">
+                        <img src="https://loremflickr.com/320/320/gameboy,console?lock=41" alt="Console Nintendo Game Boy clássico" width="120" height="120">
                         <span>Consoles</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <img src="https://loremflickr.com/400/300/gaming,keyboard?lock=22" alt="Teclado mecânico com iluminação RGB" width="120" height="120">
+                    <a href="#cat-teclados">
+                        <img src="https://loremflickr.com/400/300/redragon,keyboard?lock=42" alt="Teclado mecânico com iluminação RGB" width="120" height="120">
                         <span>Teclados</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <img src="https://loremflickr.com/300/450/figure,toy?lock=23" alt="Action figure de personagem de jogo em pose de batalha" width="120" height="120">
-                        <span>Colecionáveis</span>
+                    <a href="#cat-headsets">
+                        <img src="https://loremflickr.com/300/450/hyperx,headset?lock=43" alt="Headset gamer com microfone" width="120" height="120">
+                        <span>Headsets</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <img src="https://loremflickr.com/500/320/arcade?lock=24" alt="Máquinas de fliperama com telas acesas" width="120" height="120">
-                        <span>Retrô &amp; Arcade</span>
+                    <a href="#cat-mouses">
+                        <img src="https://loremflickr.com/500/320/logitech,mouse?lock=44" alt="Mouse gamer com iluminação RGB" width="120" height="120">
+                        <span>Mouses</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <img src="https://loremflickr.com/420/300/graphics,card?lock=25" alt="Placa de vídeo com três ventoinhas" width="120" height="120">
-                        <span>Placas de vídeo</span>
+                    <a href="#cat-controles">
+                        <img src="https://loremflickr.com/420/300/xbox,controller?lock=45" alt="Controle de videogame sem fio" width="120" height="120">
+                        <span>Controles</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <img src="https://loremflickr.com/300/300/monitor,computer?lock=26" alt="Monitor gamer curvo sobre a mesa" width="120" height="120">
-                        <span>Monitores</span>
+                    <a href="#cat-cadeiras">
+                        <img src="https://loremflickr.com/300/300/gaming,chair?lock=46" alt="Cadeira gamer reclinável" width="120" height="120">
+                        <span>Cadeiras</span>
                     </a>
                 </li>
             </ul>
@@ -189,18 +188,27 @@
 
         <!-- 4 e 5. Vitrine -->
         <section id="vitrine" class="container bloco bloco--relampago">
+            <span class="alvo" id="cat-perifericos"></span>
+            <span class="alvo" id="cat-consoles"></span>
+            <span class="alvo" id="cat-teclados"></span>
+            <span class="alvo" id="cat-headsets"></span>
+            <span class="alvo" id="cat-mouses"></span>
+            <span class="alvo" id="cat-controles"></span>
+            <span class="alvo" id="cat-cadeiras"></span>
             <div class="relampago__topo">
                 <h2><svg class="ico ico--raio" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z" fill="currentColor"/></svg> Oferta Relâmpago</h2>
                 <p class="cronometro" aria-label="Termina em breve">
                     Termina em
                     <span class="cronometro__caixa">05</span>:<span class="cronometro__caixa">42</span>:<span class="cronometro__caixa cronometro__seg" aria-hidden="true"></span>
                 </p>
-                <a href="#">Ver todas ›</a>
+                <a href="#vitrine">Ver todas ›</a>
             </div>
+
+            <p class="filtro-ativo">Filtro ativo · <a href="#vitrine">mostrar todos os produtos</a></p>
 
             <div class="grade">
 
-                <article class="produto">
+                <article class="produto cat-perifericos cat-headsets">
                     <figure>
                         <div class="produto__foto">
                             <span class="tag tag--desconto">-15%</span>
@@ -218,7 +226,7 @@
                     <a href="https://hyperx.com/collections/gaming-headsets" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
                 </article>
 
-                <article class="produto">
+                <article class="produto cat-perifericos cat-teclados">
                     <figure>
                         <div class="produto__foto">
                             <span class="tag tag--frete">Frete grátis</span>
@@ -236,7 +244,7 @@
                     <a href="https://redragon.com.br/" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
                 </article>
 
-                <article class="produto produto--esgotado">
+                <article class="produto produto--esgotado cat-consoles">
                     <figure>
                         <div class="produto__foto">
                             <span class="tag tag--esgotado">ESGOTADO</span>
@@ -253,7 +261,7 @@
                     <a href="https://www.nintendo.com/pt-br/" target="_blank" rel="noopener" class="botao botao--avise"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4zM10 21h4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Avise-me</a>
                 </article>
 
-                <article class="produto">
+                <article class="produto cat-perifericos cat-mouses">
                     <figure>
                         <div class="produto__foto">
                             <span class="tag tag--desconto">-20%</span>
@@ -271,7 +279,7 @@
                     <a href="https://www.logitechg.com/pt-br/products/gaming-mice.html" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
                 </article>
 
-                <article class="produto">
+                <article class="produto cat-perifericos cat-controles cat-consoles">
                     <figure>
                         <div class="produto__foto">
                             <img src="https://loremflickr.com/500/800/xbox,controller?lock=35" alt="Controle sem fio Xbox preto com botões coloridos" width="300" height="300" loading="lazy">
@@ -288,7 +296,7 @@
                     <a href="https://www.xbox.com/pt-BR/accessories" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
                 </article>
 
-                <article class="produto">
+                <article class="produto cat-cadeiras">
                     <figure>
                         <div class="produto__foto">
                             <span class="tag tag--frete">Frete grátis</span>
@@ -327,11 +335,11 @@
 
     <footer class="rodape">
         <div class="container rodape__colunas">
-            <div>
+            <div id="institucional">
                 <h3>Institucional</h3>
                 <ul><li><a href="#">Sobre a Pixel Forge</a></li><li><a href="#">Trabalhe conosco</a></li><li><a href="#">Política de privacidade</a></li></ul>
             </div>
-            <div>
+            <div id="ajuda">
                 <h3>Ajuda</h3>
                 <ul><li><a href="#">Central de atendimento</a></li><li><a href="#">Trocas e devoluções</a></li><li><a href="#">Prazo de entrega</a></li></ul>
             </div>
