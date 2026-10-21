@@ -1,0 +1,41 @@
+{
+  "info": {
+    "_postman_id": "4a96b2be-314d-4aa8-b145-4a15a2cf2814",
+    "name": "Livraria API - Grupo 4",
+    "description": "Coleção CRUD da Atividade 15. Execute sequencialmente cada pasta pelo Collection Runner. IDs são atualizados a cada execução, permitindo repetir sem reiniciar a API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000", "type": "string" },
+    { "key": "livroId", "value": "", "type": "string" },
+    { "key": "categoriaId", "value": "", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "Livros",
+      "item": [
+        { "name": "1 - Listar livros", "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/livros" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 200\", function () {", "    pm.response.to.have.status(200);", "});"] } }] },
+        { "name": "2 - Buscar livro inexistente", "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/livros/99999" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 404\", function () {", "    pm.response.to.have.status(404);", "});"] } }] },
+        { "name": "3 - Cadastrar livro", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"titulo\": \"O Hobbit\",\n  \"autor\": \"J.R.R. Tolkien\",\n  \"preco\": 39.9,\n  \"estoque\": 10\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/livros" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 201\", function () {", "    pm.response.to.have.status(201);", "});", "pm.collectionVariables.set(\"livroId\", pm.response.json().id);"] } }] },
+        { "name": "4 - Buscar livro cadastrado", "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/livros/{{livroId}}" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 200\", function () {", "    pm.response.to.have.status(200);", "});"] } }] },
+        { "name": "5 - Alterar só o preço", "request": { "method": "PATCH", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"preco\": 35\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/livros/{{livroId}}" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 200\", function () {", "    pm.response.to.have.status(200);", "});"] } }] },
+        { "name": "6 - Substituir tudo", "request": { "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"titulo\": \"O Hobbit\",\n  \"autor\": \"J.R.R. Tolkien\",\n  \"preco\": 42,\n  \"estoque\": 8\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/livros/{{livroId}}" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 200\", function () {", "    pm.response.to.have.status(200);", "});"] } }] },
+        { "name": "7 - Apagar livro", "request": { "method": "DELETE", "header": [], "url": "{{baseUrl}}/livros/{{livroId}}" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 204\", function () {", "    pm.response.to.have.status(204);", "});"] } }] },
+        { "name": "8 - Buscar livro apagado", "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/livros/{{livroId}}" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 404\", function () {", "    pm.response.to.have.status(404);", "});"] } }] }
+      ]
+    },
+    {
+      "name": "Categorias (extra)",
+      "item": [
+        { "name": "1 - Listar categorias", "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/categorias" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 200\", function () {", "    pm.response.to.have.status(200);", "});"] } }] },
+        { "name": "2 - Buscar categoria inexistente", "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/categorias/99999" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 404\", function () {", "    pm.response.to.have.status(404);", "});"] } }] },
+        { "name": "3 - Cadastrar categoria", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Infantil\",\n  \"descricao\": \"Livros para criancas\"\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/categorias" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 201\", function () {", "    pm.response.to.have.status(201);", "});", "pm.collectionVariables.set(\"categoriaId\", pm.response.json().id);"] } }] },
+        { "name": "4 - Buscar categoria cadastrada", "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/categorias/{{categoriaId}}" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 200\", function () {", "    pm.response.to.have.status(200);", "});"] } }] },
+        { "name": "5 - Alterar só a descrição", "request": { "method": "PATCH", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"descricao\": \"De 6 a 10 anos\"\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/categorias/{{categoriaId}}" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 200\", function () {", "    pm.response.to.have.status(200);", "});"] } }] },
+        { "name": "6 - Substituir tudo", "request": { "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Infantojuvenil\",\n  \"descricao\": \"Criancas e adolescentes\"\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/categorias/{{categoriaId}}" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 200\", function () {", "    pm.response.to.have.status(200);", "});"] } }] },
+        { "name": "7 - Apagar categoria", "request": { "method": "DELETE", "header": [], "url": "{{baseUrl}}/categorias/{{categoriaId}}" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 204\", function () {", "    pm.response.to.have.status(204);", "});"] } }] },
+        { "name": "8 - Buscar categoria apagada", "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/categorias/{{categoriaId}}" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 404\", function () {", "    pm.response.to.have.status(404);", "});"] } }] }
+      ]
+    }
+  ]
+}
