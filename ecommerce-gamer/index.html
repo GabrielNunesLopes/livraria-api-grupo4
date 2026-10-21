@@ -3,638 +3,353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pixel Forge - hardware, periféricos, consoles e colecionáveis com preço de Pix.">
-    <title>Pixel Forge | Hardware, Games e Periféricos</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Pixel Forge Games: hardware, periféricos, monitores e PCs gamer com preço de PIX.">
+    <title>Pixel Forge Games | Hardware, PC Gamer e Periféricos</title>
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/svg+xml" href="img/logo.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-    <meta name="theme-color" content="#17191f">
+    <meta name="theme-color" content="#0b4fb3">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Barra superior -->
-    <div class="barra-topo" id="topo">
-        <div class="container barra-topo__conteudo">
-            <p><strong>Frete grátis</strong> para Sul e Sudeste em compras acima de R$ 299*</p>
-            <ul>
-                <li><a href="#ajuda">Atendimento</a></li>
-                <li><a href="#ajuda">Rastrear pedido</a></li>
-                <li><a href="#institucional">Venda no Forge</a></li>
-            </ul>
-        </div>
-    </div>
-
     <!-- 1. Cabeçalho -->
-    <header class="cabecalho">
+    <header class="cabecalho" id="topo">
         <div class="container cabecalho__linha">
-            <a href="#topo" class="marca">
-                <img src="img/logo.svg" alt="Logotipo Pixel Forge: bigorna laranja com um pixel em cima" width="44" height="44">
-                <span class="marca__nome">PIXEL<b>FORGE</b></span>
+            <a href="#topo" class="logo" aria-label="Pixel Forge Games, página inicial">
+                <img src="img/logo.svg" alt="Logotipo Pixel Forge: bigorna laranja com um pixel" width="42" height="42">
+                <span>pixel<b>forge</b></span>
             </a>
 
+            <a href="#" class="cep"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg><span>Enviar para<br><b>Informe seu CEP</b></span></a>
+
             <form class="busca" action="#" role="search">
-                <input type="search" placeholder="Busque no Pixel Forge" aria-label="Buscar produtos">
-                <button type="submit" aria-label="Buscar">
-                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
-                </button>
+                <label for="busca" class="sr-only">Buscar produtos</label>
+                <input id="busca" type="search" placeholder="Busque no Pixel Forge!">
+                <button type="submit" aria-label="Buscar"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
             </form>
 
-            <div class="atalhos">
-                <a href="#" class="atalho">
-                    <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-                    <span><small>Olá, faça seu</small><b>login ou cadastro</b></span>
-                </a>
-                <a href="#" class="atalho atalho--icone" aria-label="Favoritos">
-                    <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-                </a>
-                <a href="#" class="atalho atalho--icone carrinho" aria-label="Carrinho de compras com 3 itens">
-                    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg>
-                    <span class="carrinho__qtd">3</span>
-                </a>
-            </div>
+            <nav class="conta" aria-label="Conta">
+                <a href="#" class="conta__login"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></svg><span>Olá, faça seu <b>login</b><br>ou <b>cadastro</b></span></a>
+                <a href="#" class="conta__icone" aria-label="Favoritos"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></a>
+                <a href="#" class="conta__icone" aria-label="Carrinho com 3 itens"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg><span class="conta__qtd">3</span></a>
+            </nav>
         </div>
 
-        <nav class="departamentos" aria-label="Departamentos">
+        <nav class="menu" aria-label="Departamentos">
             <ul class="container">
-                <li><a href="#categorias" class="departamentos__todos"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg> Departamentos</a></li>
-                <li><a href="#cat-hardware">Hardware</a></li>
-                <li><a href="#cat-monitores">Monitores</a></li>
-                <li><a href="#cat-perifericos">Periféricos</a></li>
-                <li><a href="#cat-headsets">Headsets</a></li>
-                <li><a href="#cat-gabinetes">Gabinetes</a></li>
-                <li><a href="#vitrine" class="destaque-menu">Oferta Relâmpago</a></li>
+                <li><a href="#categorias" class="menu__dep"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg> DEPARTAMENTOS</a></li>
+                <li><a href="#oferta">Oferta Relâmpago</a></li>
+                <li><a href="#mais-procurados">Mais procurados</a></li>
+                <li><a href="#monte">Monte seu PC</a></li>
+                <li><a href="#mais-procurados">Hardware</a></li>
+                <li><a href="#mais-procurados">Periféricos</a></li>
+                <li><a href="#mais-procurados">Monitores</a></li>
+                <li><a href="#mais-procurados">Consoles</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
 
-        <!-- 2. Carrossel scroll-snap com <picture> -->
-        <section class="hero" aria-label="Promoções em destaque">
-            <div class="container hero__grade">
-                <div class="carrossel-moldura">
-                    <div class="carrossel">
-                        <div class="slide slide--azul" id="slide1">
-                            <picture class="slide__arte">
-                                <source type="image/webp" srcset="img/banners/arte-setup.webp">
-                                <img src="img/banners/arte-setup.jpg" alt="Monitor ASUS TUF Gaming, teclado mecânico RGB e headset sem fio sobre fundo azul e laranja" width="700" height="678">
-                            </picture>
-                            <span class="ticket ticket--a" aria-hidden="true">%</span>
-                            <span class="ticket ticket--b" aria-hidden="true">%</span>
-                            <div class="slide__texto">
-                                <p class="slide__pill">Desconto exclusivo ativado!</p>
-                                <h1 class="slide__titulo slide__titulo--grande">10%<span>OFF</span></h1>
-                                <p class="slide__cupom"><small>Use o<br>cupom:</small><b>FORGE10</b></p>
-                            </div>
-                        </div>
-                        <div class="slide slide--marinho" id="slide2">
-                            <picture class="slide__arte">
-                                <source type="image/webp" srcset="img/banners/arte-pc.webp">
-                                <img src="img/banners/arte-pc.jpg" alt="Dois gabinetes gamer com fans ARGB coloridas, um branco e um preto, com teclas W A S D ao redor" width="700" height="678">
-                            </picture>
-                            <div class="slide__texto">
-                                <p class="slide__pill">Press <b>Start</b></p>
-                                <h2 class="slide__titulo">Os melhores preços pro seu 1º <mark>setup</mark></h2>
-                                <p class="slide__acoes"><span class="slide__info">Até <b>10x sem juros</b></span><a href="#cat-gabinetes" class="slide__botao">Comprar</a></p>
-                            </div>
-                        </div>
-                        <div class="slide slide--oferta" id="slide3">
-                            <div class="slide__texto">
-                                <p class="slide__pill">Oferta relâmpago</p>
-                                <h2 class="slide__titulo">Hardware com <mark>preço de Pix</mark></h2>
-                                <p class="slide__acoes"><a href="#monte-seu-pc" class="slide__botao">Ver todas</a></p>
-                            </div>
-                            <div class="vitrine-banner">
-                                <figure class="vitrine-banner__item">
-                                    <picture>
-                                        <source type="image/webp" srcset="img/produtos/placa-video-rtx5060ti.webp">
-                                        <img src="img/produtos/placa-video-rtx5060ti.jpg" alt="RTX 5060 Ti 8GB" width="200" height="200">
-                                    </picture>
-                                    <figcaption>RTX 5060 Ti 8GB<b>R$ 2.899</b><small>no Pix</small></figcaption>
-                                </figure>
-                                <figure class="vitrine-banner__item">
-                                    <picture>
-                                        <source type="image/webp" srcset="img/produtos/ryzen-7-7800x3d.webp">
-                                        <img src="img/produtos/ryzen-7-7800x3d.jpg" alt="Ryzen 7 7800X3D" width="200" height="200">
-                                    </picture>
-                                    <figcaption>Ryzen 7 7800X3D<b>R$ 2.399</b><small>no Pix</small></figcaption>
-                                </figure>
-                                <figure class="vitrine-banner__item">
-                                    <picture>
-                                        <source type="image/webp" srcset="img/produtos/ssd-kingston-nv3.webp">
-                                        <img src="img/produtos/ssd-kingston-nv3.jpg" alt="SSD NV3 1TB" width="200" height="200">
-                                    </picture>
-                                    <figcaption>SSD NV3 1TB<b>R$ 429</b><small>no Pix</small></figcaption>
-                                </figure>
-                            </div>
+        <!-- 2. Carrossel de banners (@keyframes) com <picture> -->
+        <section class="hero container" aria-label="Promoções em destaque">
+            <div class="carrossel">
+                <div class="carrossel__trilho">
+
+                    <div class="slide slide--azul" id="slide1">
+                        <picture class="slide__arte"><source type="image/webp" srcset="img/banners/arte-setup.webp"><img src="img/banners/arte-setup.jpg" alt="Monitor ASUS TUF Gaming, teclado mecânico RGB e headset sem fio sobre fundo azul e laranja" width="682" height="678"></picture>
+                        <span class="ticket ticket--a" aria-hidden="true">%</span>
+                        <span class="ticket ticket--b" aria-hidden="true">%</span>
+                        <div class="slide__texto">
+                            <p class="slide__pill">Desconto exclusivo ativado!</p>
+                            <h1 class="slide__grande">10%<span>OFF*</span></h1>
+                            <p class="slide__cupom"><small>Use o<br>cupom:</small><b>FORGE10</b></p>
                         </div>
                     </div>
-                    <div class="pontos" aria-hidden="true">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+
+                    <div class="slide slide--marinho" id="slide2">
+                        <picture class="slide__arte"><source type="image/webp" srcset="img/banners/arte-pc.webp"><img src="img/banners/arte-pc.jpg" alt="Dois gabinetes gamer com fans ARGB coloridas, um branco e um preto, com teclas W A S D ao redor" width="732" height="678"></picture>
+                        <div class="slide__texto">
+                            <p class="slide__pill">Press <b>Start</b></p>
+                            <h2 class="slide__titulo">Os melhores preços pro seu 1º <mark>setup</mark></h2>
+                            <p class="slide__acoes"><span class="slide__info">Até <b>10x sem juros</b></span><a href="#monte" class="slide__botao">Comprar</a></p>
+                        </div>
                     </div>
+
+                    <div class="slide slide--oferta" id="slide3">
+                        <div class="slide__texto">
+                            <p class="slide__pill">Esquenta Black</p>
+                            <h2 class="slide__titulo">Hardware com <mark>preço de PIX</mark></h2>
+                            <p class="slide__acoes"><a href="#oferta" class="slide__botao">Ver ofertas</a></p>
+                        </div>
+                        <div class="vitrine-banner">
+                            <figure class="vitrine-banner__item"><picture><source type="image/webp" srcset="img/produtos/placa-video-rtx5060ti.webp"><img src="img/produtos/placa-video-rtx5060ti.jpg" alt="Placa de vídeo ASUS Dual GeForce RTX 5060 Ti com duas ventoinhas ao lado da caixa" width="400" height="400"></picture><figcaption>Placa de Vídeo ASUS Dual GeForce RTX 5060 Ti OC<b>R$ 2.899,99</b><small>à vista no PIX</small></figcaption></figure><figure class="vitrine-banner__item"><picture><source type="image/webp" srcset="img/produtos/ryzen-7-7800x3d.webp"><img src="img/produtos/ryzen-7-7800x3d.jpg" alt="Caixa do processador AMD Ryzen 7 7800X3D em laranja e cinza" width="400" height="400"></picture><figcaption>Processador AMD Ryzen 7 7800X3D<b>R$ 2.399,99</b><small>à vista no PIX</small></figcaption></figure><figure class="vitrine-banner__item"><picture><source type="image/webp" srcset="img/produtos/ssd-kingston-nv3.webp"><img src="img/produtos/ssd-kingston-nv3.jpg" alt="SSD Kingston NV3 M.2 NVMe de 1TB com etiqueta azul" width="400" height="400"></picture><figcaption>SSD 1TB Kingston NV3<b>R$ 429,99</b><small>à vista no PIX</small></figcaption></figure>
+                        </div>
+                    </div>
+
                 </div>
-
+                <span class="carrossel__seta carrossel__seta--esq" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></span>
+                <span class="carrossel__seta carrossel__seta--dir" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></span>
+                <div class="carrossel__pontos" aria-hidden="true"><span></span><span></span><span></span></div>
             </div>
         </section>
 
-        <!-- Vantagens -->
-        <ul class="container vantagens" aria-label="Vantagens da loja">
-            <li><b>12x sem juros</b><span>no cartão de crédito</span></li>
-            <li><b>Entrega expressa</b><span>em até 24h nas capitais</span></li>
-            <li><b>Troca fácil</b><span>7 dias para devolver</span></li>
-            <li><b>Compra segura</b><span>site com certificado SSL</span></li>
-        </ul>
-
-        <!-- 3. Categorias circulares -->
-        <section id="categorias" class="container bloco">
-            <div class="bloco__titulo">
-                <h2>Navegue por categoria</h2>
-                <a href="#vitrine">Ver todas ›</a>
-            </div>
-            <ul class="categorias">
-                <li>
-                    <a href="#cat-monitores">
-                        <picture>
-                            <source type="image/webp" srcset="img/categorias/monitores.webp">
-                            <img src="img/categorias/monitores.jpg" alt="Monitor gamer AOC de 27 polegadas" width="120" height="120">
-                        </picture>
-                        <span>Monitores</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#cat-mouses">
-                        <picture>
-                            <source type="image/webp" srcset="img/categorias/mouses.webp">
-                            <img src="img/categorias/mouses.jpg" alt="Mouse gamer sem fio preto" width="120" height="120">
-                        </picture>
-                        <span>Mouses</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#cat-teclados">
-                        <picture>
-                            <source type="image/webp" srcset="img/categorias/teclados.webp">
-                            <img src="img/categorias/teclados.jpg" alt="Teclado mecânico com iluminação RGB" width="120" height="120">
-                        </picture>
-                        <span>Teclados</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#cat-headsets">
-                        <picture>
-                            <source type="image/webp" srcset="img/categorias/headsets.webp">
-                            <img src="img/categorias/headsets.jpg" alt="Headset gamer sem fio preto" width="120" height="120">
-                        </picture>
-                        <span>Headsets</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#cat-gabinetes">
-                        <picture>
-                            <source type="image/webp" srcset="img/categorias/gabinetes.webp">
-                            <img src="img/categorias/gabinetes.jpg" alt="Gabinete gamer branco com fans ARGB" width="120" height="120">
-                        </picture>
-                        <span>Gabinetes</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#cat-placas">
-                        <picture>
-                            <source type="image/webp" srcset="img/categorias/placas-video.webp">
-                            <img src="img/categorias/placas-video.jpg" alt="Placa de vídeo com três ventoinhas" width="120" height="120">
-                        </picture>
-                        <span>Placas de vídeo</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#cat-processadores">
-                        <picture>
-                            <source type="image/webp" srcset="img/categorias/processadores.webp">
-                            <img src="img/categorias/processadores.jpg" alt="Caixa de processador AMD Ryzen 7" width="120" height="120">
-                        </picture>
-                        <span>Processadores</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#cat-memorias">
-                        <picture>
-                            <source type="image/webp" srcset="img/categorias/memorias.webp">
-                            <img src="img/categorias/memorias.jpg" alt="Pente de memória RAM com RGB" width="120" height="120">
-                        </picture>
-                        <span>Memória RAM</span>
-                    </a>
-                </li>
+        <!-- 3. Categorias (imagens circulares) -->
+        <section id="categorias" class="container categorias" aria-label="Categorias">
+            <span class="categorias__seta" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></span>
+            <ul class="categorias__lista">
+                    <li><a href="#mais-procurados"><picture><source type="image/webp" srcset="img/produtos/placa-video-rtx5060ti.webp"><img src="img/produtos/placa-video-rtx5060ti.jpg" alt="Placas de Vídeo" width="400" height="400"></picture><span>Placas de Vídeo</span></a></li>
+                    <li><a href="#mais-procurados"><picture><source type="image/webp" srcset="img/produtos/ryzen-7-7800x3d.webp"><img src="img/produtos/ryzen-7-7800x3d.jpg" alt="Processadores" width="400" height="400"></picture><span>Processadores</span></a></li>
+                    <li><a href="#mais-procurados"><picture><source type="image/webp" srcset="img/produtos/memoria-husky-ddr4.webp"><img src="img/produtos/memoria-husky-ddr4.jpg" alt="Memória RAM" width="400" height="400"></picture><span>Memória RAM</span></a></li>
+                    <li><a href="#mais-procurados"><picture><source type="image/webp" srcset="img/produtos/ssd-kingston-nv3.webp"><img src="img/produtos/ssd-kingston-nv3.jpg" alt="SSD" width="400" height="400"></picture><span>SSD</span></a></li>
+                    <li><a href="#mais-procurados"><picture><source type="image/webp" srcset="img/produtos/monitor-aoc-27.webp"><img src="img/produtos/monitor-aoc-27.jpg" alt="Monitores" width="400" height="400"></picture><span>Monitores</span></a></li>
+                    <li><a href="#mais-procurados"><picture><source type="image/webp" srcset="img/produtos/teclado-razer-huntsman.webp"><img src="img/produtos/teclado-razer-huntsman.jpg" alt="Teclados" width="400" height="400"></picture><span>Teclados</span></a></li>
+                    <li><a href="#mais-procurados"><picture><source type="image/webp" srcset="img/produtos/mouse-sem-fio-dock.webp"><img src="img/produtos/mouse-sem-fio-dock.jpg" alt="Mouses" width="400" height="400"></picture><span>Mouses</span></a></li>
+                    <li><a href="#mais-procurados"><picture><source type="image/webp" srcset="img/produtos/headset-redragon-zeus.webp"><img src="img/produtos/headset-redragon-zeus.jpg" alt="Headsets" width="400" height="400"></picture><span>Headsets</span></a></li>
+                    <li><a href="#mais-procurados"><picture><source type="image/webp" srcset="img/produtos/gabinete-mesh-preto.webp"><img src="img/produtos/gabinete-mesh-preto.jpg" alt="Gabinetes" width="400" height="400"></picture><span>Gabinetes</span></a></li>
+                    <li><a href="#mais-procurados"><picture><source type="image/webp" srcset="img/produtos/fonte-650w.webp"><img src="img/produtos/fonte-650w.jpg" alt="Fontes" width="400" height="400"></picture><span>Fontes</span></a></li>
+                    <li><a href="#mais-procurados"><picture><source type="image/webp" srcset="img/produtos/controle-8bitdo-ultimate.webp"><img src="img/produtos/controle-8bitdo-ultimate.jpg" alt="Controles" width="400" height="400"></picture><span>Controles</span></a></li>
             </ul>
+            <span class="categorias__seta categorias__seta--dir" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></span>
         </section>
 
-        <!-- Âncoras do filtro de categorias (:target) -->
-        <span class="alvo" id="cat-monitores"></span>
-        <span class="alvo" id="cat-perifericos"></span>
-        <span class="alvo" id="cat-mouses"></span>
-        <span class="alvo" id="cat-teclados"></span>
-        <span class="alvo" id="cat-headsets"></span>
-        <span class="alvo" id="cat-gabinetes"></span>
-        <span class="alvo" id="cat-hardware"></span>
-        <span class="alvo" id="cat-placas"></span>
-        <span class="alvo" id="cat-processadores"></span>
-        <span class="alvo" id="cat-memorias"></span>
-        <span class="alvo" id="cat-armazenamento"></span>
-        <span class="alvo" id="cat-fontes"></span>
-        <span class="alvo" id="cat-controles"></span>
-        <p class="container filtro-ativo">Filtro ativo · <a href="#vitrine">mostrar todos os produtos</a></p>
-
-        <!-- 4 e 5. Vitrine -->
-        <section id="vitrine" class="container bloco bloco--relampago">
-            <div class="relampago__topo">
-                <h2><svg class="ico ico--raio" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z" fill="currentColor"/></svg> Oferta Relâmpago</h2>
-                <p class="cronometro" aria-label="Termina em breve">
-                    Termina em
-                    <span class="cronometro__caixa">05</span>:<span class="cronometro__caixa">42</span>:<span class="cronometro__caixa cronometro__seg" aria-hidden="true"></span>
-                </p>
-                <a href="#vitrine">Ver todas ›</a>
+        <!-- 4 e 5. Oferta relâmpago (vitrine) -->
+        <section id="oferta" class="container oferta">
+            <div class="oferta__topo">
+                <h2><svg class="i i--raio" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z" class="cheio"/></svg> OFERTA RELÂMPAGO</h2>
+                <p class="cronometro" aria-label="Termina em 05 horas e 42 minutos">TERMINA EM <span>05</span>:<span>42</span>:<span class="cronometro__seg">37</span></p>
+                <a href="#mais-procurados" class="oferta__ver">VER TODAS <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
             </div>
-
-            <div class="grade">
-                <article class="produto cat-monitores">
+            <div class="oferta__grade">
+                <article class="card">
                     <figure>
-                        <div class="produto__foto">
-                            <span class="tag tag--desconto">-12%</span>
-                            <a href="#" class="favoritar" aria-label="Adicionar aos favoritos"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-                            <picture>
-                                <source type="image/webp" srcset="img/produtos/monitor-aoc-27.webp">
-                                <img src="img/produtos/monitor-aoc-27.jpg" alt="Monitor gamer AOC 27 polegadas QD-OLED com imagem de dragão na tela" width="400" height="400" loading="lazy">
-                            </picture>
+                        <div class="card__foto">
+                            <span class="tag tag--off">-12%</span><span class="tag tag--frete"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.5"/><circle cx="17" cy="17.5" r="1.5"/></svg> FRETE GRÁTIS</span>
+                            <a href="#" class="card__fav" aria-label="Adicionar aos favoritos"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></a>
+                            <picture><source type="image/webp" srcset="img/produtos/monitor-aoc-27.webp"><img src="img/produtos/monitor-aoc-27.jpg" alt="Monitor gamer AOC de 27 polegadas QD-OLED exibindo arte de um dragão" width="400" height="400" loading="lazy"></picture>
                         </div>
                         <figcaption>
-                            <p class="produto__marca">AOC</p>
-                            <h3><a href="https://aoc.com/br/gaming" target="_blank" rel="noopener">Monitor Gamer AOC 27" QD-OLED, QHD, 240Hz, 0.03ms, HDR10</a></h3>
-                            <p class="avaliacao" aria-label="Nota 4,9 de 5"><span class="estrelas" style="--nota: 4.9"></span> (1.877)</p>
-                            <p class="preco-de">R$ 4.299,90</p>
-                            <p class="preco-pix">R$ 3.799,90</p>
-                            <p class="preco-info">À vista no Pix · ou 12x de R$ 351,84 sem juros</p>
-                            <p class="frete"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7M7 18a1.5 1.5 0 1 0 0-.01M17 18a1.5 1.5 0 1 0 0-.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg> Frete grátis</p>
-                            <div class="estoque" style="--vendido: 58%"><span></span><small>58% vendido</small></div>
+                            <p class="card__nota" aria-label="Nota 4,9 de 5"><span class="estrelas" style="--n:4.9"></span>(1.877)</p>
+                            <h3><a href="https://aoc.com/br/gaming" target="_blank" rel="noopener">Monitor Gamer AOC 27" QD-OLED, 240Hz, QHD, 0.03ms, HDR10, HDMI/DP</a></h3>
+                            <p class="card__de">R$ 4.299,99</p><p class="card__preco">R$ 3.799,99</p><p class="card__pix">À vista no PIX</p><p class="card__parc">ou 12x de R$ 351,85 sem juros</p>
+                            <div class="card__estoque" style="--p:76%"><span></span><small>Restam 6 unid.</small></div>
                         </figcaption>
                     </figure>
-                    <a href="https://aoc.com/br/gaming" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
+                    <a href="https://aoc.com/br/gaming" class="card__btn" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg> COMPRAR</a>
                 </article>
-                <article class="produto cat-perifericos cat-mouses">
+                <article class="card">
                     <figure>
-                        <div class="produto__foto">
-                            <span class="tag tag--desconto">-20%</span>
-                            <a href="#" class="favoritar" aria-label="Adicionar aos favoritos"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-                            <picture>
-                                <source type="image/webp" srcset="img/produtos/mouse-sem-fio-dock.webp">
-                                <img src="img/produtos/mouse-sem-fio-dock.jpg" alt="Mouse gamer sem fio preto com base de carregamento com iluminação RGB" width="400" height="400" loading="lazy">
-                            </picture>
+                        <div class="card__foto">
+                            <span class="tag tag--off">-9%</span><span class="tag tag--frete"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.5"/><circle cx="17" cy="17.5" r="1.5"/></svg> FRETE GRÁTIS</span>
+                            <a href="#" class="card__fav" aria-label="Adicionar aos favoritos"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></a>
+                            <picture><source type="image/webp" srcset="img/produtos/placa-video-rtx5060ti.webp"><img src="img/produtos/placa-video-rtx5060ti.jpg" alt="Placa de vídeo ASUS Dual GeForce RTX 5060 Ti com duas ventoinhas ao lado da caixa" width="400" height="400" loading="lazy"></picture>
                         </div>
                         <figcaption>
-                            <p class="produto__marca">ATTACK SHARK</p>
-                            <h3><a href="https://attackshark.com/" target="_blank" rel="noopener">Mouse Gamer Sem Fio Attack Shark, 26.000 DPI, Dock de Carregamento RGB</a></h3>
-                            <p class="avaliacao" aria-label="Nota 4,7 de 5"><span class="estrelas" style="--nota: 4.7"></span> (3.981)</p>
-                            <p class="preco-de">R$ 249,90</p>
-                            <p class="preco-pix">R$ 199,90</p>
-                            <p class="preco-info">À vista no Pix · ou 10x de R$ 22,21 sem juros</p>
-                            <div class="estoque" style="--vendido: 88%"><span></span><small>Últimas unidades!</small></div>
+                            <p class="card__nota" aria-label="Nota 4,9 de 5"><span class="estrelas" style="--n:4.9"></span>(742)</p>
+                            <h3><a href="https://www.asus.com/br/" target="_blank" rel="noopener">Placa de Vídeo ASUS Dual GeForce RTX 5060 Ti OC, 8GB GDDR7, DLSS 4, Ray Tracing</a></h3>
+                            <p class="card__de">R$ 3.199,99</p><p class="card__preco">R$ 2.899,99</p><p class="card__pix">À vista no PIX</p><p class="card__parc">ou 12x de R$ 268,51 sem juros</p>
+                            <div class="card__estoque" style="--p:56%"><span></span><small>Restam 11 unid.</small></div>
                         </figcaption>
                     </figure>
-                    <a href="https://attackshark.com/" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
+                    <a href="https://www.asus.com/br/" class="card__btn" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg> COMPRAR</a>
                 </article>
-                <article class="produto cat-perifericos cat-teclados">
+                <article class="card">
                     <figure>
-                        <div class="produto__foto">
-                            <span class="tag tag--desconto">-17%</span>
-                            <a href="#" class="favoritar" aria-label="Adicionar aos favoritos"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-                            <picture>
-                                <source type="image/webp" srcset="img/produtos/teclado-razer-huntsman.webp">
-                                <img src="img/produtos/teclado-razer-huntsman.jpg" alt="Teclado gamer Razer full size com iluminação RGB Chroma e apoio de pulso" width="400" height="400" loading="lazy">
-                            </picture>
+                        <div class="card__foto">
+                            <span class="tag tag--off">-17%</span>
+                            <a href="#" class="card__fav" aria-label="Adicionar aos favoritos"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></a>
+                            <picture><source type="image/webp" srcset="img/produtos/teclado-razer-huntsman.webp"><img src="img/produtos/teclado-razer-huntsman.jpg" alt="Teclado gamer Razer full size com iluminação RGB e apoio de pulso" width="400" height="400" loading="lazy"></picture>
                         </div>
                         <figcaption>
-                            <p class="produto__marca">RAZER</p>
-                            <h3><a href="https://www.razer.com/br-pt" target="_blank" rel="noopener">Teclado Gamer Razer Huntsman V3 Pro, Switch Óptico Analógico, RGB Chroma</a></h3>
-                            <p class="avaliacao" aria-label="Nota 4,8 de 5"><span class="estrelas" style="--nota: 4.8"></span> (1.120)</p>
-                            <p class="preco-de">R$ 1.799,90</p>
-                            <p class="preco-pix">R$ 1.499,90</p>
-                            <p class="preco-info">À vista no Pix · ou 12x de R$ 138,88 sem juros</p>
-                            <p class="frete"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7M7 18a1.5 1.5 0 1 0 0-.01M17 18a1.5 1.5 0 1 0 0-.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg> Frete grátis</p>
-                            <div class="estoque" style="--vendido: 39%"><span></span><small>39% vendido</small></div>
+                            <p class="card__nota" aria-label="Nota 4,8 de 5"><span class="estrelas" style="--n:4.8"></span>(1.120)</p>
+                            <h3><a href="https://www.razer.com/br-pt" target="_blank" rel="noopener">Teclado Gamer Razer Huntsman V3 Pro, Switch Óptico Analógico, RGB Chroma, Full Size</a></h3>
+                            <p class="card__de">R$ 1.799,99</p><p class="card__preco">R$ 1.499,99</p><p class="card__pix">À vista no PIX</p><p class="card__parc">ou 12x de R$ 138,89 sem juros</p>
+                            <div class="card__estoque" style="--p:32%"><span></span><small>Restam 17 unid.</small></div>
                         </figcaption>
                     </figure>
-                    <a href="https://www.razer.com/br-pt" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
+                    <a href="https://www.razer.com/br-pt" class="card__btn" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg> COMPRAR</a>
                 </article>
-                <article class="produto cat-perifericos cat-headsets">
+                <article class="card">
                     <figure>
-                        <div class="produto__foto">
-                            <span class="tag tag--desconto">-18%</span>
-                            <a href="#" class="favoritar" aria-label="Adicionar aos favoritos"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-                            <picture>
-                                <source type="image/webp" srcset="img/produtos/headset-redragon-zeus.webp">
-                                <img src="img/produtos/headset-redragon-zeus.jpg" alt="Headset gamer Redragon Zeus preto e vermelho com microfone removível e receptor USB" width="400" height="400" loading="lazy">
-                            </picture>
+                        <div class="card__foto">
+                            <span class="tag tag--off">-18%</span>
+                            <a href="#" class="card__fav" aria-label="Adicionar aos favoritos"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></a>
+                            <picture><source type="image/webp" srcset="img/produtos/headset-redragon-zeus.webp"><img src="img/produtos/headset-redragon-zeus.jpg" alt="Headset gamer Redragon Zeus preto e vermelho com microfone e receptor USB" width="400" height="400" loading="lazy"></picture>
                         </div>
                         <figcaption>
-                            <p class="produto__marca">REDRAGON</p>
-                            <h3><a href="https://redragon.com.br/" target="_blank" rel="noopener">Headset Gamer Sem Fio Redragon Zeus Pro, 7.1 Surround, Drivers 53mm</a></h3>
-                            <p class="avaliacao" aria-label="Nota 4,6 de 5"><span class="estrelas" style="--nota: 4.6"></span> (2.587)</p>
-                            <p class="preco-de">R$ 399,90</p>
-                            <p class="preco-pix">R$ 329,90</p>
-                            <p class="preco-info">À vista no Pix · ou 10x de R$ 36,66 sem juros</p>
-                            <div class="estoque" style="--vendido: 76%"><span></span><small>76% vendido</small></div>
+                            <p class="card__nota" aria-label="Nota 4,6 de 5"><span class="estrelas" style="--n:4.6"></span>(2.587)</p>
+                            <h3><a href="https://redragon.com.br/" target="_blank" rel="noopener">Headset Gamer Sem Fio Redragon Zeus Pro, Surround 7.1, Drivers 53mm, Preto e Vermelho</a></h3>
+                            <p class="card__de">R$ 399,99</p><p class="card__preco">R$ 329,99</p><p class="card__pix">À vista no PIX</p><p class="card__parc">ou 10x de R$ 36,67 sem juros</p>
+                            <div class="card__estoque" style="--p:84%"><span></span><small>Restam 4 unid.</small></div>
                         </figcaption>
                     </figure>
-                    <a href="https://redragon.com.br/" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
+                    <a href="https://redragon.com.br/" class="card__btn" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg> COMPRAR</a>
                 </article>
-                <article class="produto cat-perifericos cat-controles">
+                <article class="card">
                     <figure>
-                        <div class="produto__foto">
-                            <span class="tag tag--desconto">-16%</span>
-                            <a href="#" class="favoritar" aria-label="Adicionar aos favoritos"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-                            <picture>
-                                <source type="image/webp" srcset="img/produtos/controle-8bitdo-ultimate.webp">
-                                <img src="img/produtos/controle-8bitdo-ultimate.jpg" alt="Controle 8BitDo Ultimate preto com fio e anéis de LED nos analógicos" width="400" height="400" loading="lazy">
-                            </picture>
+                        <div class="card__foto">
+                            <span class="tag tag--off">-20%</span>
+                            <a href="#" class="card__fav" aria-label="Adicionar aos favoritos"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></a>
+                            <picture><source type="image/webp" srcset="img/produtos/mouse-sem-fio-dock.webp"><img src="img/produtos/mouse-sem-fio-dock.jpg" alt="Mouse gamer sem fio preto sobre base de carregamento com luz RGB" width="400" height="400" loading="lazy"></picture>
                         </div>
                         <figcaption>
-                            <p class="produto__marca">8BITDO</p>
-                            <h3><a href="https://www.8bitdo.com/" target="_blank" rel="noopener">Controle 8BitDo Ultimate com Fio para Xbox e PC, Analógicos Hall Effect</a></h3>
-                            <p class="avaliacao" aria-label="Nota 4,8 de 5"><span class="estrelas" style="--nota: 4.8"></span> (2.215)</p>
-                            <p class="preco-de">R$ 449,90</p>
-                            <p class="preco-pix">R$ 379,90</p>
-                            <p class="preco-info">À vista no Pix · ou 10x de R$ 42,21 sem juros</p>
-                            <div class="estoque" style="--vendido: 70%"><span></span><small>70% vendido</small></div>
+                            <p class="card__nota" aria-label="Nota 4,7 de 5"><span class="estrelas" style="--n:4.7"></span>(3.981)</p>
+                            <h3><a href="https://attackshark.com/" target="_blank" rel="noopener">Mouse Gamer Sem Fio Attack Shark, 26000 DPI, Dock de Carregamento RGB, Preto</a></h3>
+                            <p class="card__de">R$ 249,99</p><p class="card__preco">R$ 199,99</p><p class="card__pix">À vista no PIX</p><p class="card__parc">ou 10x de R$ 22,22 sem juros</p>
+                            <div class="card__estoque" style="--p:64%"><span></span><small>Restam 9 unid.</small></div>
                         </figcaption>
                     </figure>
-                    <a href="https://www.8bitdo.com/" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
+                    <a href="https://attackshark.com/" class="card__btn" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg> COMPRAR</a>
                 </article>
-                <article class="produto cat-hardware cat-placas produto--esgotado">
+                <article class="card card--esgotado">
                     <figure>
-                        <div class="produto__foto">
+                        <div class="card__foto">
                             <span class="tag tag--esgotado">ESGOTADO</span>
-                            <a href="#" class="favoritar" aria-label="Adicionar aos favoritos"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-                            <picture>
-                                <source type="image/webp" srcset="img/produtos/placa-video-rx7600.webp">
-                                <img src="img/produtos/placa-video-rx7600.jpg" alt="Placa de vídeo ASRock Radeon RX 7600 Challenger com três ventoinhas ao lado da caixa" width="400" height="400" loading="lazy">
-                            </picture>
+                            <a href="#" class="card__fav" aria-label="Adicionar aos favoritos"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></a>
+                            <picture><source type="image/webp" srcset="img/produtos/placa-video-rx7600.webp"><img src="img/produtos/placa-video-rx7600.jpg" alt="Placa de vídeo ASRock Radeon RX 7600 Challenger com três ventoinhas ao lado da caixa" width="400" height="400" loading="lazy"></picture>
                         </div>
                         <figcaption>
-                            <p class="produto__marca">ASROCK</p>
-                            <h3><a href="https://www.asrock.com/" target="_blank" rel="noopener">Placa de Vídeo ASRock Radeon RX 7600 Challenger OC, 8GB GDDR6</a></h3>
-                            <p class="avaliacao" aria-label="Nota 4,8 de 5"><span class="estrelas" style="--nota: 4.8"></span> (2.046)</p>
-                            <p class="preco-pix">Indisponível</p>
-                            <p class="preco-info">Avisaremos quando voltar ao estoque</p>
-                            <div class="estoque" style="--vendido: 100%"><span></span><small>Esgotado</small></div>
+                            <p class="card__nota" aria-label="Nota 4,8 de 5"><span class="estrelas" style="--n:4.8"></span>(2.046)</p>
+                            <h3><a href="https://www.asrock.com/" target="_blank" rel="noopener">Placa de Vídeo ASRock Radeon RX 7600 Challenger OC, 8GB GDDR6, FSR 3</a></h3>
+                            <p class="card__indisp">Produto indisponível</p><p class="card__avise-txt">Avisaremos quando chegar</p>
+                            <div class="card__estoque" style="--p:100%"><span></span><small>Esgotado</small></div>
                         </figcaption>
                     </figure>
-                    <a href="https://www.asrock.com/" target="_blank" rel="noopener" class="botao botao--avise"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4zM10 21h4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Avise-me</a>
+                    <a href="https://www.asrock.com/" class="card__btn card__btn--avise" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4zM10 21h4"/></svg> AVISE-ME</a>
                 </article>
             </div>
         </section>
 
-        <!-- Faixa promocional -->
-        <section class="faixa-pc" aria-label="Monte seu PC">
-            <div class="container faixa-pc__conteudo">
-                <p class="faixa-pc__chamada">Monte seu PC <b>peça por peça</b></p>
-                <p>Placa de vídeo, processador, memória e SSD em até <b>12x sem juros</b>. Frete grátis acima de R$ 299.</p>
-            </div>
+        <!-- Mini banners -->
+        <section class="container mini-banners" aria-label="Campanhas">
+            <a href="#monte" class="mini mini--azul" id="monte">
+                <span class="mini__texto"><small>MONTE SEU PC</small><b>Peça por peça,<br>do seu jeito</b><em>Montar agora <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></em></span>
+                <picture class="mini__img"><source type="image/webp" srcset="img/produtos/gabinete-mesh-preto.webp"><img src="img/produtos/gabinete-mesh-preto.jpg" alt="Gabinete gamer preto" width="400" height="400" loading="lazy"></picture>
+            </a>
+            <a href="#mais-procurados" class="mini mini--laranja">
+                <span class="mini__texto"><small>SEMANA DO SSD</small><b>Até 22% OFF<br>em armazenamento</b><em>Ver SSDs <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></em></span>
+                <picture class="mini__img"><source type="image/webp" srcset="img/produtos/ssd-kingston-nv3.webp"><img src="img/produtos/ssd-kingston-nv3.jpg" alt="SSD Kingston NV3" width="400" height="400" loading="lazy"></picture>
+            </a>
+            <a href="#mais-procurados" class="mini mini--escuro">
+                <span class="mini__texto"><small>CONTROLES</small><b>Jogue do sofá<br>a partir de R$ 379</b><em>Ver controles <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></em></span>
+                <picture class="mini__img"><source type="image/webp" srcset="img/produtos/controle-8bitdo-ultimate.webp"><img src="img/produtos/controle-8bitdo-ultimate.jpg" alt="Controle 8BitDo Ultimate" width="400" height="400" loading="lazy"></picture>
+            </a>
         </section>
 
-        <section id="monte-seu-pc" class="container bloco">
-            <div class="bloco__titulo">
-                <h2>Hardware para o seu PC</h2>
-                <a href="#cat-hardware">Ver só hardware ›</a>
+        <!-- Mais procurados -->
+        <section id="mais-procurados" class="container bloco">
+            <div class="bloco__topo">
+                <h2>MAIS PROCURADOS EM HARDWARE</h2>
+                <a href="#">VER TODOS <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
             </div>
-            <div class="trilho">
-                <article class="produto cat-hardware cat-placas">
+            <div class="bloco__grade">
+                <article class="card">
                     <figure>
-                        <div class="produto__foto">
-                            <span class="tag tag--desconto">-9%</span>
-                            <a href="#" class="favoritar" aria-label="Adicionar aos favoritos"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-                            <picture>
-                                <source type="image/webp" srcset="img/produtos/placa-video-rtx5060ti.webp">
-                                <img src="img/produtos/placa-video-rtx5060ti.jpg" alt="Placa de vídeo ASUS Dual GeForce RTX 5060 Ti com duas ventoinhas ao lado da caixa" width="400" height="400" loading="lazy">
-                            </picture>
+                        <div class="card__foto">
+                            <span class="tag tag--off">-14%</span><span class="tag tag--frete"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.5"/><circle cx="17" cy="17.5" r="1.5"/></svg> FRETE GRÁTIS</span>
+                            <a href="#" class="card__fav" aria-label="Adicionar aos favoritos"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></a>
+                            <picture><source type="image/webp" srcset="img/produtos/ryzen-7-7800x3d.webp"><img src="img/produtos/ryzen-7-7800x3d.jpg" alt="Caixa do processador AMD Ryzen 7 7800X3D em laranja e cinza" width="400" height="400" loading="lazy"></picture>
                         </div>
                         <figcaption>
-                            <p class="produto__marca">ASUS</p>
-                            <h3><a href="https://www.asus.com/br/" target="_blank" rel="noopener">Placa de Vídeo ASUS Dual GeForce RTX 5060 Ti OC, 8GB GDDR7, DLSS 4</a></h3>
-                            <p class="avaliacao" aria-label="Nota 4,9 de 5"><span class="estrelas" style="--nota: 4.9"></span> (742)</p>
-                            <p class="preco-de">R$ 3.199,90</p>
-                            <p class="preco-pix">R$ 2.899,90</p>
-                            <p class="preco-info">À vista no Pix · ou 12x de R$ 268,51 sem juros</p>
-                            <p class="frete"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7M7 18a1.5 1.5 0 1 0 0-.01M17 18a1.5 1.5 0 1 0 0-.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg> Frete grátis</p>
-                            <div class="estoque" style="--vendido: 44%"><span></span><small>44% vendido</small></div>
+                            <p class="card__nota" aria-label="Nota 4,9 de 5"><span class="estrelas" style="--n:4.9"></span>(5.312)</p>
+                            <h3><a href="https://www.amd.com/pt/products/processors/desktops/ryzen.html" target="_blank" rel="noopener">Processador AMD Ryzen 7 7800X3D, 5.0GHz Max Turbo, Cache 104MB, AM5, 8 Núcleos</a></h3>
+                            <p class="card__de">R$ 2.799,99</p><p class="card__preco">R$ 2.399,99</p><p class="card__pix">À vista no PIX</p><p class="card__parc">ou 12x de R$ 222,21 sem juros</p>
+                            
                         </figcaption>
                     </figure>
-                    <a href="https://www.asus.com/br/" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
+                    <a href="https://www.amd.com/pt/products/processors/desktops/ryzen.html" class="card__btn" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg> COMPRAR</a>
                 </article>
-                <article class="produto cat-hardware cat-processadores">
+                <article class="card">
                     <figure>
-                        <div class="produto__foto">
-                            <span class="tag tag--desconto">-14%</span>
-                            <a href="#" class="favoritar" aria-label="Adicionar aos favoritos"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-                            <picture>
-                                <source type="image/webp" srcset="img/produtos/ryzen-7-7800x3d.webp">
-                                <img src="img/produtos/ryzen-7-7800x3d.jpg" alt="Caixa do processador AMD Ryzen 7 7800X3D em laranja e cinza" width="400" height="400" loading="lazy">
-                            </picture>
+                        <div class="card__foto">
+                            <span class="tag tag--off">-19%</span>
+                            <a href="#" class="card__fav" aria-label="Adicionar aos favoritos"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></a>
+                            <picture><source type="image/webp" srcset="img/produtos/memoria-husky-ddr4.webp"><img src="img/produtos/memoria-husky-ddr4.jpg" alt="Pente de memória RAM Husky preto com faixa de iluminação RGB" width="400" height="400" loading="lazy"></picture>
                         </div>
                         <figcaption>
-                            <p class="produto__marca">AMD</p>
-                            <h3><a href="https://www.amd.com/pt/products/processors/desktops/ryzen.html" target="_blank" rel="noopener">Processador AMD Ryzen 7 7800X3D, 8 Núcleos, 5.0GHz, Cache 104MB, AM5</a></h3>
-                            <p class="avaliacao" aria-label="Nota 4,9 de 5"><span class="estrelas" style="--nota: 4.9"></span> (5.312)</p>
-                            <p class="preco-de">R$ 2.799,90</p>
-                            <p class="preco-pix">R$ 2.399,90</p>
-                            <p class="preco-info">À vista no Pix · ou 12x de R$ 222,21 sem juros</p>
-                            <p class="frete"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7M7 18a1.5 1.5 0 1 0 0-.01M17 18a1.5 1.5 0 1 0 0-.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg> Frete grátis</p>
-                            <div class="estoque" style="--vendido: 81%"><span></span><small>Últimas unidades!</small></div>
+                            <p class="card__nota" aria-label="Nota 4,7 de 5"><span class="estrelas" style="--n:4.7"></span>(964)</p>
+                            <h3><a href="#" target="_blank" rel="noopener">Memória RAM Husky Gaming, RGB, 16GB, 3200MHz, DDR4, CL16, Preto</a></h3>
+                            <p class="card__de">R$ 259,99</p><p class="card__preco">R$ 209,99</p><p class="card__pix">À vista no PIX</p><p class="card__parc">ou 10x de R$ 23,33 sem juros</p>
+                            
                         </figcaption>
                     </figure>
-                    <a href="https://www.amd.com/pt/products/processors/desktops/ryzen.html" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
+                    <a href="#" class="card__btn" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg> COMPRAR</a>
                 </article>
-                <article class="produto cat-hardware cat-memorias">
+                <article class="card">
                     <figure>
-                        <div class="produto__foto">
-                            <span class="tag tag--desconto">-19%</span>
-                            <a href="#" class="favoritar" aria-label="Adicionar aos favoritos"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-                            <picture>
-                                <source type="image/webp" srcset="img/produtos/memoria-husky-ddr4.webp">
-                                <img src="img/produtos/memoria-husky-ddr4.jpg" alt="Pente de memória RAM Husky preto com faixa de iluminação RGB" width="400" height="400" loading="lazy">
-                            </picture>
+                        <div class="card__foto">
+                            <span class="tag tag--off">-22%</span><span class="tag tag--frete"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.5"/><circle cx="17" cy="17.5" r="1.5"/></svg> FRETE GRÁTIS</span>
+                            <a href="#" class="card__fav" aria-label="Adicionar aos favoritos"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></a>
+                            <picture><source type="image/webp" srcset="img/produtos/ssd-kingston-nv3.webp"><img src="img/produtos/ssd-kingston-nv3.jpg" alt="SSD Kingston NV3 M.2 NVMe de 1TB com etiqueta azul" width="400" height="400" loading="lazy"></picture>
                         </div>
                         <figcaption>
-                            <p class="produto__marca">HUSKY</p>
-                            <h3><a href="https://www.google.com/search?q=mem%C3%B3ria+husky+gaming+16gb+ddr4+rgb" target="_blank" rel="noopener">Memória RAM Husky Gaming 16GB, DDR4, 3200MHz, CL16, RGB</a></h3>
-                            <p class="avaliacao" aria-label="Nota 4,7 de 5"><span class="estrelas" style="--nota: 4.7"></span> (964)</p>
-                            <p class="preco-de">R$ 259,90</p>
-                            <p class="preco-pix">R$ 209,90</p>
-                            <p class="preco-info">À vista no Pix · ou 10x de R$ 23,32 sem juros</p>
-                            <div class="estoque" style="--vendido: 54%"><span></span><small>54% vendido</small></div>
+                            <p class="card__nota" aria-label="Nota 4,8 de 5"><span class="estrelas" style="--n:4.8"></span>(6.904)</p>
+                            <h3><a href="https://www.kingston.com/br" target="_blank" rel="noopener">SSD 1TB Kingston NV3, M.2 2280 PCIe 4.0 x4 NVMe, Leitura 6000MB/s</a></h3>
+                            <p class="card__de">R$ 549,99</p><p class="card__preco">R$ 429,99</p><p class="card__pix">À vista no PIX</p><p class="card__parc">ou 10x de R$ 47,78 sem juros</p>
+                            
                         </figcaption>
                     </figure>
-                    <a href="https://www.google.com/search?q=mem%C3%B3ria+husky+gaming+16gb+ddr4+rgb" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
+                    <a href="https://www.kingston.com/br" class="card__btn" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg> COMPRAR</a>
                 </article>
-                <article class="produto cat-hardware cat-armazenamento">
+                <article class="card">
                     <figure>
-                        <div class="produto__foto">
-                            <span class="tag tag--desconto">-22%</span>
-                            <a href="#" class="favoritar" aria-label="Adicionar aos favoritos"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-                            <picture>
-                                <source type="image/webp" srcset="img/produtos/ssd-kingston-nv3.webp">
-                                <img src="img/produtos/ssd-kingston-nv3.jpg" alt="SSD Kingston NV3 M.2 NVMe de 1TB com etiqueta azul" width="400" height="400" loading="lazy">
-                            </picture>
+                        <div class="card__foto">
+                            <span class="tag tag--off">-16%</span>
+                            <a href="#" class="card__fav" aria-label="Adicionar aos favoritos"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></a>
+                            <picture><source type="image/webp" srcset="img/produtos/fonte-650w.webp"><img src="img/produtos/fonte-650w.jpg" alt="Fonte de computador preta com grade frontal e cabos" width="400" height="400" loading="lazy"></picture>
                         </div>
                         <figcaption>
-                            <p class="produto__marca">KINGSTON</p>
-                            <h3><a href="https://www.kingston.com/br" target="_blank" rel="noopener">SSD Kingston NV3 1TB, M.2 2280 NVMe PCIe 4.0, Leitura 6.000MB/s</a></h3>
-                            <p class="avaliacao" aria-label="Nota 4,8 de 5"><span class="estrelas" style="--nota: 4.8"></span> (6.904)</p>
-                            <p class="preco-de">R$ 549,90</p>
-                            <p class="preco-pix">R$ 429,90</p>
-                            <p class="preco-info">À vista no Pix · ou 10x de R$ 47,77 sem juros</p>
-                            <p class="frete"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7M7 18a1.5 1.5 0 1 0 0-.01M17 18a1.5 1.5 0 1 0 0-.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg> Frete grátis</p>
-                            <div class="estoque" style="--vendido: 63%"><span></span><small>63% vendido</small></div>
+                            <p class="card__nota" aria-label="Nota 4,5 de 5"><span class="estrelas" style="--n:4.5"></span>(1.318)</p>
+                            <h3><a href="#" target="_blank" rel="noopener">Fonte 650W 80 Plus Bronze, PFC Ativo, Ventoinha 120mm, Preto</a></h3>
+                            <p class="card__de">R$ 449,99</p><p class="card__preco">R$ 379,99</p><p class="card__pix">À vista no PIX</p><p class="card__parc">ou 10x de R$ 42,22 sem juros</p>
+                            
                         </figcaption>
                     </figure>
-                    <a href="https://www.kingston.com/br" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
+                    <a href="#" class="card__btn" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg> COMPRAR</a>
                 </article>
-                <article class="produto cat-hardware cat-fontes">
+                <article class="card">
                     <figure>
-                        <div class="produto__foto">
-                            <span class="tag tag--desconto">-16%</span>
-                            <a href="#" class="favoritar" aria-label="Adicionar aos favoritos"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-                            <picture>
-                                <source type="image/webp" srcset="img/produtos/fonte-650w.webp">
-                                <img src="img/produtos/fonte-650w.jpg" alt="Fonte de computador preta com grade frontal e cabos" width="400" height="400" loading="lazy">
-                            </picture>
+                        <div class="card__foto">
+                            <span class="tag tag--off">-15%</span>
+                            <a href="#" class="card__fav" aria-label="Adicionar aos favoritos"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></a>
+                            <picture><source type="image/webp" srcset="img/produtos/gabinete-mesh-preto.webp"><img src="img/produtos/gabinete-mesh-preto.jpg" alt="Gabinete gamer preto mid-tower com frontal mesh e lateral de vidro" width="400" height="400" loading="lazy"></picture>
                         </div>
                         <figcaption>
-                            <p class="produto__marca">PIXEL FORGE</p>
-                            <h3><a href="https://www.google.com/search?q=fonte+gamer+650w+80+plus+bronze" target="_blank" rel="noopener">Fonte Gamer 650W, 80 Plus Bronze, PFC Ativo, Ventoinha 120mm</a></h3>
-                            <p class="avaliacao" aria-label="Nota 4,5 de 5"><span class="estrelas" style="--nota: 4.5"></span> (1.318)</p>
-                            <p class="preco-de">R$ 449,90</p>
-                            <p class="preco-pix">R$ 379,90</p>
-                            <p class="preco-info">À vista no Pix · ou 10x de R$ 42,21 sem juros</p>
-                            <p class="frete"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7M7 18a1.5 1.5 0 1 0 0-.01M17 18a1.5 1.5 0 1 0 0-.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg> Frete grátis</p>
-                            <div class="estoque" style="--vendido: 35%"><span></span><small>35% vendido</small></div>
+                            <p class="card__nota" aria-label="Nota 4,6 de 5"><span class="estrelas" style="--n:4.6"></span>(884)</p>
+                            <h3><a href="#" target="_blank" rel="noopener">Gabinete Gamer Mid-Tower, Frontal Mesh, Lateral de Vidro Temperado, ATX, Preto</a></h3>
+                            <p class="card__de">R$ 329,99</p><p class="card__preco">R$ 279,99</p><p class="card__pix">À vista no PIX</p><p class="card__parc">ou 10x de R$ 31,11 sem juros</p>
+                            
                         </figcaption>
                     </figure>
-                    <a href="https://www.google.com/search?q=fonte+gamer+650w+80+plus+bronze" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
+                    <a href="#" class="card__btn" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg> COMPRAR</a>
                 </article>
-                <article class="produto cat-gabinetes">
+                <article class="card">
                     <figure>
-                        <div class="produto__foto">
-                            <span class="tag tag--desconto">-15%</span>
-                            <a href="#" class="favoritar" aria-label="Adicionar aos favoritos"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-                            <picture>
-                                <source type="image/webp" srcset="img/produtos/gabinete-mesh-preto.webp">
-                                <img src="img/produtos/gabinete-mesh-preto.jpg" alt="Gabinete gamer preto mid-tower com frontal mesh e lateral de vidro" width="400" height="400" loading="lazy">
-                            </picture>
+                        <div class="card__foto">
+                            <span class="tag tag--off">-16%</span>
+                            <a href="#" class="card__fav" aria-label="Adicionar aos favoritos"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></a>
+                            <picture><source type="image/webp" srcset="img/produtos/controle-8bitdo-ultimate.webp"><img src="img/produtos/controle-8bitdo-ultimate.jpg" alt="Controle 8BitDo Ultimate preto com anéis de LED nos analógicos" width="400" height="400" loading="lazy"></picture>
                         </div>
                         <figcaption>
-                            <p class="produto__marca">PIXEL FORGE</p>
-                            <h3><a href="https://www.google.com/search?q=gabinete+gamer+mid+tower+preto+frontal+mesh" target="_blank" rel="noopener">Gabinete Gamer Mid-Tower Preto, Frontal Mesh, Lateral de Vidro, ATX</a></h3>
-                            <p class="avaliacao" aria-label="Nota 4,6 de 5"><span class="estrelas" style="--nota: 4.6"></span> (884)</p>
-                            <p class="preco-de">R$ 329,90</p>
-                            <p class="preco-pix">R$ 279,90</p>
-                            <p class="preco-info">À vista no Pix · ou 10x de R$ 31,10 sem juros</p>
-                            <p class="frete"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7M7 18a1.5 1.5 0 1 0 0-.01M17 18a1.5 1.5 0 1 0 0-.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg> Frete grátis</p>
-                            <div class="estoque" style="--vendido: 27%"><span></span><small>27% vendido</small></div>
+                            <p class="card__nota" aria-label="Nota 4,8 de 5"><span class="estrelas" style="--n:4.8"></span>(2.215)</p>
+                            <h3><a href="https://www.8bitdo.com/" target="_blank" rel="noopener">Controle 8BitDo Ultimate com Fio, Xbox e PC, Hall Effect, LED, Preto</a></h3>
+                            <p class="card__de">R$ 449,99</p><p class="card__preco">R$ 379,99</p><p class="card__pix">À vista no PIX</p><p class="card__parc">ou 10x de R$ 42,22 sem juros</p>
+                            
                         </figcaption>
                     </figure>
-                    <a href="https://www.google.com/search?q=gabinete+gamer+mid+tower+preto+frontal+mesh" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
-                </article>
-            </div>
-        </section>
-
-        <section id="mais-vendidos" class="container bloco">
-            <div class="bloco__titulo">
-                <h2>Mais vendidos da semana</h2>
-                <a href="#vitrine">Ver ofertas ›</a>
-            </div>
-            <div class="lista-compacta">
-                <article class="produto cat-hardware cat-processadores">
-                    <figure>
-                        <div class="produto__foto">
-                            <span class="tag tag--desconto">-14%</span>
-                            <a href="#" class="favoritar" aria-label="Adicionar aos favoritos"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-                            <picture>
-                                <source type="image/webp" srcset="img/produtos/ryzen-7-7800x3d.webp">
-                                <img src="img/produtos/ryzen-7-7800x3d.jpg" alt="Caixa do processador AMD Ryzen 7 7800X3D em laranja e cinza" width="400" height="400" loading="lazy">
-                            </picture>
-                        </div>
-                        <figcaption>
-                            <p class="produto__marca">AMD</p>
-                            <h3><a href="https://www.amd.com/pt/products/processors/desktops/ryzen.html" target="_blank" rel="noopener">Processador AMD Ryzen 7 7800X3D, 8 Núcleos, 5.0GHz, Cache 104MB, AM5</a></h3>
-                            <p class="avaliacao" aria-label="Nota 4,9 de 5"><span class="estrelas" style="--nota: 4.9"></span> (5.312)</p>
-                            <p class="preco-de">R$ 2.799,90</p>
-                            <p class="preco-pix">R$ 2.399,90</p>
-                            <p class="preco-info">À vista no Pix · ou 12x de R$ 222,21 sem juros</p>
-                            <p class="frete"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7M7 18a1.5 1.5 0 1 0 0-.01M17 18a1.5 1.5 0 1 0 0-.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg> Frete grátis</p>
-                            <div class="estoque" style="--vendido: 81%"><span></span><small>Últimas unidades!</small></div>
-                        </figcaption>
-                    </figure>
-                    <a href="https://www.amd.com/pt/products/processors/desktops/ryzen.html" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
-                </article>
-                <article class="produto cat-hardware cat-armazenamento">
-                    <figure>
-                        <div class="produto__foto">
-                            <span class="tag tag--desconto">-22%</span>
-                            <a href="#" class="favoritar" aria-label="Adicionar aos favoritos"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-                            <picture>
-                                <source type="image/webp" srcset="img/produtos/ssd-kingston-nv3.webp">
-                                <img src="img/produtos/ssd-kingston-nv3.jpg" alt="SSD Kingston NV3 M.2 NVMe de 1TB com etiqueta azul" width="400" height="400" loading="lazy">
-                            </picture>
-                        </div>
-                        <figcaption>
-                            <p class="produto__marca">KINGSTON</p>
-                            <h3><a href="https://www.kingston.com/br" target="_blank" rel="noopener">SSD Kingston NV3 1TB, M.2 2280 NVMe PCIe 4.0, Leitura 6.000MB/s</a></h3>
-                            <p class="avaliacao" aria-label="Nota 4,8 de 5"><span class="estrelas" style="--nota: 4.8"></span> (6.904)</p>
-                            <p class="preco-de">R$ 549,90</p>
-                            <p class="preco-pix">R$ 429,90</p>
-                            <p class="preco-info">À vista no Pix · ou 10x de R$ 47,77 sem juros</p>
-                            <p class="frete"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7M7 18a1.5 1.5 0 1 0 0-.01M17 18a1.5 1.5 0 1 0 0-.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg> Frete grátis</p>
-                            <div class="estoque" style="--vendido: 63%"><span></span><small>63% vendido</small></div>
-                        </figcaption>
-                    </figure>
-                    <a href="https://www.kingston.com/br" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
-                </article>
-                <article class="produto cat-perifericos cat-mouses">
-                    <figure>
-                        <div class="produto__foto">
-                            <span class="tag tag--desconto">-20%</span>
-                            <a href="#" class="favoritar" aria-label="Adicionar aos favoritos"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-                            <picture>
-                                <source type="image/webp" srcset="img/produtos/mouse-sem-fio-dock.webp">
-                                <img src="img/produtos/mouse-sem-fio-dock.jpg" alt="Mouse gamer sem fio preto com base de carregamento com iluminação RGB" width="400" height="400" loading="lazy">
-                            </picture>
-                        </div>
-                        <figcaption>
-                            <p class="produto__marca">ATTACK SHARK</p>
-                            <h3><a href="https://attackshark.com/" target="_blank" rel="noopener">Mouse Gamer Sem Fio Attack Shark, 26.000 DPI, Dock de Carregamento RGB</a></h3>
-                            <p class="avaliacao" aria-label="Nota 4,7 de 5"><span class="estrelas" style="--nota: 4.7"></span> (3.981)</p>
-                            <p class="preco-de">R$ 249,90</p>
-                            <p class="preco-pix">R$ 199,90</p>
-                            <p class="preco-info">À vista no Pix · ou 10x de R$ 22,21 sem juros</p>
-                            <div class="estoque" style="--vendido: 88%"><span></span><small>Últimas unidades!</small></div>
-                        </figcaption>
-                    </figure>
-                    <a href="https://attackshark.com/" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
+                    <a href="https://www.8bitdo.com/" class="card__btn" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg> COMPRAR</a>
                 </article>
             </div>
         </section>
 
         <!-- Marcas -->
-        <section class="container bloco marcas" aria-label="Marcas oficiais">
-            <div class="bloco__titulo">
-                <h2>Lojas oficiais</h2>
-            </div>
-            <ul class="marcas__lista">
+        <section class="container bloco" aria-label="Marcas">
+            <div class="bloco__topo"><h2>MARCAS EM DESTAQUE</h2></div>
+            <ul class="marcas">
                 <li><a href="https://www.asus.com/br/" target="_blank" rel="noopener">ASUS</a></li>
                 <li><a href="https://www.amd.com/pt.html" target="_blank" rel="noopener">AMD</a></li>
                 <li><a href="https://www.razer.com/br-pt" target="_blank" rel="noopener">RAZER</a></li>
@@ -645,15 +360,13 @@
         </section>
 
         <!-- Newsletter -->
-        <section class="newsletter">
-            <div class="container newsletter__conteudo">
-                <div>
-                    <h2>Receba ofertas antes de todo mundo</h2>
-                    <p>Cupons exclusivos e alertas de Oferta Relâmpago no seu e-mail.</p>
-                </div>
-                <form class="newsletter__form" action="#">
-                    <input type="email" placeholder="Digite seu e-mail" aria-label="Seu e-mail" required>
-                    <button type="submit" class="botao">Cadastrar</button>
+        <section class="news">
+            <div class="container news__linha">
+                <p><b>Receba ofertas exclusivas</b><br>Cadastre seu e-mail e fique por dentro das promoções.</p>
+                <form action="#">
+                    <label for="news" class="sr-only">Seu e-mail</label>
+                    <input id="news" type="email" placeholder="Digite seu e-mail" required>
+                    <button type="submit">CADASTRAR</button>
                 </form>
             </div>
         </section>
@@ -661,29 +374,21 @@
     </main>
 
     <footer class="rodape">
-        <div class="container rodape__colunas">
-            <div id="institucional">
-                <h3>Institucional</h3>
-                <ul><li><a href="#">Sobre a Pixel Forge</a></li><li><a href="#">Trabalhe conosco</a></li><li><a href="#">Política de privacidade</a></li></ul>
+        <div class="container rodape__grade">
+            <div>
+                <a href="#topo" class="logo"><img src="img/logo.svg" alt="Logotipo Pixel Forge" width="36" height="36"><span>pixel<b>forge</b></span></a>
+                <p class="rodape__desc">Loja fictícia criada como projeto acadêmico. Produtos, preços e promoções são demonstrativos.</p>
             </div>
-            <div id="ajuda">
-                <h3>Ajuda</h3>
-                <ul><li><a href="#">Central de atendimento</a></li><li><a href="#">Trocas e devoluções</a></li><li><a href="#">Prazo de entrega</a></li></ul>
-            </div>
+            <nav aria-label="Institucional"><h3>Institucional</h3><ul><li><a href="#">Sobre a Pixel Forge</a></li><li><a href="#">Trabalhe conosco</a></li><li><a href="#">Política de privacidade</a></li></ul></nav>
+            <nav aria-label="Ajuda"><h3>Ajuda</h3><ul><li><a href="#">Central de atendimento</a></li><li><a href="#">Trocas e devoluções</a></li><li><a href="#">Prazo de entrega</a></li></ul></nav>
             <div>
                 <h3>Formas de pagamento</h3>
-                <ul class="pagamentos">
-                    <li>Pix</li><li>Visa</li><li>Master</li><li>Elo</li><li>Boleto</li>
-                </ul>
+                <ul class="pagamentos"><li>PIX</li><li>VISA</li><li>MASTER</li><li>ELO</li><li>AMEX</li><li>BOLETO</li></ul>
+                <h3 class="rodape__seg-titulo">Segurança</h3>
+                <p class="rodape__seg"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg> Site seguro · SSL</p>
             </div>
         </div>
-        <ul class="container redes" aria-label="Redes sociais">
-            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></li>
-            <li><a href="https://www.twitch.tv/" target="_blank" rel="noopener">Twitch</a></li>
-            <li><a href="https://discord.com/" target="_blank" rel="noopener">Discord</a></li>
-        </ul>
-        <p class="rodape__copy">&copy; 2026 Pixel Forge Comércio de Eletrônicos. Projeto acadêmico, loja fictícia.</p>
+        <p class="rodape__copy">&copy; 2026 Pixel Forge Games · Projeto acadêmico, loja fictícia.</p>
     </footer>
 
 </body>
