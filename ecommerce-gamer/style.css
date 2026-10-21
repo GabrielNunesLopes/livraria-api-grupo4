@@ -492,7 +492,7 @@ ul {
 /* ===== 3. Categorias circulares ===== */
 .categorias {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
     gap: 12px;
     background: var(--branco);
     padding: 20px;
@@ -509,8 +509,8 @@ ul {
 }
 
 .categorias img {
-    width: 120px;
-    height: 120px;
+    width: 104px;
+    height: 104px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--linha);
@@ -1035,6 +1035,22 @@ html {
 }
 
 #cat-gabinetes:target ~ .grade .produto:not(.cat-gabinetes) {
+    display: none;
+}
+
+#cat-hardware:target ~ .grade .produto:not(.cat-hardware) {
+    display: none;
+}
+
+#cat-placas:target ~ .grade .produto:not(.cat-placas) {
+    display: none;
+}
+
+#cat-processadores:target ~ .grade .produto:not(.cat-processadores) {
+    display: none;
+}
+
+#cat-memorias:target ~ .grade .produto:not(.cat-memorias) {
     display: none;
 }
 

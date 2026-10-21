@@ -8,6 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <meta name="theme-color" content="#17191f">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -57,6 +62,7 @@
         <nav class="departamentos" aria-label="Departamentos">
             <ul class="container">
                 <li><a href="#categorias" class="departamentos__todos"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg> Departamentos</a></li>
+                <li><a href="#cat-hardware">Hardware</a></li>
                 <li><a href="#cat-monitores">Monitores</a></li>
                 <li><a href="#cat-perifericos">Periféricos</a></li>
                 <li><a href="#cat-headsets">Headsets</a></li>
@@ -199,12 +205,30 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#cat-gabinetes">
+                    <a href="#cat-placas">
                         <picture>
-                            <source type="image/webp" srcset="img/categorias/pc-gamer.webp">
-                            <img src="img/categorias/pc-gamer.jpg" alt="Gabinete gamer preto com três fans ARGB" width="120" height="120">
+                            <source type="image/webp" srcset="img/categorias/placas-video.webp">
+                            <img src="img/categorias/placas-video.jpg" alt="Placa de vídeo com três ventoinhas" width="120" height="120">
                         </picture>
-                        <span>PC Gamer</span>
+                        <span>Placas de vídeo</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#cat-processadores">
+                        <picture>
+                            <source type="image/webp" srcset="img/categorias/processadores.webp">
+                            <img src="img/categorias/processadores.jpg" alt="Caixa de processador AMD Ryzen 7" width="120" height="120">
+                        </picture>
+                        <span>Processadores</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#cat-memorias">
+                        <picture>
+                            <source type="image/webp" srcset="img/categorias/memorias.webp">
+                            <img src="img/categorias/memorias.jpg" alt="Pente de memória RAM com RGB" width="120" height="120">
+                        </picture>
+                        <span>Memória RAM</span>
                     </a>
                 </li>
             </ul>
@@ -218,6 +242,10 @@
             <span class="alvo" id="cat-teclados"></span>
             <span class="alvo" id="cat-headsets"></span>
             <span class="alvo" id="cat-gabinetes"></span>
+            <span class="alvo" id="cat-hardware"></span>
+            <span class="alvo" id="cat-placas"></span>
+            <span class="alvo" id="cat-processadores"></span>
+            <span class="alvo" id="cat-memorias"></span>
             <div class="relampago__topo">
                 <h2><svg class="ico ico--raio" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z" fill="currentColor"/></svg> Oferta Relâmpago</h2>
                 <p class="cronometro" aria-label="Termina em breve">
@@ -354,6 +382,132 @@
                         </figcaption>
                     </figure>
                     <a href="https://www.google.com/search?q=gabinete+gamer+mid+tower+preto+3+fans" target="_blank" rel="noopener" class="botao botao--avise"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4zM10 21h4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Avise-me</a>
+                </article>
+
+                <article class="produto cat-hardware cat-placas">
+                    <figure>
+                        <div class="produto__foto">
+                            <span class="tag tag--desconto">-13%</span>
+                            <picture>
+                                <source type="image/webp" srcset="img/produtos/placa-video-rx7600.webp">
+                                <img src="img/produtos/placa-video-rx7600.jpg" alt="Placa de vídeo ASRock Radeon RX 7600 Challenger com três ventoinhas ao lado da caixa" width="800" height="800" loading="lazy">
+                            </picture>
+                        </div>
+                        <figcaption>
+                            <p class="avaliacao" aria-label="Nota 4,8 de 5"><span class="estrelas" style="--nota: 4.8"></span> (2.046)</p>
+                            <h3><a href="https://www.asrock.com/" target="_blank" rel="noopener">Placa de Vídeo ASRock Radeon RX 7600 Challenger OC, 8GB GDDR6, FSR 3</a></h3>
+                            <p class="preco-de">R$ 1.899,90</p>
+                            <p class="preco-pix">R$ 1.649,90</p>
+                            <p class="preco-info">À vista no Pix<br>ou 12x de R$ 152,77 sem juros</p>
+                            <div class="estoque" style="--vendido: 67%"><span></span><small>67% vendido</small></div>
+                        </figcaption>
+                    </figure>
+                    <a href="https://www.asrock.com/" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
+                </article>
+
+                <article class="produto cat-hardware cat-processadores">
+                    <figure>
+                        <div class="produto__foto">
+                            <span class="tag tag--desconto">-14%</span>
+                            <picture>
+                                <source type="image/webp" srcset="img/produtos/ryzen-7-7800x3d.webp">
+                                <img src="img/produtos/ryzen-7-7800x3d.jpg" alt="Caixa do processador AMD Ryzen 7 7800X3D em laranja e cinza" width="800" height="800" loading="lazy">
+                            </picture>
+                        </div>
+                        <figcaption>
+                            <p class="avaliacao" aria-label="Nota 4,9 de 5"><span class="estrelas" style="--nota: 4.9"></span> (5.312)</p>
+                            <h3><a href="https://www.amd.com/pt/products/processors/desktops/ryzen.html" target="_blank" rel="noopener">Processador AMD Ryzen 7 7800X3D, 8 Núcleos, 5.0GHz Turbo, Cache 104MB, AM5</a></h3>
+                            <p class="preco-de">R$ 2.799,90</p>
+                            <p class="preco-pix">R$ 2.399,90</p>
+                            <p class="preco-info">À vista no Pix<br>ou 12x de R$ 222,21 sem juros</p>
+                            <div class="estoque" style="--vendido: 81%"><span></span><small>Últimas unidades!</small></div>
+                        </figcaption>
+                    </figure>
+                    <a href="https://www.amd.com/pt/products/processors/desktops/ryzen.html" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
+                </article>
+
+                <article class="produto cat-perifericos cat-teclados">
+                    <figure>
+                        <div class="produto__foto">
+                            <span class="tag tag--frete">Frete grátis</span>
+                            <picture>
+                                <source type="image/webp" srcset="img/produtos/teclado-razer-huntsman.webp">
+                                <img src="img/produtos/teclado-razer-huntsman.jpg" alt="Teclado gamer Razer full size com iluminação RGB Chroma e apoio de pulso" width="800" height="800" loading="lazy">
+                            </picture>
+                        </div>
+                        <figcaption>
+                            <p class="avaliacao" aria-label="Nota 4,8 de 5"><span class="estrelas" style="--nota: 4.8"></span> (1.120)</p>
+                            <h3><a href="https://www.razer.com/br-pt" target="_blank" rel="noopener">Teclado Gamer Razer Huntsman V3 Pro, Switch Óptico Analógico, RGB Chroma, US</a></h3>
+                            <p class="preco-de">R$ 1.799,90</p>
+                            <p class="preco-pix">R$ 1.499,90</p>
+                            <p class="preco-info">À vista no Pix<br>ou 12x de R$ 138,88 sem juros</p>
+                            <div class="estoque" style="--vendido: 39%"><span></span><small>39% vendido</small></div>
+                        </figcaption>
+                    </figure>
+                    <a href="https://www.razer.com/br-pt" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
+                </article>
+
+                <article class="produto cat-hardware cat-memorias">
+                    <figure>
+                        <div class="produto__foto">
+                            <span class="tag tag--desconto">-19%</span>
+                            <picture>
+                                <source type="image/webp" srcset="img/produtos/memoria-husky-ddr4.webp">
+                                <img src="img/produtos/memoria-husky-ddr4.jpg" alt="Pente de memória RAM Husky preto com faixa de iluminação RGB" width="800" height="800" loading="lazy">
+                            </picture>
+                        </div>
+                        <figcaption>
+                            <p class="avaliacao" aria-label="Nota 4,7 de 5"><span class="estrelas" style="--nota: 4.7"></span> (964)</p>
+                            <h3><a href="https://www.google.com/search?q=mem%C3%B3ria+husky+gaming+16gb+ddr4+rgb" target="_blank" rel="noopener">Memória RAM Husky Gaming 16GB, DDR4, 3200MHz, CL16, RGB</a></h3>
+                            <p class="preco-de">R$ 259,90</p>
+                            <p class="preco-pix">R$ 209,90</p>
+                            <p class="preco-info">À vista no Pix<br>ou 10x de R$ 23,32 sem juros</p>
+                            <div class="estoque" style="--vendido: 54%"><span></span><small>54% vendido</small></div>
+                        </figcaption>
+                    </figure>
+                    <a href="https://www.google.com/search?q=mem%C3%B3ria+husky+gaming+16gb+ddr4+rgb" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
+                </article>
+
+                <article class="produto cat-perifericos cat-headsets">
+                    <figure>
+                        <div class="produto__foto">
+                            <span class="tag tag--desconto">-18%</span>
+                            <picture>
+                                <source type="image/webp" srcset="img/produtos/headset-redragon-zeus.webp">
+                                <img src="img/produtos/headset-redragon-zeus.jpg" alt="Headset gamer Redragon Zeus preto e vermelho com microfone removível e receptor USB" width="800" height="800" loading="lazy">
+                            </picture>
+                        </div>
+                        <figcaption>
+                            <p class="avaliacao" aria-label="Nota 4,6 de 5"><span class="estrelas" style="--nota: 4.6"></span> (2.587)</p>
+                            <h3><a href="https://redragon.com.br/" target="_blank" rel="noopener">Headset Gamer Sem Fio Redragon Zeus Pro, 7.1 Surround, Drivers 53mm, Preto e Vermelho</a></h3>
+                            <p class="preco-de">R$ 399,90</p>
+                            <p class="preco-pix">R$ 329,90</p>
+                            <p class="preco-info">À vista no Pix<br>ou 10x de R$ 36,66 sem juros</p>
+                            <div class="estoque" style="--vendido: 76%"><span></span><small>76% vendido</small></div>
+                        </figcaption>
+                    </figure>
+                    <a href="https://redragon.com.br/" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
+                </article>
+
+                <article class="produto cat-monitores">
+                    <figure>
+                        <div class="produto__foto">
+                            <span class="tag tag--frete">Frete grátis</span>
+                            <picture>
+                                <source type="image/webp" srcset="img/produtos/monitor-asus-tuf.webp">
+                                <img src="img/produtos/monitor-asus-tuf.jpg" alt="Monitor gamer ASUS TUF Gaming com logotipo amarelo na tela" width="800" height="800" loading="lazy">
+                            </picture>
+                        </div>
+                        <figcaption>
+                            <p class="avaliacao" aria-label="Nota 4,7 de 5"><span class="estrelas" style="--nota: 4.7"></span> (1.433)</p>
+                            <h3><a href="https://www.asus.com/br/" target="_blank" rel="noopener">Monitor Gamer ASUS TUF Gaming 23,8", Full HD, 180Hz, IPS, FreeSync</a></h3>
+                            <p class="preco-de">R$ 1.099,90</p>
+                            <p class="preco-pix">R$ 899,90</p>
+                            <p class="preco-info">À vista no Pix<br>ou 10x de R$ 99,99 sem juros</p>
+                            <div class="estoque" style="--vendido: 49%"><span></span><small>49% vendido</small></div>
+                        </figcaption>
+                    </figure>
+                    <a href="https://www.asus.com/br/" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
                 </article>
             </div>
         </section>
