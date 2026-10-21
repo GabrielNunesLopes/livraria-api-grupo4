@@ -1,0 +1,394 @@
+/* ===== Variáveis e base ===== */
+:root {
+    --fundo: #0b0d17;
+    --painel: #151a2d;
+    --texto: #e6e9ff;
+    --suave: #9aa3c7;
+    --ciano: #00f0ff;
+    --rosa: #ff2bd6;
+    --verde: #39ff88;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: "Rajdhani", sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.titulo-secao {
+    font-family: "Orbitron", sans-serif;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--ciano);
+    text-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
+}
+
+.botao {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    border-radius: 6px;
+    background: linear-gradient(90deg, var(--ciano), var(--rosa));
+    color: #0b0d17;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: box-shadow 0.3s;
+}
+
+.botao:hover {
+    box-shadow: 0 0 18px var(--rosa);
+}
+
+/* ===== 1. Cabeçalho ===== */
+.topo {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.8rem 2rem;
+    background: rgba(11, 13, 23, 0.92);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.3rem;
+}
+
+.marca strong {
+    color: var(--rosa);
+}
+
+.menu {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.menu a {
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.menu a:hover {
+    color: var(--ciano);
+}
+
+.acoes {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.acoes input {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--suave);
+    border-radius: 20px;
+    background: var(--painel);
+    color: var(--texto);
+    font: inherit;
+}
+
+.carrinho {
+    position: relative;
+    color: var(--ciano);
+}
+
+.contador {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: var(--rosa);
+    color: #fff;
+    font-size: 0.75rem;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: grid;
+    place-items: center;
+}
+
+/* ===== 2. Carrossel com scroll-snap ===== */
+.hero {
+    position: relative;
+}
+
+.carrossel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.carrossel::-webkit-scrollbar {
+    display: none;
+}
+
+.slide {
+    position: relative;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+}
+
+.slide img {
+    width: 100%;
+    aspect-ratio: 14 / 5;
+    object-fit: cover;
+    filter: brightness(0.55);
+}
+
+.slide-texto {
+    position: absolute;
+    left: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 480px;
+}
+
+.slide-texto h1,
+.slide-texto h2 {
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(1.6rem, 4vw, 3rem);
+    text-shadow: 0 0 16px var(--rosa);
+}
+
+.slide-texto p {
+    margin: 0.5rem 0 1.2rem;
+    font-size: 1.2rem;
+}
+
+.pontos {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.6rem;
+}
+
+.pontos a {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--ciano);
+}
+
+.pontos a:hover {
+    background: var(--ciano);
+}
+
+/* ===== 3. Categorias circulares ===== */
+.categorias,
+.vitrine {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.lista-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.lista-categorias a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 600;
+}
+
+.lista-categorias img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid transparent;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.lista-categorias a:hover img {
+    transform: scale(1.08);
+    border-color: var(--rosa);
+    box-shadow: 0 0 20px var(--rosa);
+}
+
+/* ===== 4. Vitrine de produtos ===== */
+.grade {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.produto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--painel);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    transition: border-color 0.3s;
+}
+
+.produto:hover {
+    border-color: var(--ciano);
+}
+
+.foto {
+    position: relative;
+    overflow: hidden; /* impede o zoom de vazar do card */
+}
+
+.foto img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover; /* padroniza sem distorcer */
+    transition: transform 0.5s ease;
+}
+
+.produto:hover .foto img {
+    transform: scale(1.1);
+}
+
+figcaption {
+    padding: 1rem 1.2rem 0;
+}
+
+figcaption h3 {
+    font-size: 1.2rem;
+}
+
+.preco {
+    color: var(--verde);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.preco del {
+    color: var(--suave);
+    font-size: 0.95rem;
+    margin-right: 0.4rem;
+}
+
+.produto .botao {
+    margin: 1rem 1.2rem 1.2rem;
+    text-align: center;
+}
+
+.etiqueta {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    padding: 0.2rem 0.7rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.desconto {
+    background: var(--rosa);
+    color: #fff;
+}
+
+/* ===== 5. Produto esgotado ===== */
+.esgotado .foto img {
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+.selo-esgotado {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-12deg);
+    background: #e01e37;
+    color: #fff;
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    padding: 0.4rem 1.2rem;
+}
+
+.esgotado .preco {
+    color: var(--suave);
+}
+
+.botao-secundario {
+    background: transparent;
+    color: var(--ciano);
+    border: 2px solid var(--ciano);
+}
+
+/* ===== Rodapé ===== */
+.rodape {
+    margin-top: 2rem;
+    padding: 2rem;
+    text-align: center;
+    background: var(--painel);
+    color: var(--suave);
+    border-top: 1px solid rgba(255, 43, 214, 0.3);
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 760px) {
+    .topo {
+        justify-content: center;
+        padding: 0.8rem 1rem;
+    }
+
+    .menu {
+        gap: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .slide img {
+        aspect-ratio: 1 / 1;
+    }
+
+    .categorias,
+    .vitrine {
+        padding: 2rem 1rem;
+    }
+
+    .lista-categorias img {
+        width: 110px;
+        height: 110px;
+    }
+}
