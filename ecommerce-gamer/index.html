@@ -3,241 +3,346 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pixel Forge Games - consoles retrô, periféricos RGB e action figures.">
-    <title>Pixel Forge Games | Loja Gamer</title>
+    <meta name="description" content="Pixel Forge - hardware, periféricos, consoles e colecionáveis com preço de Pix.">
+    <title>Pixel Forge | Hardware, Games e Periféricos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="scanlines" aria-hidden="true"></div>
 
-    <div class="faixa-promo" aria-label="Avisos da loja">
-        <div class="faixa-trilho">
-            <span>⚡ Frete grátis acima de R$ 299</span><span>🎮 Pix com 10% OFF</span><span>🔥 Semana RGB: até 40% OFF</span><span>🕹️ Retrô revisado com garantia</span>
-            <span aria-hidden="true">⚡ Frete grátis acima de R$ 299</span><span aria-hidden="true">🎮 Pix com 10% OFF</span><span aria-hidden="true">🔥 Semana RGB: até 40% OFF</span><span aria-hidden="true">🕹️ Retrô revisado com garantia</span>
+    <!-- Barra superior -->
+    <div class="barra-topo">
+        <div class="container barra-topo__conteudo">
+            <p><strong>Frete grátis</strong> para Sul e Sudeste em compras acima de R$ 299*</p>
+            <ul>
+                <li><a href="#">Atendimento</a></li>
+                <li><a href="#">Rastrear pedido</a></li>
+                <li><a href="#">Venda no Forge</a></li>
+            </ul>
         </div>
     </div>
 
-    <!-- 1. Cabeçalho com identidade visual -->
-    <header class="topo">
-        <a href="#" class="marca">
-            <img src="img/logo.svg" alt="Logotipo da Pixel Forge Games: controle de videogame em neon azul e rosa" width="48" height="48">
-            <span>Pixel<strong>Forge</strong></span>
-        </a>
+    <!-- 1. Cabeçalho -->
+    <header class="cabecalho">
+        <div class="container cabecalho__linha">
+            <a href="#" class="marca">
+                <img src="img/logo.svg" alt="Logotipo Pixel Forge: bigorna laranja com um pixel em cima" width="44" height="44">
+                <span class="marca__nome">PIXEL<b>FORGE</b></span>
+            </a>
 
-        <nav aria-label="Categorias da loja">
-            <ul class="menu">
-                <li><a href="#categorias">Consoles</a></li>
+            <form class="busca" action="#" role="search">
+                <input type="search" placeholder="Busque no Pixel Forge" aria-label="Buscar produtos">
+                <button type="submit" aria-label="Buscar">
+                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+                </button>
+            </form>
+
+            <div class="atalhos">
+                <a href="#" class="atalho">
+                    <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                    <span><small>Olá, faça seu</small><b>login ou cadastro</b></span>
+                </a>
+                <a href="#" class="atalho atalho--icone" aria-label="Favoritos">
+                    <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                </a>
+                <a href="#" class="atalho atalho--icone carrinho" aria-label="Carrinho de compras com 3 itens">
+                    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg>
+                    <span class="carrinho__qtd">3</span>
+                </a>
+            </div>
+        </div>
+
+        <nav class="departamentos" aria-label="Departamentos">
+            <ul class="container">
+                <li><a href="#" class="departamentos__todos">☰ Departamentos</a></li>
+                <li><a href="#categorias">Hardware</a></li>
                 <li><a href="#categorias">Periféricos</a></li>
+                <li><a href="#categorias">Consoles</a></li>
                 <li><a href="#categorias">Colecionáveis</a></li>
-                <li><a href="#vitrine">Ofertas</a></li>
+                <li><a href="#vitrine">Cadeiras</a></li>
+                <li><a href="#vitrine" class="destaque-menu">Oferta Relâmpago</a></li>
             </ul>
         </nav>
-
-        <div class="acoes">
-            <input type="search" placeholder="Buscar jogos..." aria-label="Buscar produtos">
-            <a href="#" class="carrinho" aria-label="Carrinho de compras com 3 itens">
-                <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
-                    <path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <circle cx="10" cy="20" r="1.5" fill="currentColor"/>
-                    <circle cx="17" cy="20" r="1.5" fill="currentColor"/>
-                </svg>
-                <span class="contador">3</span>
-            </a>
-        </div>
     </header>
 
     <main>
 
-        <!-- 2. Carrossel (scroll-snap) com banners em <picture> -->
+        <!-- 2. Carrossel scroll-snap com <picture> -->
         <section class="hero" aria-label="Promoções em destaque">
-            <div class="carrossel">
-                <div class="slide" id="slide1">
-                    <picture>
-                        <source media="(max-width: 600px)" srcset="https://loremflickr.com/600/600/gaming,setup?lock=11">
-                        <img src="https://loremflickr.com/1400/500/gaming,setup?lock=11" alt="Setup gamer iluminado com luzes RGB roxas e azuis" width="1400" height="500">
-                    </picture>
-                    <div class="slide-texto">
-                        <h1 class="glitch" data-text="Semana RGB">Semana RGB</h1>
-                        <p>Até 40% OFF em periféricos iluminados</p>
-                        <a href="#vitrine" class="botao">Ver ofertas</a>
+            <div class="container hero__grade">
+                <div class="carrossel-moldura">
+                    <div class="carrossel">
+                        <div class="slide" id="slide1">
+                            <picture>
+                                <source media="(max-width: 700px)" srcset="https://loremflickr.com/700/500/gaming,setup?lock=11">
+                                <img src="https://loremflickr.com/1100/440/gaming,setup?lock=11" alt="Setup gamer com monitor ultrawide, teclado e iluminação lateral" width="1100" height="440">
+                            </picture>
+                            <div class="slide__texto">
+                                <span class="slide__selo">Só esta semana</span>
+                                <h1>Monte seu setup<br>gastando menos</h1>
+                                <p>Monitores, teclados e headsets com até <b>40% OFF</b> no Pix</p>
+                                <a href="#vitrine" class="botao">Aproveitar</a>
+                            </div>
+                        </div>
+                        <div class="slide" id="slide2">
+                            <picture>
+                                <source media="(max-width: 700px)" srcset="https://loremflickr.com/700/500/retro,console?lock=12">
+                                <img src="https://loremflickr.com/1100/440/retro,console?lock=12" alt="Console de videogame retrô com cartuchos clássicos" width="1100" height="440">
+                            </picture>
+                            <div class="slide__texto">
+                                <span class="slide__selo">Revisados</span>
+                                <h2>Retrô com<br>12 meses de garantia</h2>
+                                <p>Consoles clássicos testados peça por peça</p>
+                                <a href="#vitrine" class="botao">Ver consoles</a>
+                            </div>
+                        </div>
+                        <div class="slide" id="slide3">
+                            <picture>
+                                <source media="(max-width: 700px)" srcset="https://loremflickr.com/700/500/action,figure?lock=13">
+                                <img src="https://loremflickr.com/1100/440/action,figure?lock=13" alt="Action figures de personagens de games em prateleira" width="1100" height="440">
+                            </picture>
+                            <div class="slide__texto">
+                                <span class="slide__selo">Pré-venda</span>
+                                <h2>Colecionáveis<br>com frete grátis</h2>
+                                <p>Reserve agora e pague só no lançamento</p>
+                                <a href="#vitrine" class="botao">Reservar</a>
+                            </div>
+                        </div>
                     </div>
+                    <nav class="pontos" aria-label="Escolher banner">
+                        <a href="#slide1" aria-label="Banner 1"></a>
+                        <a href="#slide2" aria-label="Banner 2"></a>
+                        <a href="#slide3" aria-label="Banner 3"></a>
+                    </nav>
                 </div>
-                <div class="slide" id="slide2">
-                    <picture>
-                        <source media="(max-width: 600px)" srcset="https://loremflickr.com/600/600/retro,console?lock=12">
-                        <img src="https://loremflickr.com/1400/500/retro,console?lock=12" alt="Console de videogame retrô com cartuchos clássicos" width="1400" height="500">
-                    </picture>
-                    <div class="slide-texto">
-                        <h2>Nostalgia Retrô</h2>
-                        <p>Consoles clássicos revisados com garantia</p>
-                        <a href="#vitrine" class="botao">Explorar</a>
-                    </div>
-                </div>
-                <div class="slide" id="slide3">
-                    <picture>
-                        <source media="(max-width: 600px)" srcset="https://loremflickr.com/600/600/action,figure?lock=13">
-                        <img src="https://loremflickr.com/1400/500/action,figure?lock=13" alt="Coleção de action figures de personagens de games em prateleira" width="1400" height="500">
-                    </picture>
-                    <div class="slide-texto">
-                        <h2>Colecionáveis</h2>
-                        <p>Action figures em pré-venda com frete grátis</p>
-                        <a href="#vitrine" class="botao">Garantir o meu</a>
-                    </div>
-                </div>
+
+                <aside class="mini-banners" aria-label="Destaques rápidos">
+                    <a href="#" class="mini-banner mini-banner--azul">
+                        <span>Cupom</span>
+                        <b>FORGE10</b>
+                        <small>10% OFF na 1ª compra</small>
+                    </a>
+                    <a href="#" class="mini-banner mini-banner--laranja">
+                        <span>Pix</span>
+                        <b>15% OFF</b>
+                        <small>em todo o site</small>
+                    </a>
+                </aside>
             </div>
-            <nav class="pontos" aria-label="Escolher banner">
-                <a href="#slide1" aria-label="Banner 1"></a>
-                <a href="#slide2" aria-label="Banner 2"></a>
-                <a href="#slide3" aria-label="Banner 3"></a>
-            </nav>
         </section>
 
+        <!-- Vantagens -->
+        <ul class="container vantagens" aria-label="Vantagens da loja">
+            <li><b>12x sem juros</b><span>no cartão de crédito</span></li>
+            <li><b>Entrega expressa</b><span>em até 24h nas capitais</span></li>
+            <li><b>Troca fácil</b><span>7 dias para devolver</span></li>
+            <li><b>Compra segura</b><span>site com certificado SSL</span></li>
+        </ul>
+
         <!-- 3. Categorias circulares -->
-        <section id="categorias" class="categorias">
-            <h2 class="titulo-secao">Categorias em Destaque</h2>
-            <ul class="lista-categorias">
+        <section id="categorias" class="container bloco">
+            <div class="bloco__titulo">
+                <h2>Navegue por categoria</h2>
+                <a href="#">Ver todas ›</a>
+            </div>
+            <ul class="categorias">
                 <li>
                     <a href="#">
-                        <img src="https://loremflickr.com/320/320/playstation,console?lock=21" alt="Console de videogame moderno com controle sem fio" width="140" height="140">
+                        <img src="https://loremflickr.com/320/320/playstation,console?lock=21" alt="Console de videogame moderno com controle sem fio" width="120" height="120">
                         <span>Consoles</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <img src="https://loremflickr.com/400/300/gaming,keyboard?lock=22" alt="Teclado mecânico gamer com iluminação RGB" width="140" height="140">
-                        <span>Periféricos</span>
+                        <img src="https://loremflickr.com/400/300/gaming,keyboard?lock=22" alt="Teclado mecânico com iluminação RGB" width="120" height="120">
+                        <span>Teclados</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <img src="https://loremflickr.com/300/450/figure,toy?lock=23" alt="Action figure de personagem de jogo em pose de batalha" width="140" height="140">
+                        <img src="https://loremflickr.com/300/450/figure,toy?lock=23" alt="Action figure de personagem de jogo em pose de batalha" width="120" height="120">
                         <span>Colecionáveis</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <img src="https://loremflickr.com/500/320/arcade?lock=24" alt="Máquinas de fliperama arcade com telas acesas" width="140" height="140">
+                        <img src="https://loremflickr.com/500/320/arcade?lock=24" alt="Máquinas de fliperama com telas acesas" width="120" height="120">
                         <span>Retrô &amp; Arcade</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="https://loremflickr.com/420/300/graphics,card?lock=25" alt="Placa de vídeo com três ventoinhas" width="120" height="120">
+                        <span>Placas de vídeo</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="https://loremflickr.com/300/300/monitor,computer?lock=26" alt="Monitor gamer curvo sobre a mesa" width="120" height="120">
+                        <span>Monitores</span>
                     </a>
                 </li>
             </ul>
         </section>
 
-        <!-- Faixa de marcas animada -->
-        <section class="marcas" aria-label="Marcas parceiras">
-            <div class="marcas-trilho">
-                <span>NEBULA</span><span>VOLT</span><span>VIPER</span><span>HYPER</span><span>TITAN</span><span>ARCADIA</span>
-                <span aria-hidden="true">NEBULA</span><span aria-hidden="true">VOLT</span><span aria-hidden="true">VIPER</span><span aria-hidden="true">HYPER</span><span aria-hidden="true">TITAN</span><span aria-hidden="true">ARCADIA</span>
+        <!-- 4 e 5. Vitrine -->
+        <section id="vitrine" class="container bloco bloco--relampago">
+            <div class="relampago__topo">
+                <h2>⚡ Oferta Relâmpago</h2>
+                <p class="cronometro" aria-label="Termina em breve">
+                    Termina em
+                    <span class="cronometro__caixa">05</span>:<span class="cronometro__caixa">42</span>:<span class="cronometro__caixa cronometro__seg" aria-hidden="true"></span>
+                </p>
+                <a href="#">Ver todas ›</a>
             </div>
-        </section>
 
-        <!-- 4 e 5. Vitrine de produtos -->
-        <section id="vitrine" class="vitrine">
-            <h2 class="titulo-secao">Vitrine de Produtos</h2>
             <div class="grade">
 
                 <article class="produto">
                     <figure>
-                        <div class="foto">
-                            <span class="etiqueta desconto">-15%</span>
-                            <img src="https://loremflickr.com/800/600/gaming,headset?lock=31" alt="Headset gamer over-ear preto com microfone retrátil e LED azul" width="400" height="400" loading="lazy">
+                        <div class="produto__foto">
+                            <span class="tag tag--desconto">-15%</span>
+                            <img src="https://loremflickr.com/800/600/gaming,headset?lock=31" alt="Headset gamer over-ear preto com microfone retrátil" width="300" height="300" loading="lazy">
                         </div>
                         <figcaption>
-                            <h3>Headset Nebula 7.1</h3>
-                            <p class="preco"><del>R$ 399,90</del> R$ 339,90</p>
+                            <p class="avaliacao" aria-label="Nota 4,8 de 5"><span class="estrelas" style="--nota: 4.8"></span> (1.204)</p>
+                            <h3>Headset Gamer Nebula 7.1 Surround, Drivers 50mm, USB, Preto</h3>
+                            <p class="preco-de">R$ 399,90</p>
+                            <p class="preco-pix">R$ 339,90</p>
+                            <p class="preco-info">À vista no Pix<br>ou 10x de R$ 37,77 sem juros</p>
+                            <div class="estoque" style="--vendido: 72%"><span></span><small>72% vendido</small></div>
                         </figcaption>
                     </figure>
-                    <a href="#" class="botao">Comprar</a>
+                    <a href="#" class="botao botao--comprar">🛒 Comprar</a>
                 </article>
 
                 <article class="produto">
                     <figure>
-                        <div class="foto">
-                            <img src="https://loremflickr.com/600/900/mechanical,keyboard?lock=32" alt="Teclado mecânico compacto com switches azuis e teclas translúcidas RGB" width="400" height="400" loading="lazy">
+                        <div class="produto__foto">
+                            <span class="tag tag--frete">Frete grátis</span>
+                            <img src="https://loremflickr.com/600/900/mechanical,keyboard?lock=32" alt="Teclado mecânico compacto TKL com switches azuis e teclas RGB" width="300" height="300" loading="lazy">
                         </div>
                         <figcaption>
-                            <h3>Teclado Mecânico Volt TKL</h3>
-                            <p class="preco">R$ 289,90</p>
+                            <p class="avaliacao" aria-label="Nota 4,6 de 5"><span class="estrelas" style="--nota: 4.6"></span> (873)</p>
+                            <h3>Teclado Mecânico Volt TKL, Switch Blue, RGB, ABNT2</h3>
+                            <p class="preco-de">R$ 349,90</p>
+                            <p class="preco-pix">R$ 289,90</p>
+                            <p class="preco-info">À vista no Pix<br>ou 10x de R$ 32,21 sem juros</p>
+                            <div class="estoque" style="--vendido: 45%"><span></span><small>45% vendido</small></div>
                         </figcaption>
                     </figure>
-                    <a href="#" class="botao">Comprar</a>
+                    <a href="#" class="botao botao--comprar">🛒 Comprar</a>
                 </article>
 
-                <article class="produto esgotado">
+                <article class="produto produto--esgotado">
                     <figure>
-                        <div class="foto">
-                            <span class="etiqueta selo-esgotado">ESGOTADO</span>
-                            <img src="https://loremflickr.com/900/500/nintendo?lock=33" alt="Console portátil retrô com cartucho de jogo clássico" width="400" height="400" loading="lazy">
+                        <div class="produto__foto">
+                            <span class="tag tag--esgotado">ESGOTADO</span>
+                            <img src="https://loremflickr.com/900/500/nintendo?lock=33" alt="Console portátil retrô com cartucho de jogo clássico" width="300" height="300" loading="lazy">
                         </div>
                         <figcaption>
-                            <h3>Console Portátil Retrô 8-bit</h3>
-                            <p class="preco">Indisponível</p>
+                            <p class="avaliacao" aria-label="Nota 4,9 de 5"><span class="estrelas" style="--nota: 4.9"></span> (2.310)</p>
+                            <h3>Console Portátil Retrô 8-bit, 400 Jogos na Memória, Tela 3"</h3>
+                            <p class="preco-pix">Indisponível</p>
+                            <p class="preco-info">Avisaremos quando voltar ao estoque</p>
+                            <div class="estoque" style="--vendido: 100%"><span></span><small>100% vendido</small></div>
                         </figcaption>
                     </figure>
-                    <a href="#" class="botao botao-secundario">Avise-me</a>
-                </article>
-
-                <article class="produto">
-                    <figure>
-                        <div class="foto">
-                            <span class="etiqueta desconto">-20%</span>
-                            <img src="https://loremflickr.com/700/700/gaming,mouse?lock=34" alt="Mouse gamer ergonômico com 7 botões e iluminação RGB na base" width="400" height="400" loading="lazy">
-                        </div>
-                        <figcaption>
-                            <h3>Mouse Viper Pro 16K DPI</h3>
-                            <p class="preco"><del>R$ 249,90</del> R$ 199,90</p>
-                        </figcaption>
-                    </figure>
-                    <a href="#" class="botao">Comprar</a>
+                    <a href="#" class="botao botao--avise">🔔 Avise-me</a>
                 </article>
 
                 <article class="produto">
                     <figure>
-                        <div class="foto">
-                            <img src="https://loremflickr.com/500/800/gamepad,controller?lock=35" alt="Controle gamer sem fio preto com botões coloridos" width="400" height="400" loading="lazy">
+                        <div class="produto__foto">
+                            <span class="tag tag--desconto">-20%</span>
+                            <img src="https://loremflickr.com/700/700/gaming,mouse?lock=34" alt="Mouse gamer ergonômico com 7 botões e iluminação RGB" width="300" height="300" loading="lazy">
                         </div>
                         <figcaption>
-                            <h3>Controle Wireless Hyper</h3>
-                            <p class="preco">R$ 319,90</p>
+                            <p class="avaliacao" aria-label="Nota 4,7 de 5"><span class="estrelas" style="--nota: 4.7"></span> (3.981)</p>
+                            <h3>Mouse Gamer Viper Pro, 16.000 DPI, 7 Botões, Sem Fio</h3>
+                            <p class="preco-de">R$ 249,90</p>
+                            <p class="preco-pix">R$ 199,90</p>
+                            <p class="preco-info">À vista no Pix<br>ou 10x de R$ 22,21 sem juros</p>
+                            <div class="estoque" style="--vendido: 88%"><span></span><small>Últimas unidades!</small></div>
                         </figcaption>
                     </figure>
-                    <a href="#" class="botao">Comprar</a>
+                    <a href="#" class="botao botao--comprar">🛒 Comprar</a>
                 </article>
 
                 <article class="produto">
                     <figure>
-                        <div class="foto">
-                            <img src="https://loremflickr.com/1000/600/gaming,chair?lock=36" alt="Cadeira gamer reclinável preta com detalhes em vermelho" width="400" height="400" loading="lazy">
+                        <div class="produto__foto">
+                            <img src="https://loremflickr.com/500/800/gamepad,controller?lock=35" alt="Controle gamer sem fio preto com botões coloridos" width="300" height="300" loading="lazy">
                         </div>
                         <figcaption>
-                            <h3>Cadeira Gamer Titan</h3>
-                            <p class="preco">R$ 1.199,90</p>
+                            <p class="avaliacao" aria-label="Nota 4,5 de 5"><span class="estrelas" style="--nota: 4.5"></span> (512)</p>
+                            <h3>Controle Sem Fio Hyper, Bluetooth, PC e Console, Preto</h3>
+                            <p class="preco-de">R$ 369,90</p>
+                            <p class="preco-pix">R$ 319,90</p>
+                            <p class="preco-info">À vista no Pix<br>ou 10x de R$ 35,54 sem juros</p>
+                            <div class="estoque" style="--vendido: 30%"><span></span><small>30% vendido</small></div>
                         </figcaption>
                     </figure>
-                    <a href="#" class="botao">Comprar</a>
+                    <a href="#" class="botao botao--comprar">🛒 Comprar</a>
+                </article>
+
+                <article class="produto">
+                    <figure>
+                        <div class="produto__foto">
+                            <span class="tag tag--frete">Frete grátis</span>
+                            <img src="https://loremflickr.com/1000/600/gaming,chair?lock=36" alt="Cadeira gamer reclinável preta com detalhes em vermelho" width="300" height="300" loading="lazy">
+                        </div>
+                        <figcaption>
+                            <p class="avaliacao" aria-label="Nota 4,4 de 5"><span class="estrelas" style="--nota: 4.4"></span> (298)</p>
+                            <h3>Cadeira Gamer Titan, Reclinável 180°, Almofadas, Preta</h3>
+                            <p class="preco-de">R$ 1.499,90</p>
+                            <p class="preco-pix">R$ 1.199,90</p>
+                            <p class="preco-info">À vista no Pix<br>ou 12x de R$ 111,10 sem juros</p>
+                            <div class="estoque" style="--vendido: 61%"><span></span><small>61% vendido</small></div>
+                        </figcaption>
+                    </figure>
+                    <a href="#" class="botao botao--comprar">🛒 Comprar</a>
                 </article>
 
             </div>
         </section>
 
-        <!-- Chamada final -->
+        <!-- Newsletter -->
         <section class="newsletter">
-            <h2 class="glitch" data-text="Level Up!">Level Up!</h2>
-            <p>Entre para o clã e receba cupons exclusivos toda semana.</p>
-            <form class="form-news" action="#">
-                <input type="email" placeholder="seu@email.com" aria-label="Seu e-mail" required>
-                <button type="submit" class="botao">Inscrever</button>
-            </form>
+            <div class="container newsletter__conteudo">
+                <div>
+                    <h2>Receba ofertas antes de todo mundo</h2>
+                    <p>Cupons exclusivos e alertas de Oferta Relâmpago no seu e-mail.</p>
+                </div>
+                <form class="newsletter__form" action="#">
+                    <input type="email" placeholder="Digite seu e-mail" aria-label="Seu e-mail" required>
+                    <button type="submit" class="botao">Cadastrar</button>
+                </form>
+            </div>
         </section>
 
     </main>
 
     <footer class="rodape">
-        <p><strong>Formas de pagamento:</strong> Pix · Cartão de crédito em até 12x · Boleto</p>
-        <p>&copy; 2026 Pixel Forge Games. Todos os direitos reservados. Projeto acadêmico.</p>
+        <div class="container rodape__colunas">
+            <div>
+                <h3>Institucional</h3>
+                <ul><li><a href="#">Sobre a Pixel Forge</a></li><li><a href="#">Trabalhe conosco</a></li><li><a href="#">Política de privacidade</a></li></ul>
+            </div>
+            <div>
+                <h3>Ajuda</h3>
+                <ul><li><a href="#">Central de atendimento</a></li><li><a href="#">Trocas e devoluções</a></li><li><a href="#">Prazo de entrega</a></li></ul>
+            </div>
+            <div>
+                <h3>Formas de pagamento</h3>
+                <ul class="pagamentos">
+                    <li>Pix</li><li>Visa</li><li>Master</li><li>Elo</li><li>Boleto</li>
+                </ul>
+            </div>
+        </div>
+        <p class="rodape__copy">&copy; 2026 Pixel Forge Comércio de Eletrônicos. Projeto acadêmico, loja fictícia.</p>
     </footer>
 
 </body>
