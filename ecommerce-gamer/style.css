@@ -392,3 +392,478 @@ figcaption h3 {
         height: 110px;
     }
 }
+
+/* =========================================================
+   ANIMAÇÕES E EFEITOS EXTRAS (100% CSS)
+   ========================================================= */
+
+/* Fundo com grade cyberpunk em movimento */
+body {
+    background:
+        linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px) 0 0 / 40px 40px,
+        linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px) 0 0 / 40px 40px,
+        radial-gradient(circle at 20% 0%, #24104a 0%, transparent 50%),
+        radial-gradient(circle at 90% 60%, #0a2a40 0%, transparent 45%),
+        var(--fundo);
+    animation: grade-move 20s linear infinite;
+}
+
+@keyframes grade-move {
+    to { background-position: 40px 40px, 40px 40px, 0 0, 0 0, 0 0; }
+}
+
+/* Linhas de monitor CRT */
+.scanlines {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.12) 0 1px, transparent 1px 3px);
+}
+
+/* Faixa de avisos rolando */
+.faixa-promo,
+.marcas {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.faixa-promo {
+    background: linear-gradient(90deg, var(--rosa), #7b2bff, var(--ciano));
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.35rem 0;
+}
+
+.faixa-trilho,
+.marcas-trilho {
+    display: inline-flex;
+    gap: 4rem;
+    animation: rolar 25s linear infinite;
+}
+
+.faixa-trilho span,
+.marcas-trilho span {
+    flex-shrink: 0;
+}
+
+@keyframes rolar {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.faixa-promo:hover .faixa-trilho,
+.marcas:hover .marcas-trilho {
+    animation-play-state: paused;
+}
+
+/* Logo pulsando em neon */
+.marca img {
+    animation: pulso-neon 2.5s ease-in-out infinite;
+}
+
+.marca:hover img {
+    animation: girar 0.8s ease-in-out;
+}
+
+@keyframes pulso-neon {
+    0%, 100% { filter: drop-shadow(0 0 2px var(--ciano)); }
+    50% { filter: drop-shadow(0 0 12px var(--rosa)); }
+}
+
+@keyframes girar {
+    to { transform: rotate(360deg); }
+}
+
+/* Sublinhado animado no menu */
+.menu a {
+    position: relative;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: var(--ciano);
+    box-shadow: 0 0 8px var(--ciano);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
+
+.menu a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.acoes input {
+    transition: border-color 0.3s, box-shadow 0.3s, width 0.3s;
+    width: 170px;
+}
+
+.acoes input:focus {
+    outline: none;
+    width: 220px;
+    border-color: var(--ciano);
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.6);
+}
+
+.contador {
+    animation: quicar 1.6s ease-in-out infinite;
+}
+
+@keyframes quicar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+/* Banner: zoom lento (Ken Burns) e texto entrando */
+.slide {
+    overflow: hidden;
+}
+
+.slide img {
+    animation: ken-burns 14s ease-in-out infinite alternate;
+}
+
+@keyframes ken-burns {
+    from { transform: scale(1); }
+    to { transform: scale(1.12) translateX(-2%); }
+}
+
+.slide-texto > * {
+    opacity: 0;
+    animation: subir 0.8s ease forwards;
+}
+
+.slide-texto > :nth-child(2) { animation-delay: 0.25s; }
+.slide-texto > :nth-child(3) { animation-delay: 0.5s; }
+
+@keyframes subir {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80px;
+    background: linear-gradient(transparent, var(--fundo));
+    pointer-events: none;
+}
+
+.pontos {
+    z-index: 2;
+}
+
+/* Efeito glitch nos títulos */
+.glitch {
+    position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.glitch::before {
+    color: var(--ciano);
+    animation: glitch-a 3s infinite steps(1);
+}
+
+.glitch::after {
+    color: var(--rosa);
+    animation: glitch-b 3s infinite steps(1);
+}
+
+@keyframes glitch-a {
+    0%, 88%, 100% { clip-path: inset(0 0 100% 0); transform: none; }
+    90% { clip-path: inset(10% 0 60% 0); transform: translate(-4px, -2px); }
+    94% { clip-path: inset(50% 0 20% 0); transform: translate(4px, 1px); }
+}
+
+@keyframes glitch-b {
+    0%, 90%, 100% { clip-path: inset(0 0 100% 0); transform: none; }
+    92% { clip-path: inset(60% 0 10% 0); transform: translate(4px, 2px); }
+    96% { clip-path: inset(20% 0 50% 0); transform: translate(-3px, -1px); }
+}
+
+/* Botões com brilho passando */
+.botao {
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.2s;
+    background-size: 200% 100%;
+    animation: gradiente 4s ease infinite;
+}
+
+.botao:hover {
+    transform: translateY(-2px);
+}
+
+.botao::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.6s;
+}
+
+.botao:hover::before {
+    left: 130%;
+}
+
+@keyframes gradiente {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.botao-secundario {
+    animation: none;
+}
+
+/* Títulos de seção com linha neon */
+.titulo-secao::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    margin: 0.6rem auto 0;
+    background: linear-gradient(90deg, var(--ciano), var(--rosa));
+    box-shadow: 0 0 10px var(--rosa);
+    animation: largura 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes largura {
+    to { width: 180px; }
+}
+
+/* Categorias: anel giratório no hover */
+.lista-categorias li {
+    animation: aparecer 0.7s ease both;
+}
+
+.lista-categorias li:nth-child(2) { animation-delay: 0.1s; }
+.lista-categorias li:nth-child(3) { animation-delay: 0.2s; }
+.lista-categorias li:nth-child(4) { animation-delay: 0.3s; }
+
+.lista-categorias a {
+    position: relative;
+}
+
+.lista-categorias a::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    width: 152px;
+    height: 152px;
+    border-radius: 50%;
+    background: conic-gradient(var(--ciano), var(--rosa), var(--verde), var(--ciano));
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s;
+    animation: girar 3s linear infinite;
+}
+
+.lista-categorias a:hover::before {
+    opacity: 1;
+}
+
+.lista-categorias a:hover span {
+    color: var(--ciano);
+    text-shadow: 0 0 8px var(--ciano);
+}
+
+/* Faixa de marcas */
+.marcas {
+    border-block: 1px solid rgba(0, 240, 255, 0.2);
+    padding: 1.2rem 0;
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--suave);
+}
+
+.marcas-trilho {
+    animation-duration: 18s;
+    animation-direction: reverse;
+}
+
+.marcas span:hover {
+    color: var(--rosa);
+    -webkit-text-stroke-color: var(--rosa);
+}
+
+/* Cards: entrada ao rolar, levitar, borda neon */
+.produto {
+    position: relative;
+    transition: border-color 0.3s, transform 0.4s, box-shadow 0.4s;
+    animation: aparecer 0.8s ease both;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(40px) scale(0.96); }
+    to { opacity: 1; transform: none; }
+}
+
+@supports (animation-timeline: view()) {
+    .produto,
+    .lista-categorias li {
+        animation-timeline: view();
+        animation-range: entry 0% cover 30%;
+        animation-delay: 0s;
+    }
+}
+
+.produto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(255, 43, 214, 0.25), 0 0 0 1px var(--ciano);
+}
+
+.foto::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.25) 50%, transparent 60%);
+    transform: translateX(-100%);
+    transition: transform 0.8s;
+    pointer-events: none;
+}
+
+.produto:hover .foto::after {
+    transform: translateX(100%);
+}
+
+.produto:hover .foto img {
+    transform: scale(1.1);
+}
+
+.desconto {
+    animation: pulso-etiqueta 1.4s ease-in-out infinite;
+}
+
+@keyframes pulso-etiqueta {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 43, 214, 0.7); }
+    50% { box-shadow: 0 0 0 8px rgba(255, 43, 214, 0); }
+}
+
+/* Esgotado: o filtro continua, sem "levitar" */
+.esgotado:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.esgotado:hover .foto img {
+    transform: scale(1.05);
+}
+
+.selo-esgotado {
+    animation: piscar 2s steps(2) infinite;
+}
+
+@keyframes piscar {
+    50% { opacity: 0.75; }
+}
+
+/* Newsletter */
+.newsletter {
+    max-width: 800px;
+    margin: 3rem auto 0;
+    padding: 3rem 2rem;
+    text-align: center;
+    border: 1px solid var(--rosa);
+    border-radius: 16px;
+    background: rgba(21, 26, 45, 0.8);
+    animation: borda-neon 3s ease-in-out infinite;
+}
+
+.newsletter h2 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 2.2rem;
+}
+
+.newsletter p {
+    color: var(--suave);
+    margin: 0.5rem 0 1.5rem;
+}
+
+@keyframes borda-neon {
+    0%, 100% { box-shadow: 0 0 10px rgba(255, 43, 214, 0.4); border-color: var(--rosa); }
+    50% { box-shadow: 0 0 25px rgba(0, 240, 255, 0.5); border-color: var(--ciano); }
+}
+
+.form-news {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.form-news input {
+    flex: 1 1 220px;
+    max-width: 320px;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--suave);
+    border-radius: 6px;
+    background: var(--fundo);
+    color: var(--texto);
+    font: inherit;
+}
+
+.form-news input:focus {
+    outline: none;
+    border-color: var(--ciano);
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.6);
+}
+
+.form-news button {
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+}
+
+@media (max-width: 760px) {
+    .acoes input,
+    .acoes input:focus {
+        width: 150px;
+    }
+
+    .marcas {
+        font-size: 1.2rem;
+    }
+
+    .lista-categorias a::before {
+        width: 122px;
+        height: 122px;
+    }
+}
+
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .slide-texto > * {
+        opacity: 1;
+    }
+}

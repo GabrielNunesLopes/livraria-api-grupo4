@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <div class="faixa-promo" aria-label="Avisos da loja">
+        <div class="faixa-trilho">
+            <span>⚡ Frete grátis acima de R$ 299</span><span>🎮 Pix com 10% OFF</span><span>🔥 Semana RGB: até 40% OFF</span><span>🕹️ Retrô revisado com garantia</span>
+            <span aria-hidden="true">⚡ Frete grátis acima de R$ 299</span><span aria-hidden="true">🎮 Pix com 10% OFF</span><span aria-hidden="true">🔥 Semana RGB: até 40% OFF</span><span aria-hidden="true">🕹️ Retrô revisado com garantia</span>
+        </div>
+    </div>
 
     <!-- 1. Cabeçalho com identidade visual -->
     <header class="topo">
@@ -52,7 +60,7 @@
                         <img src="https://loremflickr.com/1400/500/gaming,setup?lock=11" alt="Setup gamer iluminado com luzes RGB roxas e azuis" width="1400" height="500">
                     </picture>
                     <div class="slide-texto">
-                        <h1>Semana RGB</h1>
+                        <h1 class="glitch" data-text="Semana RGB">Semana RGB</h1>
                         <p>Até 40% OFF em periféricos iluminados</p>
                         <a href="#vitrine" class="botao">Ver ofertas</a>
                     </div>
@@ -116,6 +124,14 @@
                     </a>
                 </li>
             </ul>
+        </section>
+
+        <!-- Faixa de marcas animada -->
+        <section class="marcas" aria-label="Marcas parceiras">
+            <div class="marcas-trilho">
+                <span>NEBULA</span><span>VOLT</span><span>VIPER</span><span>HYPER</span><span>TITAN</span><span>ARCADIA</span>
+                <span aria-hidden="true">NEBULA</span><span aria-hidden="true">VOLT</span><span aria-hidden="true">VIPER</span><span aria-hidden="true">HYPER</span><span aria-hidden="true">TITAN</span><span aria-hidden="true">ARCADIA</span>
+            </div>
         </section>
 
         <!-- 4 e 5. Vitrine de produtos -->
@@ -205,6 +221,16 @@
                 </article>
 
             </div>
+        </section>
+
+        <!-- Chamada final -->
+        <section class="newsletter">
+            <h2 class="glitch" data-text="Level Up!">Level Up!</h2>
+            <p>Entre para o clã e receba cupons exclusivos toda semana.</p>
+            <form class="form-news" action="#">
+                <input type="email" placeholder="seu@email.com" aria-label="Seu e-mail" required>
+                <button type="submit" class="botao">Inscrever</button>
+            </form>
         </section>
 
     </main>
