@@ -1559,3 +1559,105 @@ body {
         grid-auto-columns: 70%;
     }
 }
+
+/* =========================================================
+   CARROSSEL AUTOMÁTICO (@keyframes) — 3 banners, 6s cada
+   ========================================================= */
+
+.carrossel {
+    overflow: visible; /* quem corta é a moldura */
+    scroll-snap-type: none;
+    animation: carrossel 18s infinite;
+}
+
+@keyframes carrossel {
+    0%, 30% { transform: translateX(0); }
+    33.33%, 63.33% { transform: translateX(-100%); }
+    66.66%, 96.66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+}
+
+.slide::before {
+    display: none; /* imagem inteira, sem metade escura */
+}
+
+.slide img {
+    aspect-ratio: 7 / 3;
+    transition: none;
+}
+
+.slide:hover img {
+    transform: none;
+}
+
+/* card de texto entra ~2s depois do banner aparecer */
+.slide__texto {
+    left: 4%;
+    max-width: 430px;
+    padding: 26px 28px;
+    border-radius: 12px;
+    background: rgba(10, 11, 14, 0.82);
+    border-left: 4px solid var(--destaque);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    animation: card-banner 18s infinite both;
+}
+
+.slide__texto > * {
+    animation: none;
+}
+
+#slide2 .slide__texto { animation-delay: 6s; }
+#slide3 .slide__texto { animation-delay: 12s; }
+
+@keyframes card-banner {
+    0%, 11% { opacity: 0; transform: translate(-30px, -50%); }
+    14%, 30% { opacity: 1; transform: translate(0, -50%); }
+    33.33%, 100% { opacity: 0; transform: translate(-30px, -50%); }
+}
+
+/* indicadores acompanham o banner atual */
+.pontos span {
+    width: 28px;
+    height: 5px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.5);
+    animation: ponto 18s infinite both;
+}
+
+.pontos span:nth-child(2) { animation-delay: 6s; }
+.pontos span:nth-child(3) { animation-delay: 12s; }
+
+@keyframes ponto {
+    0%, 32% { background: var(--branco); width: 44px; }
+    34%, 100% { background: rgba(255, 255, 255, 0.5); width: 28px; }
+}
+
+/* pausa ao passar o mouse */
+.carrossel-moldura:hover .carrossel,
+.carrossel-moldura:hover .slide__texto,
+.carrossel-moldura:hover .pontos span {
+    animation-play-state: paused;
+}
+
+@media (max-width: 800px) {
+    .slide img {
+        aspect-ratio: 1 / 1;
+    }
+
+    .slide__texto {
+        top: auto;
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+        padding: 16px;
+        transform: none;
+    }
+
+    @keyframes card-banner {
+        0%, 11% { opacity: 0; transform: translateY(20px); }
+        14%, 30% { opacity: 1; transform: none; }
+        33.33%, 100% { opacity: 0; transform: translateY(20px); }
+    }
+}
