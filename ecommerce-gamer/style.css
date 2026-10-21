@@ -302,7 +302,8 @@ ul {
 
 .slide img {
     width: 100%;
-    aspect-ratio: 5 / 2;
+    height: auto;
+    aspect-ratio: 1400 / 645;
     object-fit: cover;
     transition: transform 6s ease;
 }
@@ -909,7 +910,7 @@ ul {
     }
 
     .slide img {
-        aspect-ratio: 7 / 5;
+        aspect-ratio: 1 / 1;
     }
 
     .vantagens {
@@ -1013,11 +1014,15 @@ html {
     display: block;
 }
 
+#cat-monitores:target ~ .grade .produto:not(.cat-monitores) {
+    display: none;
+}
+
 #cat-perifericos:target ~ .grade .produto:not(.cat-perifericos) {
     display: none;
 }
 
-#cat-consoles:target ~ .grade .produto:not(.cat-consoles) {
+#cat-mouses:target ~ .grade .produto:not(.cat-mouses) {
     display: none;
 }
 
@@ -1029,15 +1034,7 @@ html {
     display: none;
 }
 
-#cat-mouses:target ~ .grade .produto:not(.cat-mouses) {
-    display: none;
-}
-
-#cat-controles:target ~ .grade .produto:not(.cat-controles) {
-    display: none;
-}
-
-#cat-cadeiras:target ~ .grade .produto:not(.cat-cadeiras) {
+#cat-gabinetes:target ~ .grade .produto:not(.cat-gabinetes) {
     display: none;
 }
 
@@ -1053,4 +1050,30 @@ html {
 .categorias a:focus-visible {
     outline: 2px solid var(--destaque);
     outline-offset: 2px;
+}
+
+/* Banner claro (fundo branco) */
+.slide--claro {
+    background: var(--branco);
+}
+
+.slide--claro::before {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.7) 40%, transparent 65%);
+}
+
+.slide--claro .slide__texto {
+    color: var(--texto);
+}
+
+.slide--claro .slide__texto b {
+    color: var(--destaque);
+}
+
+/* fotos de categoria com anel na cor da loja */
+.categorias img {
+    background: var(--branco);
+}
+
+picture {
+    display: block;
 }

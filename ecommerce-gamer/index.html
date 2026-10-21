@@ -57,10 +57,10 @@
         <nav class="departamentos" aria-label="Departamentos">
             <ul class="container">
                 <li><a href="#categorias" class="departamentos__todos"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg> Departamentos</a></li>
+                <li><a href="#cat-monitores">Monitores</a></li>
                 <li><a href="#cat-perifericos">Periféricos</a></li>
                 <li><a href="#cat-headsets">Headsets</a></li>
-                <li><a href="#cat-consoles">Consoles</a></li>
-                <li><a href="#cat-cadeiras">Cadeiras</a></li>
+                <li><a href="#cat-gabinetes">Gabinetes</a></li>
                 <li><a href="#vitrine" class="destaque-menu">Oferta Relâmpago</a></li>
             </ul>
         </nav>
@@ -75,38 +75,44 @@
                     <div class="carrossel">
                         <div class="slide" id="slide1">
                             <picture>
-                                <source media="(max-width: 700px)" srcset="https://loremflickr.com/700/500/gaming,setup?lock=11">
-                                <img src="https://loremflickr.com/1100/440/gaming,setup?lock=11" alt="Setup gamer com monitor ultrawide, teclado e iluminação lateral" width="1100" height="440">
+                                <source media="(max-width: 700px)" type="image/webp" srcset="img/banners/setup-completo-mobile.webp">
+                                <source media="(max-width: 700px)" srcset="img/banners/setup-completo-mobile.jpg">
+                                <source type="image/webp" srcset="img/banners/setup-completo.webp">
+                                <img src="img/banners/setup-completo.jpg" alt="Monitor ASUS TUF Gaming, teclado mecânico RGB e headset sem fio sobre fundo azul e laranja" width="1400" height="645">
                             </picture>
                             <div class="slide__texto">
-                                <span class="slide__selo">Só esta semana</span>
-                                <h1>Monte seu setup<br>gastando menos</h1>
-                                <p>Monitores, teclados e headsets com até <b>40% OFF</b> no Pix</p>
-                                <a href="#vitrine" class="botao">Aproveitar</a>
+                                <span class="slide__selo">Cupom FORGE10</span>
+                                <h1>Setup completo<br>com 10% OFF</h1>
+                                <p>Monitores, teclados e headsets com cupom <b>FORGE10</b> no Pix</p>
+                                <a href="#cat-perifericos" class="botao">Aproveitar</a>
                             </div>
                         </div>
                         <div class="slide" id="slide2">
                             <picture>
-                                <source media="(max-width: 700px)" srcset="https://loremflickr.com/700/500/retro,console?lock=12">
-                                <img src="https://loremflickr.com/1100/440/retro,console?lock=12" alt="Console de videogame retrô com cartuchos clássicos" width="1100" height="440">
+                                <source media="(max-width: 700px)" type="image/webp" srcset="img/banners/pc-gamer-mobile.webp">
+                                <source media="(max-width: 700px)" srcset="img/banners/pc-gamer-mobile.jpg">
+                                <source type="image/webp" srcset="img/banners/pc-gamer.webp">
+                                <img src="img/banners/pc-gamer.jpg" alt="Dois gabinetes gamer com fans ARGB coloridas, um branco e um preto" width="1400" height="645">
                             </picture>
                             <div class="slide__texto">
-                                <span class="slide__selo">Revisados</span>
-                                <h2>Retrô com<br>12 meses de garantia</h2>
-                                <p>Consoles clássicos testados peça por peça</p>
-                                <a href="#vitrine" class="botao">Ver consoles</a>
+                                <span class="slide__selo">Press start</span>
+                                <h2>Os melhores preços<br>pro seu 1º setup</h2>
+                                <p>Gabinetes e PCs em até <b>10x sem juros</b></p>
+                                <a href="#cat-gabinetes" class="botao">Ver gabinetes</a>
                             </div>
                         </div>
-                        <div class="slide" id="slide3">
+                        <div class="slide slide--claro" id="slide3">
                             <picture>
-                                <source media="(max-width: 700px)" srcset="https://loremflickr.com/700/500/action,figure?lock=13">
-                                <img src="https://loremflickr.com/1100/440/action,figure?lock=13" alt="Action figures de personagens de games em prateleira" width="1100" height="440">
+                                <source media="(max-width: 700px)" type="image/webp" srcset="img/banners/monitores-mobile.webp">
+                                <source media="(max-width: 700px)" srcset="img/banners/monitores-mobile.jpg">
+                                <source type="image/webp" srcset="img/banners/monitores.webp">
+                                <img src="img/banners/monitores.jpg" alt="Monitor gamer AOC 27 polegadas QD-OLED e mouse sem fio com base de carregamento RGB" width="1400" height="645">
                             </picture>
                             <div class="slide__texto">
-                                <span class="slide__selo">Pré-venda</span>
-                                <h2>Colecionáveis<br>com frete grátis</h2>
-                                <p>Reserve agora e pague só no lançamento</p>
-                                <a href="#vitrine" class="botao">Reservar</a>
+                                <span class="slide__selo">Lançamento</span>
+                                <h2>QD-OLED 240Hz<br>chegou</h2>
+                                <p>Monitor AOC 27" QHD com <b>12% OFF</b> no Pix</p>
+                                <a href="#cat-monitores" class="botao">Ver monitores</a>
                             </div>
                         </div>
                     </div>
@@ -148,39 +154,57 @@
             </div>
             <ul class="categorias">
                 <li>
-                    <a href="#cat-consoles">
-                        <img src="https://loremflickr.com/320/320/gameboy,console?lock=41" alt="Console Nintendo Game Boy clássico" width="120" height="120">
-                        <span>Consoles</span>
+                    <a href="#cat-monitores">
+                        <picture>
+                            <source type="image/webp" srcset="img/categorias/monitores.webp">
+                            <img src="img/categorias/monitores.jpg" alt="Monitor gamer AOC de 27 polegadas" width="120" height="120">
+                        </picture>
+                        <span>Monitores</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#cat-mouses">
+                        <picture>
+                            <source type="image/webp" srcset="img/categorias/mouses.webp">
+                            <img src="img/categorias/mouses.jpg" alt="Mouse gamer sem fio preto" width="120" height="120">
+                        </picture>
+                        <span>Mouses</span>
                     </a>
                 </li>
                 <li>
                     <a href="#cat-teclados">
-                        <img src="https://loremflickr.com/400/300/redragon,keyboard?lock=42" alt="Teclado mecânico com iluminação RGB" width="120" height="120">
+                        <picture>
+                            <source type="image/webp" srcset="img/categorias/teclados.webp">
+                            <img src="img/categorias/teclados.jpg" alt="Teclado mecânico com iluminação RGB" width="120" height="120">
+                        </picture>
                         <span>Teclados</span>
                     </a>
                 </li>
                 <li>
                     <a href="#cat-headsets">
-                        <img src="https://loremflickr.com/300/450/hyperx,headset?lock=43" alt="Headset gamer com microfone" width="120" height="120">
+                        <picture>
+                            <source type="image/webp" srcset="img/categorias/headsets.webp">
+                            <img src="img/categorias/headsets.jpg" alt="Headset gamer sem fio preto" width="120" height="120">
+                        </picture>
                         <span>Headsets</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#cat-mouses">
-                        <img src="https://loremflickr.com/500/320/logitech,mouse?lock=44" alt="Mouse gamer com iluminação RGB" width="120" height="120">
-                        <span>Mouses</span>
+                    <a href="#cat-gabinetes">
+                        <picture>
+                            <source type="image/webp" srcset="img/categorias/gabinetes.webp">
+                            <img src="img/categorias/gabinetes.jpg" alt="Gabinete gamer branco com fans ARGB" width="120" height="120">
+                        </picture>
+                        <span>Gabinetes</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#cat-controles">
-                        <img src="https://loremflickr.com/420/300/xbox,controller?lock=45" alt="Controle de videogame sem fio" width="120" height="120">
-                        <span>Controles</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#cat-cadeiras">
-                        <img src="https://loremflickr.com/300/300/gaming,chair?lock=46" alt="Cadeira gamer reclinável" width="120" height="120">
-                        <span>Cadeiras</span>
+                    <a href="#cat-gabinetes">
+                        <picture>
+                            <source type="image/webp" srcset="img/categorias/pc-gamer.webp">
+                            <img src="img/categorias/pc-gamer.jpg" alt="Gabinete gamer preto com três fans ARGB" width="120" height="120">
+                        </picture>
+                        <span>PC Gamer</span>
                     </a>
                 </li>
             </ul>
@@ -188,13 +212,12 @@
 
         <!-- 4 e 5. Vitrine -->
         <section id="vitrine" class="container bloco bloco--relampago">
+            <span class="alvo" id="cat-monitores"></span>
             <span class="alvo" id="cat-perifericos"></span>
-            <span class="alvo" id="cat-consoles"></span>
+            <span class="alvo" id="cat-mouses"></span>
             <span class="alvo" id="cat-teclados"></span>
             <span class="alvo" id="cat-headsets"></span>
-            <span class="alvo" id="cat-mouses"></span>
-            <span class="alvo" id="cat-controles"></span>
-            <span class="alvo" id="cat-cadeiras"></span>
+            <span class="alvo" id="cat-gabinetes"></span>
             <div class="relampago__topo">
                 <h2><svg class="ico ico--raio" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z" fill="currentColor"/></svg> Oferta Relâmpago</h2>
                 <p class="cronometro" aria-label="Termina em breve">
@@ -208,112 +231,130 @@
 
             <div class="grade">
 
-                <article class="produto cat-perifericos cat-headsets">
+                <article class="produto cat-monitores">
                     <figure>
                         <div class="produto__foto">
-                            <span class="tag tag--desconto">-15%</span>
-                            <img src="https://loremflickr.com/800/600/hyperx,headset?lock=31" alt="Headset gamer HyperX Cloud II preto com detalhes vermelhos e microfone removível" width="300" height="300" loading="lazy">
+                            <span class="tag tag--desconto">-12%</span>
+                            <picture>
+                                <source type="image/webp" srcset="img/produtos/monitor-aoc-27.webp">
+                                <img src="img/produtos/monitor-aoc-27.jpg" alt="Monitor gamer AOC 27 polegadas QD-OLED com imagem de dragão na tela" width="200" height="200" loading="lazy">
+                            </picture>
                         </div>
                         <figcaption>
-                            <p class="avaliacao" aria-label="Nota 4,8 de 5"><span class="estrelas" style="--nota: 4.8"></span> (1.204)</p>
-                            <h3><a href="https://hyperx.com/collections/gaming-headsets" target="_blank" rel="noopener">Headset Gamer HyperX Cloud II 7.1 Surround, Drivers 53mm, USB, Vermelho</a></h3>
-                            <p class="preco-de">R$ 399,90</p>
-                            <p class="preco-pix">R$ 339,90</p>
-                            <p class="preco-info">À vista no Pix<br>ou 10x de R$ 37,77 sem juros</p>
-                            <div class="estoque" style="--vendido: 72%"><span></span><small>72% vendido</small></div>
+                            <p class="avaliacao" aria-label="Nota 4,9 de 5"><span class="estrelas" style="--nota: 4.9"></span> (1.877)</p>
+                            <h3><a href="https://aoc.com/br/gaming" target="_blank" rel="noopener">Monitor Gamer AOC 27" QD-OLED, QHD, 240Hz, 0.03ms, HDR10</a></h3>
+                            <p class="preco-de">R$ 4.299,90</p>
+                            <p class="preco-pix">R$ 3.799,90</p>
+                            <p class="preco-info">À vista no Pix<br>ou 12x de R$ 351,84 sem juros</p>
+                            <div class="estoque" style="--vendido: 58%"><span></span><small>58% vendido</small></div>
                         </figcaption>
                     </figure>
-                    <a href="https://hyperx.com/collections/gaming-headsets" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
-                </article>
-
-                <article class="produto cat-perifericos cat-teclados">
-                    <figure>
-                        <div class="produto__foto">
-                            <span class="tag tag--frete">Frete grátis</span>
-                            <img src="https://loremflickr.com/600/900/redragon,keyboard?lock=32" alt="Teclado mecânico compacto Redragon Kumara com iluminação RGB" width="300" height="300" loading="lazy">
-                        </div>
-                        <figcaption>
-                            <p class="avaliacao" aria-label="Nota 4,6 de 5"><span class="estrelas" style="--nota: 4.6"></span> (873)</p>
-                            <h3><a href="https://redragon.com.br/" target="_blank" rel="noopener">Teclado Mecânico Gamer Redragon Kumara K552, Switch Outemu Blue, RGB, ABNT2</a></h3>
-                            <p class="preco-de">R$ 349,90</p>
-                            <p class="preco-pix">R$ 289,90</p>
-                            <p class="preco-info">À vista no Pix<br>ou 10x de R$ 32,21 sem juros</p>
-                            <div class="estoque" style="--vendido: 45%"><span></span><small>45% vendido</small></div>
-                        </figcaption>
-                    </figure>
-                    <a href="https://redragon.com.br/" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
-                </article>
-
-                <article class="produto produto--esgotado cat-consoles">
-                    <figure>
-                        <div class="produto__foto">
-                            <span class="tag tag--esgotado">ESGOTADO</span>
-                            <img src="https://loremflickr.com/900/500/gameboy?lock=33" alt="Console portátil Nintendo Game Boy clássico cinza com cartucho" width="300" height="300" loading="lazy">
-                        </div>
-                        <figcaption>
-                            <p class="avaliacao" aria-label="Nota 4,9 de 5"><span class="estrelas" style="--nota: 4.9"></span> (2.310)</p>
-                            <h3><a href="https://www.nintendo.com/pt-br/" target="_blank" rel="noopener">Console Nintendo Game Boy Clássico DMG-01, Revisado, Cinza</a></h3>
-                            <p class="preco-pix">Indisponível</p>
-                            <p class="preco-info">Avisaremos quando voltar ao estoque</p>
-                            <div class="estoque" style="--vendido: 100%"><span></span><small>100% vendido</small></div>
-                        </figcaption>
-                    </figure>
-                    <a href="https://www.nintendo.com/pt-br/" target="_blank" rel="noopener" class="botao botao--avise"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4zM10 21h4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Avise-me</a>
+                    <a href="https://aoc.com/br/gaming" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
                 </article>
 
                 <article class="produto cat-perifericos cat-mouses">
                     <figure>
                         <div class="produto__foto">
                             <span class="tag tag--desconto">-20%</span>
-                            <img src="https://loremflickr.com/700/700/logitech,mouse?lock=34" alt="Mouse gamer Logitech G502 HERO preto com botões laterais" width="300" height="300" loading="lazy">
+                            <picture>
+                                <source type="image/webp" srcset="img/produtos/mouse-sem-fio-dock.webp">
+                                <img src="img/produtos/mouse-sem-fio-dock.jpg" alt="Mouse gamer sem fio preto com base de carregamento com iluminação RGB" width="200" height="200" loading="lazy">
+                            </picture>
                         </div>
                         <figcaption>
                             <p class="avaliacao" aria-label="Nota 4,7 de 5"><span class="estrelas" style="--nota: 4.7"></span> (3.981)</p>
-                            <h3><a href="https://www.logitechg.com/pt-br/products/gaming-mice.html" target="_blank" rel="noopener">Mouse Gamer Logitech G502 HERO, 25.600 DPI, 11 Botões Programáveis, RGB</a></h3>
+                            <h3><a href="https://attackshark.com/" target="_blank" rel="noopener">Mouse Gamer Sem Fio Attack Shark, 26.000 DPI, Dock de Carregamento RGB</a></h3>
                             <p class="preco-de">R$ 249,90</p>
                             <p class="preco-pix">R$ 199,90</p>
                             <p class="preco-info">À vista no Pix<br>ou 10x de R$ 22,21 sem juros</p>
                             <div class="estoque" style="--vendido: 88%"><span></span><small>Últimas unidades!</small></div>
                         </figcaption>
                     </figure>
-                    <a href="https://www.logitechg.com/pt-br/products/gaming-mice.html" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
+                    <a href="https://attackshark.com/" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
                 </article>
 
-                <article class="produto cat-perifericos cat-controles cat-consoles">
-                    <figure>
-                        <div class="produto__foto">
-                            <img src="https://loremflickr.com/500/800/xbox,controller?lock=35" alt="Controle sem fio Xbox preto com botões coloridos" width="300" height="300" loading="lazy">
-                        </div>
-                        <figcaption>
-                            <p class="avaliacao" aria-label="Nota 4,5 de 5"><span class="estrelas" style="--nota: 4.5"></span> (512)</p>
-                            <h3><a href="https://www.xbox.com/pt-BR/accessories" target="_blank" rel="noopener">Controle Sem Fio Xbox Series, Bluetooth, PC e Console, Carbon Black</a></h3>
-                            <p class="preco-de">R$ 369,90</p>
-                            <p class="preco-pix">R$ 319,90</p>
-                            <p class="preco-info">À vista no Pix<br>ou 10x de R$ 35,54 sem juros</p>
-                            <div class="estoque" style="--vendido: 30%"><span></span><small>30% vendido</small></div>
-                        </figcaption>
-                    </figure>
-                    <a href="https://www.xbox.com/pt-BR/accessories" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
-                </article>
-
-                <article class="produto cat-cadeiras">
+                <article class="produto cat-perifericos cat-teclados">
                     <figure>
                         <div class="produto__foto">
                             <span class="tag tag--frete">Frete grátis</span>
-                            <img src="https://loremflickr.com/1000/600/gaming,chair?lock=36" alt="Cadeira gamer reclinável preta e vermelha com almofadas" width="300" height="300" loading="lazy">
+                            <picture>
+                                <source type="image/webp" srcset="img/produtos/teclado-mecanico-75.webp">
+                                <img src="img/produtos/teclado-mecanico-75.jpg" alt="Teclado mecânico compacto 75% preto com iluminação RGB nas teclas" width="390" height="235" loading="lazy">
+                            </picture>
                         </div>
                         <figcaption>
-                            <p class="avaliacao" aria-label="Nota 4,4 de 5"><span class="estrelas" style="--nota: 4.4"></span> (298)</p>
-                            <h3><a href="https://www.thunderx3.com/" target="_blank" rel="noopener">Cadeira Gamer ThunderX3 TGC12, Reclinável 180°, Almofadas, Preta e Vermelha</a></h3>
-                            <p class="preco-de">R$ 1.499,90</p>
-                            <p class="preco-pix">R$ 1.199,90</p>
-                            <p class="preco-info">À vista no Pix<br>ou 12x de R$ 111,10 sem juros</p>
+                            <p class="avaliacao" aria-label="Nota 4,6 de 5"><span class="estrelas" style="--nota: 4.6"></span> (873)</p>
+                            <h3><a href="https://havit.hk/" target="_blank" rel="noopener">Teclado Mecânico Gamer Compacto 75%, Hot-Swap, RGB, ABNT2, Preto</a></h3>
+                            <p class="preco-de">R$ 349,90</p>
+                            <p class="preco-pix">R$ 289,90</p>
+                            <p class="preco-info">À vista no Pix<br>ou 10x de R$ 32,21 sem juros</p>
+                            <div class="estoque" style="--vendido: 45%"><span></span><small>45% vendido</small></div>
+                        </figcaption>
+                    </figure>
+                    <a href="https://havit.hk/" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
+                </article>
+
+                <article class="produto cat-perifericos cat-headsets">
+                    <figure>
+                        <div class="produto__foto">
+                            <span class="tag tag--desconto">-15%</span>
+                            <picture>
+                                <source type="image/webp" srcset="img/produtos/headset-sem-fio.webp">
+                                <img src="img/produtos/headset-sem-fio.jpg" alt="Headset gamer sem fio preto com microfone removível e acabamento em tecido" width="270" height="360" loading="lazy">
+                            </picture>
+                        </div>
+                        <figcaption>
+                            <p class="avaliacao" aria-label="Nota 4,8 de 5"><span class="estrelas" style="--nota: 4.8"></span> (1.204)</p>
+                            <h3><a href="https://havit.hk/" target="_blank" rel="noopener">Headset Gamer Sem Fio Havit Gamenote, Bluetooth e 2.4GHz, Drivers 50mm</a></h3>
+                            <p class="preco-de">R$ 399,90</p>
+                            <p class="preco-pix">R$ 339,90</p>
+                            <p class="preco-info">À vista no Pix<br>ou 10x de R$ 37,77 sem juros</p>
+                            <div class="estoque" style="--vendido: 72%"><span></span><small>72% vendido</small></div>
+                        </figcaption>
+                    </figure>
+                    <a href="https://havit.hk/" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
+                </article>
+
+                <article class="produto cat-gabinetes">
+                    <figure>
+                        <div class="produto__foto">
+                            <span class="tag tag--frete">Frete grátis</span>
+                            <picture>
+                                <source type="image/webp" srcset="img/produtos/gabinete-aquario-branco.webp">
+                                <img src="img/produtos/gabinete-aquario-branco.jpg" alt="Gabinete gamer aquário branco com vidro lateral, water cooler e fans ARGB" width="370" height="410" loading="lazy">
+                            </picture>
+                        </div>
+                        <figcaption>
+                            <p class="avaliacao" aria-label="Nota 4,5 de 5"><span class="estrelas" style="--nota: 4.5"></span> (512)</p>
+                            <h3><a href="https://www.google.com/search?q=gabinete+gamer+aqu%C3%A1rio+branco" target="_blank" rel="noopener">Gabinete Gamer Aquário Branco, Vidro Temperado, 4 Fans ARGB, Micro-ATX</a></h3>
+                            <p class="preco-de">R$ 519,90</p>
+                            <p class="preco-pix">R$ 429,90</p>
+                            <p class="preco-info">À vista no Pix<br>ou 10x de R$ 47,77 sem juros</p>
                             <div class="estoque" style="--vendido: 61%"><span></span><small>61% vendido</small></div>
                         </figcaption>
                     </figure>
-                    <a href="https://www.thunderx3.com/" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
+                    <a href="https://www.google.com/search?q=gabinete+gamer+aqu%C3%A1rio+branco" target="_blank" rel="noopener" class="botao botao--comprar"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.5" fill="currentColor"/><circle cx="17" cy="20" r="1.5" fill="currentColor"/></svg> Comprar</a>
                 </article>
 
+                <article class="produto cat-gabinetes produto--esgotado">
+                    <figure>
+                        <div class="produto__foto">
+                            <span class="tag tag--esgotado">ESGOTADO</span>
+                            <picture>
+                                <source type="image/webp" srcset="img/produtos/gabinete-preto-rgb.webp">
+                                <img src="img/produtos/gabinete-preto-rgb.jpg" alt="Gabinete gamer preto com lateral de vidro e três fans ARGB coloridas" width="280" height="380" loading="lazy">
+                            </picture>
+                        </div>
+                        <figcaption>
+                            <p class="avaliacao" aria-label="Nota 4,4 de 5"><span class="estrelas" style="--nota: 4.4"></span> (2.310)</p>
+                            <h3><a href="https://www.google.com/search?q=gabinete+gamer+mid+tower+preto+3+fans" target="_blank" rel="noopener">Gabinete Gamer Mid-Tower Preto, Lateral de Vidro, 3 Fans ARGB</a></h3>
+                            <p class="preco-pix">Indisponível</p>
+                            <p class="preco-info">Avisaremos quando voltar ao estoque</p>
+                            <div class="estoque" style="--vendido: 100%"><span></span><small>100% vendido</small></div>
+                        </figcaption>
+                    </figure>
+                    <a href="https://www.google.com/search?q=gabinete+gamer+mid+tower+preto+3+fans" target="_blank" rel="noopener" class="botao botao--avise"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4zM10 21h4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Avise-me</a>
+                </article>
             </div>
         </section>
 
