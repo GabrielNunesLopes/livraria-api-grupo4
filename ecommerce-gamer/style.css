@@ -3,18 +3,18 @@
    ========================================================= */
 
 :root {
-    --laranja: #ff6a00;
-    --laranja-escuro: #e05a00;
-    --azul: #0b3b8c;
-    --azul-escuro: #072a66;
-    --azul-noite: #06183d;
-    --fundo: #eef0f4;
+    --destaque: #e5173f;
+    --destaque-escuro: #c10f31;
+    --grafite: #17191f;
+    --grafite-escuro: #0f1115;
+    --grafite-noite: #0a0b0e;
+    --fundo: #f2f2f4;
     --branco: #ffffff;
     --texto: #1f2430;
     --cinza: #6b7280;
     --linha: #dde1e8;
-    --verde: #12a150;
-    --vermelho: #d7263d;
+    --verde: #0f9d58;
+    --vermelho: #9b1028;
     --raio: 8px;
 }
 
@@ -62,7 +62,7 @@ ul {
     padding: 0.7rem 1.4rem;
     border: none;
     border-radius: var(--raio);
-    background: var(--laranja);
+    background: var(--destaque);
     color: var(--branco);
     font: inherit;
     font-weight: 700;
@@ -73,7 +73,7 @@ ul {
 }
 
 .botao:hover {
-    background: var(--laranja-escuro);
+    background: var(--destaque-escuro);
 }
 
 .botao:active {
@@ -82,8 +82,8 @@ ul {
 
 /* ===== Barra superior ===== */
 .barra-topo {
-    background: var(--azul-noite);
-    color: #c9d4ea;
+    background: var(--grafite-noite);
+    color: #b8bcc6;
     font-size: 0.8rem;
 }
 
@@ -95,7 +95,7 @@ ul {
 }
 
 .barra-topo strong {
-    color: var(--laranja);
+    color: var(--destaque);
 }
 
 .barra-topo ul {
@@ -112,7 +112,7 @@ ul {
     position: sticky;
     top: 0;
     z-index: 20;
-    background: var(--azul);
+    background: var(--grafite);
     color: var(--branco);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
@@ -148,7 +148,7 @@ ul {
 }
 
 .marca__nome b {
-    color: var(--laranja);
+    color: var(--destaque);
 }
 
 .busca {
@@ -162,7 +162,7 @@ ul {
 }
 
 .busca:focus-within {
-    border-color: var(--laranja);
+    border-color: var(--destaque);
 }
 
 .busca input {
@@ -177,7 +177,7 @@ ul {
 .busca button {
     border: none;
     background: var(--branco);
-    color: var(--laranja);
+    color: var(--destaque);
     padding: 0 1rem;
     cursor: pointer;
 }
@@ -202,7 +202,7 @@ ul {
 }
 
 .atalho:hover {
-    color: #ffd2b0;
+    color: #ff9fb2;
 }
 
 .carrinho {
@@ -218,7 +218,7 @@ ul {
     display: grid;
     place-items: center;
     border-radius: 50%;
-    background: var(--laranja);
+    background: var(--destaque);
     font-size: 0.72rem;
     font-weight: 700;
     animation: pop 0.5s ease 1s both;
@@ -231,7 +231,7 @@ ul {
 }
 
 .departamentos {
-    background: var(--azul-escuro);
+    background: var(--grafite-escuro);
 }
 
 .departamentos ul {
@@ -251,16 +251,16 @@ ul {
 }
 
 .departamentos a:hover {
-    border-color: var(--laranja);
+    border-color: var(--destaque);
     background: rgba(255, 255, 255, 0.06);
 }
 
 .departamentos__todos {
-    color: var(--laranja);
+    color: var(--destaque);
 }
 
 .destaque-menu {
-    color: #ffd23f;
+    color: #ffcf3a;
 }
 
 /* ===== 2. Carrossel (scroll-snap) ===== */
@@ -297,7 +297,7 @@ ul {
     flex: 0 0 100%;
     scroll-snap-align: start;
     overflow: hidden;
-    background: var(--azul-noite);
+    background: var(--grafite-noite);
 }
 
 .slide img {
@@ -316,7 +316,7 @@ ul {
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: linear-gradient(90deg, rgba(6, 24, 61, 0.92) 0%, rgba(6, 24, 61, 0.55) 45%, transparent 75%);
+    background: linear-gradient(90deg, rgba(10, 11, 14, 0.92) 0%, rgba(10, 11, 14, 0.55) 45%, transparent 75%);
 }
 
 .slide__texto {
@@ -331,7 +331,7 @@ ul {
 
 .slide__selo {
     display: inline-block;
-    background: var(--laranja);
+    background: var(--destaque);
     padding: 0.2rem 0.6rem;
     border-radius: 4px;
     font-size: 0.8rem;
@@ -354,7 +354,7 @@ ul {
 }
 
 .slide__texto b {
-    color: #ffd23f;
+    color: #ffcf3a;
 }
 
 .slide__texto > * {
@@ -389,7 +389,7 @@ ul {
 }
 
 .pontos a:hover {
-    background: var(--laranja);
+    background: var(--destaque);
     width: 40px;
 }
 
@@ -425,12 +425,12 @@ ul {
     line-height: 1.1;
 }
 
-.mini-banner--azul {
-    background: var(--azul) repeating-linear-gradient(-45deg, transparent 0 14px, rgba(255, 255, 255, 0.05) 14px 28px);
+.mini-banner--grafite {
+    background: var(--grafite) repeating-linear-gradient(-45deg, transparent 0 14px, rgba(255, 255, 255, 0.05) 14px 28px);
 }
 
-.mini-banner--laranja {
-    background: var(--laranja) repeating-linear-gradient(-45deg, transparent 0 14px, rgba(0, 0, 0, 0.06) 14px 28px);
+.mini-banner--destaque {
+    background: var(--destaque) repeating-linear-gradient(-45deg, transparent 0 14px, rgba(0, 0, 0, 0.06) 14px 28px);
 }
 
 /* ===== Vantagens ===== */
@@ -447,7 +447,7 @@ ul {
 .vantagens li {
     background: var(--branco);
     padding: 0.9rem 1rem;
-    border-left: 4px solid var(--laranja);
+    border-left: 4px solid var(--destaque);
 }
 
 .vantagens b,
@@ -478,13 +478,13 @@ ul {
     font-family: "Barlow Condensed", sans-serif;
     font-size: 1.6rem;
     text-transform: uppercase;
-    color: var(--azul);
+    color: var(--grafite);
 }
 
 .bloco__titulo a,
 .relampago__topo a {
     margin-left: auto;
-    color: var(--laranja);
+    color: var(--destaque);
     font-weight: 600;
 }
 
@@ -518,16 +518,16 @@ ul {
 
 .categorias a:hover img {
     transform: scale(1.08);
-    border-color: var(--laranja);
+    border-color: var(--destaque);
 }
 
 .categorias a:hover span {
-    color: var(--laranja);
+    color: var(--destaque);
 }
 
 /* ===== 4. Vitrine (Oferta Relâmpago) ===== */
 .bloco--relampago {
-    background: var(--azul);
+    background: var(--grafite);
     border-radius: var(--raio);
     padding: 16px;
 }
@@ -537,7 +537,7 @@ ul {
 }
 
 .relampago__topo a {
-    color: #ffd2b0;
+    color: #ff9fb2;
 }
 
 .cronometro {
@@ -554,7 +554,7 @@ ul {
     padding: 3px 6px;
     border-radius: 4px;
     background: var(--branco);
-    color: var(--azul);
+    color: var(--grafite);
     text-align: center;
     font-weight: 800;
     font-variant-numeric: tabular-nums;
@@ -665,7 +665,7 @@ ul {
 }
 
 .preco-pix {
-    color: var(--laranja);
+    color: var(--destaque);
     font-size: 1.45rem;
     font-weight: 800;
     line-height: 1.1;
@@ -694,7 +694,7 @@ ul {
     display: block;
     height: 100%;
     width: var(--vendido);
-    background: linear-gradient(90deg, #ffb400, var(--laranja));
+    background: linear-gradient(90deg, #ffb400, var(--destaque));
     animation: encher 1.2s ease-out both;
     transform-origin: left;
 }
@@ -731,7 +731,7 @@ ul {
 }
 
 .tag--frete {
-    background: var(--azul);
+    background: var(--grafite);
 }
 
 /* ===== 5. Produto esgotado ===== */
@@ -765,19 +765,19 @@ ul {
     padding: 0.6rem;
     text-align: center;
     background: var(--branco);
-    color: var(--azul);
-    border: 2px solid var(--azul);
+    color: var(--grafite);
+    border: 2px solid var(--grafite);
 }
 
 .botao--avise:hover {
-    background: var(--azul);
+    background: var(--grafite);
     color: var(--branco);
 }
 
 /* ===== Newsletter ===== */
 .newsletter {
     margin-top: 32px;
-    background: var(--laranja);
+    background: var(--destaque);
     color: var(--branco);
 }
 
@@ -812,17 +812,17 @@ ul {
 }
 
 .newsletter__form .botao {
-    background: var(--azul-noite);
+    background: var(--grafite-noite);
 }
 
 .newsletter__form .botao:hover {
-    background: var(--azul);
+    background: var(--grafite);
 }
 
 /* ===== Rodapé ===== */
 .rodape {
-    background: var(--azul-noite);
-    color: #c9d4ea;
+    background: var(--grafite-noite);
+    color: #b8bcc6;
     padding-top: 32px;
 }
 
@@ -843,7 +843,7 @@ ul {
 }
 
 .rodape a:hover {
-    color: var(--laranja);
+    color: var(--destaque);
 }
 
 .pagamentos {
@@ -856,7 +856,7 @@ ul {
     padding: 4px 10px;
     border-radius: 4px;
     background: var(--branco);
-    color: var(--azul);
+    color: var(--grafite);
     font-weight: 700;
     font-size: 0.8rem;
 }
@@ -957,4 +957,31 @@ ul {
 
 .vantagens {
     padding: 0;
+}
+
+/* Ícones SVG */
+.ico {
+    display: inline-block;
+    vertical-align: -3px;
+}
+
+.ico--raio {
+    color: #ffcf3a;
+    vertical-align: -4px;
+}
+
+.produto h3 a:hover {
+    color: var(--destaque);
+    text-decoration: underline;
+}
+
+.redes {
+    display: flex;
+    gap: 1rem;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.redes a:hover {
+    color: var(--destaque);
 }
