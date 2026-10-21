@@ -1014,47 +1014,7 @@ html {
     display: block;
 }
 
-#cat-monitores:target ~ .grade .produto:not(.cat-monitores) {
-    display: none;
-}
-
-#cat-perifericos:target ~ .grade .produto:not(.cat-perifericos) {
-    display: none;
-}
-
-#cat-mouses:target ~ .grade .produto:not(.cat-mouses) {
-    display: none;
-}
-
-#cat-teclados:target ~ .grade .produto:not(.cat-teclados) {
-    display: none;
-}
-
-#cat-headsets:target ~ .grade .produto:not(.cat-headsets) {
-    display: none;
-}
-
-#cat-gabinetes:target ~ .grade .produto:not(.cat-gabinetes) {
-    display: none;
-}
-
-#cat-hardware:target ~ .grade .produto:not(.cat-hardware) {
-    display: none;
-}
-
-#cat-placas:target ~ .grade .produto:not(.cat-placas) {
-    display: none;
-}
-
-#cat-processadores:target ~ .grade .produto:not(.cat-processadores) {
-    display: none;
-}
-
-#cat-memorias:target ~ .grade .produto:not(.cat-memorias) {
-    display: none;
-}
-
-.alvo:target ~ .grade .produto {
+.alvo:target ~ .bloco .produto {
     animation: aparecer-card 0.35s ease both;
 }
 
@@ -1092,4 +1052,325 @@ html {
 
 picture {
     display: block;
+}
+
+
+/* =========================================================
+   LAYOUT "PLANO" — menos caixas, cara de loja real
+   ========================================================= */
+
+body {
+    background: var(--branco);
+}
+
+.hero {
+    padding: 16px 0 0;
+}
+
+.hero__grade {
+    grid-template-columns: 1fr;
+}
+
+.carrossel-moldura {
+    border-radius: 4px;
+}
+
+/* vantagens: só texto separado por linhas */
+.vantagens {
+    margin-top: 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--linha);
+    border-radius: 0;
+    gap: 0;
+}
+
+.vantagens li {
+    background: none;
+    border-left: none;
+    padding: 14px 16px;
+    text-align: center;
+}
+
+.vantagens li + li {
+    border-left: 1px solid var(--linha);
+}
+
+.vantagens b {
+    color: var(--grafite);
+}
+
+/* categorias sem caixa */
+.categorias {
+    background: none;
+    padding: 4px 0;
+    border-radius: 0;
+}
+
+.categorias img {
+    border: 2px solid var(--linha);
+    padding: 3px;
+}
+
+/* títulos de seção com linha */
+.bloco {
+    margin-top: 36px;
+}
+
+.bloco__titulo,
+.relampago__topo {
+    border-bottom: 2px solid var(--grafite);
+    padding-bottom: 8px;
+    margin-bottom: 0;
+}
+
+.bloco__titulo h2,
+.relampago__topo h2 {
+    color: var(--grafite);
+}
+
+/* oferta relâmpago sem caixa escura */
+.bloco--relampago {
+    background: none;
+    border-radius: 0;
+    padding: 0 16px;
+    width: 100%;
+    max-width: 1240px;
+}
+
+.relampago__topo {
+    border-bottom-color: var(--destaque);
+}
+
+.relampago__topo h2,
+.cronometro {
+    color: var(--texto);
+}
+
+.relampago__topo a {
+    color: var(--destaque);
+}
+
+.cronometro__caixa {
+    background: var(--grafite);
+    color: var(--branco);
+}
+
+/* produtos: grade com linhas, sem "card flutuando" */
+.grade {
+    gap: 0;
+    border-left: 1px solid var(--linha);
+}
+
+.produto {
+    border-radius: 0;
+    border-right: 1px solid var(--linha);
+    border-bottom: 1px solid var(--linha);
+    transition: none;
+}
+
+.produto:hover {
+    transform: none;
+    box-shadow: inset 0 0 0 2px var(--destaque);
+}
+
+.produto--esgotado:hover {
+    box-shadow: inset 0 0 0 2px var(--linha);
+}
+
+.produto h3 a:hover {
+    text-decoration: underline;
+}
+
+/* trilhos horizontais com scroll-snap */
+.trilho {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 210px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    border-left: 1px solid var(--linha);
+    scrollbar-width: thin;
+    scrollbar-color: var(--destaque) transparent;
+    padding-bottom: 6px;
+}
+
+.trilho .produto {
+    scroll-snap-align: start;
+}
+
+/* faixa promocional de ponta a ponta */
+.faixa-pc {
+    margin-top: 36px;
+    background: var(--grafite);
+    color: #c9ccd4;
+}
+
+.faixa-pc__conteudo {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.faixa-pc__chamada {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--branco);
+    white-space: nowrap;
+}
+
+.faixa-pc b {
+    color: var(--destaque);
+}
+
+.newsletter {
+    margin-top: 40px;
+}
+
+/* filtro */
+.filtro-ativo {
+    margin: 16px auto 0;
+    color: var(--texto);
+}
+
+.filtro-ativo a {
+    color: var(--destaque);
+}
+
+.alvo:target ~ .faixa-pc {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .faixa-pc__conteudo {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .vantagens li:nth-child(3) {
+        border-left: none;
+    }
+
+    .trilho {
+        grid-auto-columns: 46%;
+    }
+}
+
+#cat-monitores:target ~ .bloco .produto:not(.cat-monitores),
+#cat-monitores:target ~ .bloco:not(:has(.cat-monitores)) {
+    display: none;
+}
+
+#cat-perifericos:target ~ .bloco .produto:not(.cat-perifericos),
+#cat-perifericos:target ~ .bloco:not(:has(.cat-perifericos)) {
+    display: none;
+}
+
+#cat-mouses:target ~ .bloco .produto:not(.cat-mouses),
+#cat-mouses:target ~ .bloco:not(:has(.cat-mouses)) {
+    display: none;
+}
+
+#cat-teclados:target ~ .bloco .produto:not(.cat-teclados),
+#cat-teclados:target ~ .bloco:not(:has(.cat-teclados)) {
+    display: none;
+}
+
+#cat-headsets:target ~ .bloco .produto:not(.cat-headsets),
+#cat-headsets:target ~ .bloco:not(:has(.cat-headsets)) {
+    display: none;
+}
+
+#cat-gabinetes:target ~ .bloco .produto:not(.cat-gabinetes),
+#cat-gabinetes:target ~ .bloco:not(:has(.cat-gabinetes)) {
+    display: none;
+}
+
+#cat-hardware:target ~ .bloco .produto:not(.cat-hardware),
+#cat-hardware:target ~ .bloco:not(:has(.cat-hardware)) {
+    display: none;
+}
+
+#cat-placas:target ~ .bloco .produto:not(.cat-placas),
+#cat-placas:target ~ .bloco:not(:has(.cat-placas)) {
+    display: none;
+}
+
+#cat-processadores:target ~ .bloco .produto:not(.cat-processadores),
+#cat-processadores:target ~ .bloco:not(:has(.cat-processadores)) {
+    display: none;
+}
+
+#cat-memorias:target ~ .bloco .produto:not(.cat-memorias),
+#cat-memorias:target ~ .bloco:not(:has(.cat-memorias)) {
+    display: none;
+}
+
+#cat-armazenamento:target ~ .bloco .produto:not(.cat-armazenamento),
+#cat-armazenamento:target ~ .bloco:not(:has(.cat-armazenamento)) {
+    display: none;
+}
+
+#cat-fontes:target ~ .bloco .produto:not(.cat-fontes),
+#cat-fontes:target ~ .bloco:not(:has(.cat-fontes)) {
+    display: none;
+}
+
+#cat-controles:target ~ .bloco .produto:not(.cat-controles),
+#cat-controles:target ~ .bloco:not(:has(.cat-controles)) {
+    display: none;
+}
+
+/* Mais vendidos: lista compacta (foto ao lado do texto) */
+.lista-compacta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-left: 1px solid var(--linha);
+}
+
+.lista-compacta .produto {
+    flex-direction: row;
+    align-items: center;
+}
+
+.lista-compacta figure {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    align-items: center;
+    flex: 1;
+}
+
+.lista-compacta .estoque,
+.lista-compacta .preco-info,
+.lista-compacta .tag {
+    display: none;
+}
+
+.lista-compacta h3 {
+    min-height: 0;
+}
+
+.lista-compacta figcaption {
+    padding: 12px;
+}
+
+.lista-compacta .botao--comprar {
+    margin: 0 12px 0 0;
+    padding: 0.6rem 0.7rem;
+    font-size: 0;
+}
+
+.lista-compacta .botao--comprar .ico {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 800px) {
+    .lista-compacta {
+        grid-template-columns: 1fr;
+    }
 }
