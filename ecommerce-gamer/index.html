@@ -92,15 +92,14 @@
                     </div>
 
                 </div>
-                <span class="carrossel__seta carrossel__seta--esq" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></span>
-                <span class="carrossel__seta carrossel__seta--dir" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></span>
-                <div class="carrossel__pontos" aria-hidden="true"><span></span><span></span><span></span></div>
+                <button type="button" class="carrossel__seta carrossel__seta--esq" aria-label="Banner anterior"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button>
+                <button type="button" class="carrossel__seta carrossel__seta--dir" aria-label="Próximo banner"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+                <div class="carrossel__pontos"><button type="button" aria-label="Banner 1" class="ativo"></button><button type="button" aria-label="Banner 2"></button><button type="button" aria-label="Banner 3"></button></div>
             </div>
         </section>
 
         <!-- 3. Categorias (imagens circulares) -->
         <section id="categorias" class="container categorias" aria-label="Categorias">
-            <span class="categorias__seta" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></span>
             <ul class="categorias__lista">
                     <li><a href="#mais-procurados"><picture><source type="image/webp" srcset="img/produtos/placa-video-rtx5060ti.webp"><img src="img/produtos/placa-video-rtx5060ti.jpg" alt="Placas de Vídeo" width="400" height="400"></picture><span>Placas de Vídeo</span></a></li>
                     <li><a href="#mais-procurados"><picture><source type="image/webp" srcset="img/produtos/ryzen-7-7800x3d.webp"><img src="img/produtos/ryzen-7-7800x3d.jpg" alt="Processadores" width="400" height="400"></picture><span>Processadores</span></a></li>
@@ -114,7 +113,6 @@
                     <li><a href="#mais-procurados"><picture><source type="image/webp" srcset="img/produtos/fonte-650w.webp"><img src="img/produtos/fonte-650w.jpg" alt="Fontes" width="400" height="400"></picture><span>Fontes</span></a></li>
                     <li><a href="#mais-procurados"><picture><source type="image/webp" srcset="img/produtos/controle-8bitdo-ultimate.webp"><img src="img/produtos/controle-8bitdo-ultimate.jpg" alt="Controles" width="400" height="400"></picture><span>Controles</span></a></li>
             </ul>
-            <span class="categorias__seta categorias__seta--dir" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></span>
         </section>
 
         <!-- 4 e 5. Oferta relâmpago (vitrine) -->
@@ -391,5 +389,6 @@
         <p class="rodape__copy">&copy; 2026 Pixel Forge Games · Projeto acadêmico, loja fictícia.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
