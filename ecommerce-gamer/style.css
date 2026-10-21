@@ -1590,31 +1590,153 @@ body {
     transform: none;
 }
 
-/* card de texto entra ~2s depois do banner aparecer */
+/* texto direto na arte do banner, entra ~2s depois */
 .slide__texto {
-    left: 4%;
-    max-width: 430px;
-    padding: 26px 28px;
-    border-radius: 12px;
-    background: rgba(10, 11, 14, 0.82);
-    border-left: 4px solid var(--destaque);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(4px);
-    opacity: 0;
-    animation: card-banner 18s infinite both;
+    left: 6%;
+    top: 50%;
+    max-width: 560px;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: var(--branco);
+    font-family: "Poppins", sans-serif;
+    transform: translateY(-50%);
 }
 
 .slide__texto > * {
-    animation: none;
+    opacity: 0;
+    animation: texto-banner 18s infinite both;
 }
 
-#slide2 .slide__texto { animation-delay: 6s; }
-#slide3 .slide__texto { animation-delay: 12s; }
+.slide__texto > :nth-child(2) { animation-name: texto-banner-2; }
+.slide__texto > :nth-child(3) { animation-name: texto-banner-3; }
+.slide__texto > :nth-child(4) { animation-name: texto-banner-3; }
 
-@keyframes card-banner {
-    0%, 11% { opacity: 0; transform: translate(-30px, -50%); }
-    14%, 30% { opacity: 1; transform: translate(0, -50%); }
-    33.33%, 100% { opacity: 0; transform: translate(-30px, -50%); }
+#slide2 .slide__texto > * { animation-delay: 6s; }
+#slide3 .slide__texto > * { animation-delay: 12s; }
+
+@keyframes texto-banner {
+    0%, 10% { opacity: 0; transform: translateY(18px); }
+    13%, 31% { opacity: 1; transform: none; }
+    33.33%, 100% { opacity: 0; transform: none; }
+}
+
+@keyframes texto-banner-2 {
+    0%, 12% { opacity: 0; transform: translateY(18px); }
+    15%, 31% { opacity: 1; transform: none; }
+    33.33%, 100% { opacity: 0; transform: none; }
+}
+
+@keyframes texto-banner-3 {
+    0%, 14% { opacity: 0; transform: translateY(18px); }
+    17%, 31% { opacity: 1; transform: none; }
+    33.33%, 100% { opacity: 0; transform: none; }
+}
+
+.slide__pill {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 6px 22px;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    border-radius: 999px;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.slide__titulo {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(2rem, 4.2vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -1.5px;
+    text-transform: none;
+    margin: 0 0 18px;
+}
+
+.slide__titulo mark {
+    background: #ff5c00;
+    color: var(--branco);
+    padding: 0 10px;
+}
+
+.slide__titulo--grande {
+    position: relative;
+    font-size: clamp(4rem, 11vw, 9.5rem);
+    letter-spacing: -6px;
+    line-height: 0.9;
+}
+
+.slide__titulo--grande span {
+    position: absolute;
+    right: -10px;
+    bottom: -6px;
+    background: #ff5c00;
+    padding: 2px 14px;
+    font-size: 0.38em;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.slide__cupom {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin: 18px 0 0;
+    padding: 6px 20px 6px 24px;
+    background: var(--branco);
+    border-radius: 999px;
+    color: #4a4f5c;
+}
+
+.slide__cupom small {
+    font-size: 0.8rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    border-right: 2px dashed #4a4f5c;
+    padding-right: 14px;
+}
+
+.slide__cupom b {
+    color: #ff5c00;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.slide__acoes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+}
+
+.slide__info {
+    padding: 10px 24px;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    border-radius: 999px;
+    font-size: 1.05rem;
+}
+
+.slide__botao {
+    display: inline-block;
+    padding: 12px 34px;
+    border-radius: 999px;
+    background: #ff5c00;
+    color: var(--branco);
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.slide__botao:hover {
+    background: #e05000;
+    transform: translateY(-2px);
+}
+
+.slide__texto > .slide__botao {
+    margin: 18px 0 0 12px;
 }
 
 /* indicadores acompanham o banner atual */
@@ -1636,7 +1758,7 @@ body {
 
 /* pausa ao passar o mouse */
 .carrossel-moldura:hover .carrossel,
-.carrossel-moldura:hover .slide__texto,
+.carrossel-moldura:hover .slide__texto > *,
 .carrossel-moldura:hover .pontos span {
     animation-play-state: paused;
 }
@@ -1646,18 +1768,69 @@ body {
         aspect-ratio: 1 / 1;
     }
 
+}
+
+@media (max-width: 800px) {
     .slide__texto {
-        top: auto;
-        bottom: 16px;
-        left: 16px;
-        right: 16px;
-        padding: 16px;
+        top: 24px;
+        left: 20px;
+        right: 20px;
         transform: none;
     }
 
-    @keyframes card-banner {
-        0%, 11% { opacity: 0; transform: translateY(20px); }
-        14%, 30% { opacity: 1; transform: none; }
-        33.33%, 100% { opacity: 0; transform: translateY(20px); }
+    .slide__pill {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+
+    .slide__titulo {
+        font-size: 1.9rem;
+    }
+
+    .slide__titulo--grande {
+        font-size: 4.5rem;
+    }
+
+    .slide__acoes .slide__info,
+    .slide__cupom small {
+        display: none;
+    }
+}
+
+/* garante a tipografia do banner sobre regras antigas */
+.slide__texto .slide__titulo {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(2rem, 4.2vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.04;
+    letter-spacing: -1.5px;
+    text-transform: none;
+    margin: 0 0 18px;
+}
+
+.slide__texto .slide__titulo--grande {
+    display: inline-block;
+    font-size: clamp(4.5rem, 11vw, 9.5rem);
+    letter-spacing: -6px;
+    line-height: 0.9;
+    margin: 0;
+}
+
+.slide__texto b {
+    color: inherit;
+    font-weight: 800;
+}
+
+.slide__cupom b {
+    color: #ff5c00;
+}
+
+@media (max-width: 800px) {
+    .slide__texto .slide__titulo {
+        font-size: 1.9rem;
+    }
+
+    .slide__texto .slide__titulo--grande {
+        font-size: 4.5rem;
     }
 }
