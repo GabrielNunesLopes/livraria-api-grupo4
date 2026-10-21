@@ -1374,3 +1374,188 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* =========================================================
+   CARDS ENQUADRADOS (padrão de loja virtual)
+   ========================================================= */
+
+.grade {
+    gap: 12px;
+    border-left: none;
+    margin-top: 16px;
+}
+
+.trilho {
+    gap: 12px;
+    border-left: none;
+    grid-auto-columns: 220px;
+    padding: 16px 2px 12px;
+}
+
+.produto {
+    position: relative;
+    background: var(--branco);
+    border: 1px solid #e3e4e8;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.produto:hover {
+    border-color: var(--destaque);
+    box-shadow: 0 8px 20px rgba(23, 25, 31, 0.1);
+}
+
+.produto--esgotado:hover {
+    border-color: #e3e4e8;
+    box-shadow: none;
+}
+
+.produto__foto {
+    padding: 16px;
+    border-bottom: 1px solid #f0f0f3;
+}
+
+.produto__foto img {
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.produto:hover .produto__foto img {
+    transform: scale(1.06);
+}
+
+.favoritar {
+    position: absolute;
+    z-index: 3;
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--branco);
+    border: 1px solid var(--linha);
+    color: var(--cinza);
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.favoritar:hover {
+    color: var(--destaque);
+    border-color: var(--destaque);
+}
+
+.favoritar:hover path {
+    fill: var(--destaque);
+}
+
+.produto figcaption {
+    padding: 12px 14px 0;
+}
+
+.produto__marca {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    color: var(--cinza);
+}
+
+.produto h3 {
+    margin: 2px 0 6px;
+    font-size: 0.88rem;
+    min-height: 3.7em;
+}
+
+.produto h3 a {
+    color: var(--texto);
+}
+
+.avaliacao {
+    margin-bottom: 6px;
+}
+
+.preco-pix {
+    font-size: 1.4rem;
+}
+
+.frete {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 6px;
+    color: var(--verde);
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.botao--comprar,
+.botao--avise {
+    margin: 12px 14px 14px;
+}
+
+/* estoque só na oferta relâmpago */
+.trilho .estoque,
+.lista-compacta .estoque {
+    display: none;
+}
+
+/* mais vendidos */
+.lista-compacta {
+    gap: 12px;
+    border-left: none;
+    margin-top: 16px;
+}
+
+.lista-compacta .produto__foto {
+    padding: 10px;
+    border-bottom: none;
+}
+
+.lista-compacta .favoritar,
+.lista-compacta .frete,
+.lista-compacta .avaliacao {
+    display: none;
+}
+
+.lista-compacta .botao--comprar {
+    margin: 0 12px 0 0;
+}
+
+/* lojas oficiais */
+.marcas__lista {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+    list-style: none;
+}
+
+.marcas__lista a {
+    display: grid;
+    place-items: center;
+    height: 70px;
+    border: 1px solid #e3e4e8;
+    border-radius: 8px;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #a0a3ab;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.marcas__lista a:hover {
+    color: var(--grafite);
+    border-color: var(--destaque);
+}
+
+@media (max-width: 800px) {
+    .marcas__lista {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .trilho {
+        grid-auto-columns: 70%;
+    }
+}
