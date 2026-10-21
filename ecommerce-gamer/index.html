@@ -79,26 +79,23 @@
             <div class="container hero__grade">
                 <div class="carrossel-moldura">
                     <div class="carrossel">
-                        <div class="slide" id="slide1">
-                            <picture>
-                                <source media="(max-width: 700px)" type="image/webp" srcset="img/banners/setup-completo-mobile.webp">
-                                <source media="(max-width: 700px)" srcset="img/banners/setup-completo-mobile.jpg">
-                                <source type="image/webp" srcset="img/banners/setup-completo.webp">
-                                <img src="img/banners/setup-completo.jpg" alt="Monitor ASUS TUF Gaming, teclado mecânico RGB e headset sem fio sobre fundo azul e laranja" width="1400" height="600">
+                        <div class="slide slide--azul" id="slide1">
+                            <picture class="slide__arte">
+                                <source type="image/webp" srcset="img/banners/arte-setup.webp">
+                                <img src="img/banners/arte-setup.jpg" alt="Monitor ASUS TUF Gaming, teclado mecânico RGB e headset sem fio sobre fundo azul e laranja" width="700" height="678">
                             </picture>
+                            <span class="ticket ticket--a" aria-hidden="true">%</span>
+                            <span class="ticket ticket--b" aria-hidden="true">%</span>
                             <div class="slide__texto">
                                 <p class="slide__pill">Desconto exclusivo ativado!</p>
                                 <h1 class="slide__titulo slide__titulo--grande">10%<span>OFF</span></h1>
                                 <p class="slide__cupom"><small>Use o<br>cupom:</small><b>FORGE10</b></p>
-                                <a href="#cat-perifericos" class="slide__botao">Aproveitar</a>
                             </div>
                         </div>
-                        <div class="slide" id="slide2">
-                            <picture>
-                                <source media="(max-width: 700px)" type="image/webp" srcset="img/banners/pc-gamer-mobile.webp">
-                                <source media="(max-width: 700px)" srcset="img/banners/pc-gamer-mobile.jpg">
-                                <source type="image/webp" srcset="img/banners/pc-gamer.webp">
-                                <img src="img/banners/pc-gamer.jpg" alt="Dois gabinetes gamer com fans ARGB coloridas, um branco e um preto" width="1400" height="600">
+                        <div class="slide slide--marinho" id="slide2">
+                            <picture class="slide__arte">
+                                <source type="image/webp" srcset="img/banners/arte-pc.webp">
+                                <img src="img/banners/arte-pc.jpg" alt="Dois gabinetes gamer com fans ARGB coloridas, um branco e um preto, com teclas W A S D ao redor" width="700" height="678">
                             </picture>
                             <div class="slide__texto">
                                 <p class="slide__pill">Press <b>Start</b></p>
@@ -106,17 +103,34 @@
                                 <p class="slide__acoes"><span class="slide__info">Até <b>10x sem juros</b></span><a href="#cat-gabinetes" class="slide__botao">Comprar</a></p>
                             </div>
                         </div>
-                        <div class="slide" id="slide3">
-                            <picture>
-                                <source media="(max-width: 700px)" type="image/webp" srcset="img/banners/perifericos-mobile.webp">
-                                <source media="(max-width: 700px)" srcset="img/banners/perifericos-mobile.jpg">
-                                <source type="image/webp" srcset="img/banners/perifericos.webp">
-                                <img src="img/banners/perifericos.jpg" alt="Gabinete gamer preto, controle 8BitDo com LEDs e mouse sem fio sobre fundo azul e laranja" width="1400" height="600">
-                            </picture>
+                        <div class="slide slide--oferta" id="slide3">
                             <div class="slide__texto">
-                                <p class="slide__pill">Semana dos <b>periféricos</b></p>
-                                <h2 class="slide__titulo">Jogue no seu <mark>ritmo</mark></h2>
-                                <p class="slide__acoes"><span class="slide__info">Até <b>20% OFF</b> no Pix</span><a href="#cat-perifericos" class="slide__botao">Ver ofertas</a></p>
+                                <p class="slide__pill">Oferta relâmpago</p>
+                                <h2 class="slide__titulo">Hardware com <mark>preço de Pix</mark></h2>
+                                <p class="slide__acoes"><a href="#monte-seu-pc" class="slide__botao">Ver todas</a></p>
+                            </div>
+                            <div class="vitrine-banner">
+                                <figure class="vitrine-banner__item">
+                                    <picture>
+                                        <source type="image/webp" srcset="img/produtos/placa-video-rtx5060ti.webp">
+                                        <img src="img/produtos/placa-video-rtx5060ti.jpg" alt="RTX 5060 Ti 8GB" width="200" height="200">
+                                    </picture>
+                                    <figcaption>RTX 5060 Ti 8GB<b>R$ 2.899</b><small>no Pix</small></figcaption>
+                                </figure>
+                                <figure class="vitrine-banner__item">
+                                    <picture>
+                                        <source type="image/webp" srcset="img/produtos/ryzen-7-7800x3d.webp">
+                                        <img src="img/produtos/ryzen-7-7800x3d.jpg" alt="Ryzen 7 7800X3D" width="200" height="200">
+                                    </picture>
+                                    <figcaption>Ryzen 7 7800X3D<b>R$ 2.399</b><small>no Pix</small></figcaption>
+                                </figure>
+                                <figure class="vitrine-banner__item">
+                                    <picture>
+                                        <source type="image/webp" srcset="img/produtos/ssd-kingston-nv3.webp">
+                                        <img src="img/produtos/ssd-kingston-nv3.jpg" alt="SSD NV3 1TB" width="200" height="200">
+                                    </picture>
+                                    <figcaption>SSD NV3 1TB<b>R$ 429</b><small>no Pix</small></figcaption>
+                                </figure>
                             </div>
                         </div>
                     </div>
