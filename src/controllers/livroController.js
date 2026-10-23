@@ -9,17 +9,32 @@ function buscarPorId(req, res) {
   res.json(livro);
 }
 function criar(req, res) {
+  const erro = livroService.validarLivro(req.body, true);
+  if (erro) {
+    res.status(400).json({ erro: erro });
+    return;
+  }
   const novoLivro = livroService.criarLivro(req.body);
   res.status(201).json(novoLivro);
 }
 
 function atualizar(req, res) {
+  const erro = livroService.validarLivro(req.body, true);
+  if (erro) {
+    res.status(400).json({ erro: erro });
+    return;
+  }
   const livro = livroService.atualizarLivro(req.params.id, req.body);
   if (!livro) return res.status(404).json({ erro: "Livro nao encontrado" });
   res.status(200).json(livro);
 }
 
 function atualizarParcial(req, res) {
+  const erro = livroService.validarLivro(req.body, false);
+  if (erro) {
+    res.status(400).json({ erro: erro });
+    return;
+  }
   const livro = livroService.atualizarParcialLivro(req.params.id, req.body);
   if (!livro) return res.status(404).json({ erro: "Livro nao encontrado" });
   res.status(200).json(livro);

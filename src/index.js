@@ -1,6 +1,8 @@
 const express = require("express");
 const routes = require("./routes");
 const logger = require("./middlewares/logger");
+const naoEncontrado = require("./middlewares/naoEncontrado");
+const tratarErros = require("./middlewares/tratarErros");
 
 const app = express();
 const DEFAULT_PORT = 3000;
@@ -19,6 +21,9 @@ app.get("/sobre", (req, res) => {
 });
 
 app.use(routes);
+
+app.use(naoEncontrado);
+app.use(tratarErros);
 
 if (require.main === module) {
   app.listen(PORT, () => {
