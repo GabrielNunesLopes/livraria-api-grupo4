@@ -8,12 +8,13 @@ Importe `postman/livraria.postman_collection.json` no Postman. A coleção cont�
 
 ## Como executar
 
-1. Inicie a API na raiz do projeto com `npm run dev`.
-2. No Postman, selecione a pasta **Livros** e use **Run** para executar as requisições na ordem numerada. A pasta extra **Categorias** pode ser executada da mesma forma.
-3. Confira os resultados. Os status esperados são 200 (listar/buscar existente/alterar), 404 (buscar inexistente ou apagado), 201 (cadastrar) e 204 (apagar).
-4. Execute a pasta novamente sem reiniciar o servidor.
+1. Configure as variáveis MySQL no `.env`, seguindo `.env.example`, e crie o banco executando `src/database/livraria.sql`. Atenção: o script apaga e recria o banco `livraria`.
+2. Inicie a API na raiz do projeto com `npm run dev`.
+3. No Postman, selecione a pasta **Livros** e use **Run** para executar as requisições na ordem numerada. A pasta extra **Categorias** pode ser executada da mesma forma.
+4. Confira os resultados. Os status esperados são 200 (listar/buscar existente/alterar), 404 (buscar inexistente ou apagado), 201 (cadastrar) e 204 (apagar).
+5. Execute a pasta novamente sem reiniciar o servidor.
 
-**Por que a segunda rodada também passa?** A requisição de cadastro salva o ID retornado em uma variável da coleção a cada rodada; as requisições seguintes usam esse novo ID e alteram/apagam o registro recém-criado.
+**Por que a segunda rodada também passa?** Livros são gravados no MySQL e a requisição de cadastro salva o ID retornado em uma variável da coleção a cada rodada; as requisições seguintes usam esse novo ID e alteram/apagam o registro recém-criado. Categorias são mantidas em memória e reiniciam com o servidor.
 
 ## Requisições incluídas
 

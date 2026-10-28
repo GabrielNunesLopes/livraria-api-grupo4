@@ -3,7 +3,9 @@
 **Projeto:** API de Livraria — Grupo 4  
 **Base local:** `http://localhost:3000`
 
-Este guia registra as respostas da atividade e como conferir o CRUD de livros e categorias. Os dados ficam em memória: ao reiniciar o servidor, as categorias e os livros voltam aos dados iniciais.
+Este guia registra as respostas da atividade e como conferir o CRUD de livros e categorias. Livros são persistidos no MySQL; categorias ficam em memória e voltam aos dados iniciais ao reiniciar o servidor.
+
+Para executar o CRUD atual, configure `.env` usando `.env.example` e execute `src/database/livraria.sql` no MySQL Workbench. O script apaga e recria o banco `livraria` e insere três livros iniciais.
 
 ## Divisão de trabalho
 
@@ -67,16 +69,16 @@ Exemplo de criação: `POST /livros` com `{"titulo":"O Hobbit","autor":"J.R.R. T
 
 O contador de IDs só aumenta. Apagar o livro de ID 1 não renumera os demais e não libera esse ID. Ao criar outro livro, ele recebe o próximo ID da sequência, mesmo depois de uma exclusão.
 
-Para reproduzir a sequência do mistério, reinicie o servidor antes de começar. Então:
+Para reproduzir a sequência com o banco recém-criado, execute o script SQL e então:
 
 | Requisição | Esperado |
 |---|---|
 | `DELETE /livros/1` | `204` |
 | `GET /livros/1` | `404` |
 | `GET /livros/2` | `200`, continua com ID 2 |
-| `POST /livros` com o JSON de O Hobbit | `201`, O Hobbit recebe ID 3 |
+| `POST /livros` com o JSON de O Hobbit | `201`, O Hobbit recebe ID 4 |
 
-O Hobbit recebe ID 3 porque o ID 1 foi removido, mas o contador não volta atrás.
+O banco já inicia com três livros, então o próximo ID é 4. Excluir o ID 1 não renumera os demais nem faz o contador voltar atrás.
 
 ## Parte 4 — Conferir categorias
 

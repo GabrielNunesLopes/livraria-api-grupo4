@@ -16,7 +16,7 @@ Arquivos preparados conforme `02-guia-alunos-express-mvc.pdf`:
 
 - `src/routes/livroRoutes.js`: GET `/` e GET `/:indice`
 - `src/controllers/livroController.js`: `listar` e `buscarPorIndice`, com 404
-- `src/services/livroService.js`: array em memória, `listarLivros` e `buscarLivroPorIndice`
+- `src/services/livroService.js`: operações de livros persistidas no MySQL, incluindo listagem e filtros
 - `src/models/Livro.js`: `toJSON()` expondo `preco` e `estoque`
 - `index-additions.txt`: linhas que devem existir em `src/index.js`
 
@@ -67,7 +67,7 @@ livraria-api-grupo4/
 
 - **Routes:** recebem as requisições HTTP e encaminham para os controllers.
 - **Controllers:** recebem a requisição, acionam o service correspondente e enviam a resposta.
-- **Services:** concentram a lógica usada pelas rotas; nesta etapa utilizam estruturas simples em memória, sem banco de dados.
+- **Services:** concentram a lógica usada pelas rotas; livros usam MySQL e categorias permanecem em memória.
 - **Models:** representam as entidades do domínio da livraria.
 
 ## Referências MVC implementadas
@@ -96,7 +96,7 @@ Fluxo:
 categoriaRoutes -> categoriaController -> categoriaService
 ```
 
-As duas rotas retornam listas em memória e funcionam apenas como referência do padrão MVC solicitado nesta etapa.
+`GET /livros` consulta os registros do MySQL; `GET /categorias` retorna a lista mantida em memória.
 
 ## Rotas gerais
 
@@ -128,6 +128,8 @@ Principais ajustes consolidados nesta entrega:
 npm install
 npm run dev
 ```
+
+Antes de iniciar, configure as credenciais do MySQL em `.env`, usando `.env.example` como referência, e execute `src/database/livraria.sql`. O script SQL apaga e recria o banco `livraria` antes de criar a tabela e inserir os livros iniciais.
 
 O ponto de entrada da aplicação é `src/index.js`.
 
