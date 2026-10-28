@@ -7,6 +7,7 @@ workspace:
 cloudResources:
   collections:
     ../postman/collections/Livraria API - Grupo 4: 05bef206-cda1-4017-bd80-17d9caa8951e
+    ../postman/collections/Livraria API - Entrega do Bloco 3: 328341b0-2f77-46d8-8790-e79ce6520b89
 
 # All resources in the `postman/` folder are automatically registered in Local View.
 # Point to additional files outside the `postman/` folder to register them individually. Example:
