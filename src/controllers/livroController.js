@@ -1,12 +1,13 @@
 const livroService = require("../services/livroService");
 
 async function buscarPorId(req, res) {
-  const livro = await livroService.buscarLivroPorId(req.params.id);
+  const id = req.params.id;
+  const livro = await livroService.buscarLivroPorId(id);
   if (!livro) {
     res.status(404).json({ erro: "Livro nao encontrado" });
     return;
   }
-  res.json(livro);
+  res.json(livro); 
 }
 async function criar(req, res) {
   const erro = livroService.validarLivro(req.body, true);
@@ -35,7 +36,10 @@ async function atualizarParcial(req, res) {
     res.status(400).json({ erro: erro });
     return;
   }
-  const livro = await livroService.atualizarParcialLivro(req.params.id, req.body);
+  const livro = await livroService.atualizarParcialLivro(
+    req.params.id,
+    req.body,
+  );
   if (!livro) return res.status(404).json({ erro: "Livro nao encontrado" });
   res.status(200).json(livro);
 }

@@ -71,7 +71,9 @@ async function atualizarLivro(id, dados) {
 
 async function atualizarParcialLivro(id, dados) {
   const colunasPermitidas = ["titulo", "autor", "preco", "estoque"];
-  const campos = colunasPermitidas.filter((campo) => dados[campo] !== undefined);
+  const campos = colunasPermitidas.filter(
+    (campo) => dados[campo] !== undefined,
+  );
   if (campos.length > 0) {
     const atualizacoes = campos.map((campo) => `${campo} = ?`).join(", ");
     const valores = campos.map((campo) => dados[campo]);
