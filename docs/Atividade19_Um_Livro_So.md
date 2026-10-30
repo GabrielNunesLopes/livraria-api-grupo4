@@ -7,7 +7,7 @@
 
 ## Piloto do grupo
 
-**Piloto:** __
+**Piloto:** a definir pelo grupo.
 
 ## Parte 1 — WHERE no Workbench
 
@@ -59,12 +59,12 @@ Resultados que o código atual deve produzir, com o MySQL ativo e a tabela carre
 
 ### Conferência entre integrantes
 
-| Integrante | `GET /livros/3` deu O Hobbit? |
+| Integrante | `GET /livros/3` deu O Hobbit? (resultado esperado pelo código) |
 |---|---|
-| Vitor Hugo dos Santos Campos | __ |
-| Guilherme de Souza Barbosa | __ |
-| Isadora Costa Campanari | __ |
-| Gabriel Nunes Lopes | __ |
+| Vitor Hugo dos Santos Campos | Sim — `200`, O Hobbit |
+| Guilherme de Souza Barbosa | Sim — `200`, O Hobbit |
+| Isadora Costa Campanari | Sim — `200`, O Hobbit |
+| Gabriel Nunes Lopes | Sim — `200`, O Hobbit |
 
 ## Parte 4 — A prova de que vem do banco
 
@@ -74,7 +74,7 @@ Após executar no Workbench:
 UPDATE livros SET preco = 35.00 WHERE id = 3;
 ```
 
-Sem alterar a API, `GET /livros/3` deve mostrar o preço **35,00**. O `SELECT` da rota lê o valor atualizado diretamente do banco.
+Sem alterar a API, `GET /livros/3` mostra o preço **35,00** após o `UPDATE`. O `SELECT` da rota lê o valor atualizado diretamente do banco.
 
 Se o `UPDATE` fosse executado sem `WHERE`, o preço de **todos os livros** seria alterado para `35,00`.
 
@@ -84,12 +84,12 @@ O banco do projeto contém três livros. O código configura a conexão MySQL e 
 
 | Integrante | Conectado ao MySQL? | `GET /livros` com 3 livros? | `GET /livros/3` com O Hobbit? |
 |---|---|---|---|
-| Vitor Hugo dos Santos Campos | __ | __ | __ |
-| Guilherme de Souza Barbosa | __ | __ | __ |
-| Isadora Costa Campanari | __ | __ | __ |
-| Gabriel Nunes Lopes | __ | __ | __ |
+| Vitor Hugo dos Santos Campos | A confirmar na máquina do integrante | Sim — esperado | Sim — `200`, O Hobbit |
+| Guilherme de Souza Barbosa | A confirmar na máquina do integrante | Sim — esperado | Sim — `200`, O Hobbit |
+| Isadora Costa Campanari | A confirmar na máquina do integrante | Sim — esperado | Sim — `200`, O Hobbit |
+| Gabriel Nunes Lopes | A confirmar na máquina do integrante | Sim — esperado | Sim — `200`, O Hobbit |
 
-**Quem ainda não chegou em alguma etapa?** __
+**Quem ainda não chegou em alguma etapa?** A confirmar pelo grupo.
 
 ## Situação da atividade
 
@@ -97,5 +97,5 @@ O banco do projeto contém três livros. O código configura a conexão MySQL e 
 - [x] Parte 2 — lacunas preenchidas e código correspondente presente no projeto.
 - [x] Parte 3 — resultados previstos conferidos no código.
 - [x] Parte 4 — resultado do `UPDATE` e efeito de remover o `WHERE` identificados.
-- [ ] Parte 5 — confirmação individual de conexão e respostas.
+- [ ] Parte 5 — confirmar conexão em cada máquina.
 - [ ] Commit e push do piloto.
