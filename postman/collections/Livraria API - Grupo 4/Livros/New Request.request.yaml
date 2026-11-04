@@ -1,4 +1,17 @@
 $kind: http-request
-url: ""
-method: GET
+url: http://localhost:3000/livros
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"titulo\": \"A Revolução dos Bichos\",\r
+
+    \  \"autor\": \"George Orwell\",\r
+
+    \  \"preco\": 34.9,\r
+
+    \  \"estoque\": 10\r
+
+    }"
 order: 9000

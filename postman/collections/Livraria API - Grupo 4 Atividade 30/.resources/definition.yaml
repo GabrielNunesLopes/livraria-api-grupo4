@@ -1,0 +1,6 @@
+$kind: collection
+description: Coleção CRUD da Atividade 15. Execute sequencialmente cada pasta pelo Collection Runner. IDs são atualizados a cada execução, permitindo repetir sem reiniciar a API.
+variables:
+  baseUrl: http://localhost:3000
+  livroId: ""
+  categoriaId: ""

@@ -25,6 +25,39 @@
       ]
     },
     {
+      "name": "Erros do banco",
+      "item": [
+        {
+          "name": "Titulo grande demais",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"A Saga Interminavel do Livro Que Nunca Acabava de Ter Titulo A Saga Interminavel do Livro Que Nunca Acabava de Ter Titulo A Saga Interminavel do Livro Que Nunca Acabava de Ter Titulo\",\n  \"autor\": \"J.R.R. Tolkien\",\n  \"preco\": 39.9,\n  \"estoque\": 8\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "{{baseUrl}}/livros"
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 400\", function () {", "    pm.response.to.have.status(400);", "});"] } }]
+        },
+        {
+          "name": "Preco grande demais",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"titulo\": \"O Livro Mais Caro\", \"autor\": \"Ninguem\", \"preco\": 123456789012, \"estoque\": 1 }",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": "{{baseUrl}}/livros"
+          },
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 400\", function () {", "    pm.response.to.have.status(400);", "});"] } }]
+        }
+      ]
+    },
+    {
       "name": "Categorias (extra)",
       "item": [
         { "name": "1 - Listar categorias", "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/categorias" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 200\", function () {", "    pm.response.to.have.status(200);", "});"] } }] },
