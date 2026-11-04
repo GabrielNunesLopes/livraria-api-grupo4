@@ -10,8 +10,7 @@
 ## Revezamento
 
 | Ordem | Responsável | Parte |
-|---|---|---|
-| Todos | Todos os integrantes | Parte 1 — Workbench |
+|---|---|---|-6ertds | Todos os integrantes | Parte 1 — Workbench |
 | 1º | Gabriel Nunes Lopes | Parte 2 — POST |
 | 2º | Isadora Costa Campanari | Parte 3 — PUT e PATCH |
 | 3º | Vitor Hugo dos Santos Campos | Parte 4 — DELETE e fim do array |
