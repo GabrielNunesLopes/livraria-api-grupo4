@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Itens do carrinho, frete e resumo do pedido.">
+    <title>Carrinho | Pixel Forge Games</title>
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <meta name="theme-color" content="#0b4fb3">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="cabecalho" id="topo">
+        <div class="container cabecalho__linha">
+            <a href="index.html" class="logo" aria-label="Pixel Forge Games, página inicial">
+                <img src="img/logo.svg" alt="Logotipo Pixel Forge: bigorna laranja com um pixel" width="42" height="42">
+                <span>pixel<b>forge</b></span>
+            </a>
+
+            <a href="#" class="cep"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg><span>Enviar para<br><b>Informe seu CEP</b></span></a>
+
+            <form class="busca" action="#" role="search">
+                <label for="busca" class="sr-only">Buscar produtos</label>
+                <input id="busca" type="search" placeholder="Busque no Pixel Forge!">
+                <button type="submit" aria-label="Buscar"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
+            </form>
+
+            <nav class="conta" aria-label="Conta">
+                <a href="cadastro.html" class="conta__login"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></svg><span>Olá, faça seu <b>login</b><br>ou <b>cadastro</b></span></a>
+                <a href="#" class="conta__icone" aria-label="Favoritos"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></a>
+                <a href="carrinho.html" class="conta__icone" aria-label="Carrinho com 3 itens"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg><span class="conta__qtd">3</span></a>
+            </nav>
+        </div>
+
+        <nav class="menu" aria-label="Departamentos">
+            <ul class="container">
+                <li><a href="index.html#categorias" class="menu__dep"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg> DEPARTAMENTOS</a></li>
+                <li><a href="index.html#oferta">Oferta Relâmpago</a></li>
+                <li><a href="index.html#mais-procurados">Mais procurados</a></li>
+                <li><a href="index.html#monte">Monte seu PC</a></li>
+                <li><a href="index.html#mais-procurados">Hardware</a></li>
+                <li><a href="index.html#mais-procurados">Periféricos</a></li>
+                <li><a href="index.html#mais-procurados">Monitores</a></li>
+                <li><a href="index.html#mais-procurados">Consoles</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container pagina">
+
+        <ol class="etapas" aria-label="Etapas da compra">
+            <li class="etapas__atual"><span>1</span> Carrinho</li>
+            <li><span>2</span> Identificação</li>
+            <li><span>3</span> Pagamento</li>
+        </ol>
+
+        <div class="carrinho">
+            <section class="carrinho__lista">
+                <table class="tabela-carrinho">
+                    <caption>Meu carrinho <small>(3 produtos)</small></caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Preço unitário</th>
+                            <th scope="col">Quantidade</th>
+                            <th scope="col">Subtotal</th>
+                            <th scope="col"><span class="sr-only">Ação</span>Remover</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr data-preco="2899.99">
+                        <td class="carrinho__produto">
+                            <picture><source type="image/webp" srcset="img/produtos/placa-video-rtx5060ti.webp"><img src="img/produtos/placa-video-rtx5060ti.jpg" alt="Placa de Vídeo ASUS Dual GeForce RTX 5060 Ti OC, 8GB" width="400" height="400" loading="lazy"></picture>
+                            <span><a href="produto.html">Placa de Vídeo ASUS Dual GeForce RTX 5060 Ti OC, 8GB</a><small>Placas de Vídeo · Vendido por Pixel Forge</small></span>
+                        </td>
+                        <td data-rotulo="Preço">R$ 2.899,99</td>
+                        <td data-rotulo="Qtd."><label for="qtd1" class="sr-only">Quantidade de Placa de Vídeo ASUS Dual GeForce RTX 5060 Ti OC, 8GB</label><input id="qtd1" type="number" min="1" max="10" value="1" class="carrinho__qtd"></td>
+                        <td data-rotulo="Subtotal" class="carrinho__sub">R$ 2.899,99</td>
+                        <td><button type="button" class="carrinho__remover" aria-label="Remover Placa de Vídeo ASUS Dual GeForce RTX 5060 Ti OC, 8GB"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/></svg></button></td>
+                    </tr>
+                    <tr data-preco="2399.99">
+                        <td class="carrinho__produto">
+                            <picture><source type="image/webp" srcset="img/produtos/ryzen-7-7800x3d.webp"><img src="img/produtos/ryzen-7-7800x3d.jpg" alt="Processador AMD Ryzen 7 7800X3D, 8 Núcleos, AM5" width="400" height="400" loading="lazy"></picture>
+                            <span><a href="produto.html">Processador AMD Ryzen 7 7800X3D, 8 Núcleos, AM5</a><small>Processadores · Vendido por Pixel Forge</small></span>
+                        </td>
+                        <td data-rotulo="Preço">R$ 2.399,99</td>
+                        <td data-rotulo="Qtd."><label for="qtd2" class="sr-only">Quantidade de Processador AMD Ryzen 7 7800X3D, 8 Núcleos, AM5</label><input id="qtd2" type="number" min="1" max="10" value="1" class="carrinho__qtd"></td>
+                        <td data-rotulo="Subtotal" class="carrinho__sub">R$ 2.399,99</td>
+                        <td><button type="button" class="carrinho__remover" aria-label="Remover Processador AMD Ryzen 7 7800X3D, 8 Núcleos, AM5"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/></svg></button></td>
+                    </tr>
+                    <tr data-preco="429.99">
+                        <td class="carrinho__produto">
+                            <picture><source type="image/webp" srcset="img/produtos/ssd-kingston-nv3.webp"><img src="img/produtos/ssd-kingston-nv3.jpg" alt="SSD 1TB Kingston NV3, M.2 NVMe PCIe 4.0" width="400" height="400" loading="lazy"></picture>
+                            <span><a href="produto.html">SSD 1TB Kingston NV3, M.2 NVMe PCIe 4.0</a><small>Armazenamento · Vendido por Pixel Forge</small></span>
+                        </td>
+                        <td data-rotulo="Preço">R$ 429,99</td>
+                        <td data-rotulo="Qtd."><label for="qtd3" class="sr-only">Quantidade de SSD 1TB Kingston NV3, M.2 NVMe PCIe 4.0</label><input id="qtd3" type="number" min="1" max="10" value="2" class="carrinho__qtd"></td>
+                        <td data-rotulo="Subtotal" class="carrinho__sub">R$ 859,98</td>
+                        <td><button type="button" class="carrinho__remover" aria-label="Remover SSD 1TB Kingston NV3, M.2 NVMe PCIe 4.0"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/></svg></button></td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="carrinho__frete-gratis"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.5"/><circle cx="17" cy="17.5" r="1.5"/></svg> Parabéns! Você ganhou <b>frete grátis</b> para Sul e Sudeste.</td>
+                            <td colspan="2" class="carrinho__parcial">Soma parcial: <b class="js-parcial">R$ 6.159,96</b></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <a href="index.html" class="carrinho__voltar"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg> Continuar comprando</a>
+            </section>
+
+            <aside class="order-summary" aria-labelledby="resumo-titulo">
+                <h2 id="resumo-titulo">Resumo do pedido</h2>
+                <dl>
+                    <div><dt>Subtotal</dt><dd class="js-subtotal">R$ 6.159,96</dd></div>
+                    <div><dt>Frete</dt><dd class="resumo__gratis">Grátis</dd></div>
+                    <div class="resumo__desconto"><dt>Desconto</dt><dd class="js-desconto">— R$ 0,00</dd></div>
+                </dl>
+                <form class="cupom" action="#">
+                    <label for="cupom">Cupom de desconto</label>
+                    <div><input id="cupom" type="text" placeholder="Ex.: FORGE10"><button type="submit">Aplicar</button></div>
+                </form>
+                <div class="resumo__total">
+                    <span>Total</span>
+                    <b class="js-total">R$ 6.159,96</b>
+                    <small>em até 12x sem juros ou <b class="js-pix">R$ 5.543,96</b> no PIX</small>
+                </div>
+                <a href="cadastro.html" class="btn-checkout">Finalizar Compra →</a>
+                <p class="resumo__seguro"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> Ambiente seguro</p>
+            </aside>
+        </div>
+
+    </main>
+
+    <footer class="rodape">
+        <div class="container rodape__grade">
+            <div>
+                <a href="index.html" class="logo"><img src="img/logo.svg" alt="Logotipo Pixel Forge" width="36" height="36"><span>pixel<b>forge</b></span></a>
+                <p class="rodape__desc">Loja fictícia criada como projeto acadêmico. Produtos, preços e promoções são demonstrativos.</p>
+            </div>
+            <nav aria-label="Institucional"><h3>Institucional</h3><ul><li><a href="#">Sobre a Pixel Forge</a></li><li><a href="#">Trabalhe conosco</a></li><li><a href="#">Política de privacidade</a></li></ul></nav>
+            <nav aria-label="Ajuda"><h3>Ajuda</h3><ul><li><a href="#">Central de atendimento</a></li><li><a href="#">Trocas e devoluções</a></li><li><a href="#">Prazo de entrega</a></li></ul></nav>
+            <div>
+                <h3>Formas de pagamento</h3>
+                <ul class="pagamentos"><li><img src="img/pagamentos/pix.svg" alt="Pix" width="46" height="30" loading="lazy"></li><li><img src="img/pagamentos/visa.svg" alt="Visa" width="46" height="30" loading="lazy"></li><li><img src="img/pagamentos/mastercard.svg" alt="Mastercard" width="46" height="30" loading="lazy"></li><li><img src="img/pagamentos/elo.svg" alt="Elo" width="46" height="30" loading="lazy"></li><li><img src="img/pagamentos/amex.svg" alt="American Express" width="46" height="30" loading="lazy"></li><li><img src="img/pagamentos/hipercard.svg" alt="Hipercard" width="46" height="30" loading="lazy"></li><li><img src="img/pagamentos/boleto.svg" alt="Boleto bancário" width="46" height="30" loading="lazy"></li></ul>
+                <h3 class="rodape__seg-titulo">Segurança</h3>
+                <p class="rodape__seg"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg> Site seguro · SSL</p>
+            </div>
+        </div>
+        <p class="rodape__copy">&copy; 2026 Pixel Forge Games · Projeto acadêmico, loja fictícia.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
