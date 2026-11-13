@@ -208,8 +208,12 @@ No `atualizarParcialLivro`, junto das outras quatro linhas `if`, acrescentem:
 ### 4.4 — A validação
 No `validarLivro`, antes do `return null;` do fim, acrescentem:
 ```javascript
-  if (dados.categoria_id !== undefined && typeof dados.categoria_id !== "number") {
-    return "O categoria_id deve ser um numero";
+  if (
+    dados.categoria_id !== undefined &&
+    dados.categoria_id !== null &&
+    (!Number.isInteger(dados.categoria_id) || dados.categoria_id < 1)
+  ) {
+    return "O categoria_id deve ser um numero inteiro positivo ou nulo";
   }
 ```
 **Testar:**

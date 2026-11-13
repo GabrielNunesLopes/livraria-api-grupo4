@@ -6,22 +6,271 @@
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
-    { "key": "baseUrl", "value": "http://localhost:3000", "type": "string" },
-    { "key": "livroId", "value": "", "type": "string" },
-    { "key": "categoriaId", "value": "", "type": "string" }
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "livroId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "categoriaId",
+      "value": "",
+      "type": "string"
+    }
   ],
   "item": [
     {
       "name": "Livros",
       "item": [
-        { "name": "1 - Listar livros", "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/livros" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 200\", function () {", "    pm.response.to.have.status(200);", "});"] } }] },
-        { "name": "2 - Buscar livro inexistente", "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/livros/99999" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 404\", function () {", "    pm.response.to.have.status(404);", "});"] } }] },
-        { "name": "3 - Cadastrar livro", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"titulo\": \"O Hobbit\",\n  \"autor\": \"J.R.R. Tolkien\",\n  \"preco\": 39.9,\n  \"estoque\": 10\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/livros" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 201\", function () {", "    pm.response.to.have.status(201);", "});", "pm.collectionVariables.set(\"livroId\", pm.response.json().id);"] } }] },
-        { "name": "4 - Buscar livro cadastrado", "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/livros/{{livroId}}" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 200\", function () {", "    pm.response.to.have.status(200);", "});"] } }] },
-        { "name": "5 - Alterar só o preço", "request": { "method": "PATCH", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"preco\": 35\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/livros/{{livroId}}" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 200\", function () {", "    pm.response.to.have.status(200);", "});"] } }] },
-        { "name": "6 - Substituir tudo", "request": { "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"titulo\": \"O Hobbit\",\n  \"autor\": \"J.R.R. Tolkien\",\n  \"preco\": 42,\n  \"estoque\": 8\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/livros/{{livroId}}" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 200\", function () {", "    pm.response.to.have.status(200);", "});"] } }] },
-        { "name": "7 - Apagar livro", "request": { "method": "DELETE", "header": [], "url": "{{baseUrl}}/livros/{{livroId}}" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 204\", function () {", "    pm.response.to.have.status(204);", "});"] } }] },
-        { "name": "8 - Buscar livro apagado", "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/livros/{{livroId}}" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 404\", function () {", "    pm.response.to.have.status(404);", "});"] } }] }
+        {
+          "name": "1 - Listar livros",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/livros"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"A carga inicial tem pelo menos oito livros\", function () {",
+                  "    const livros = pm.response.json();",
+                  "    pm.expect(livros).to.be.an(\"array\").that.has.lengthOf.at.least(8);",
+                  "});",
+                  "pm.test(\"Todos os oito livros iniciais t?m categoria\", function () {",
+                  "    const livros = pm.response.json().slice(0, 8);",
+                  "    pm.expect(livros.every(livro => livro.categoria_id !== null && livro.categoria !== null)).to.eql(true);",
+                  "});",
+                  "pm.test(\"Os tr?s livros iniciais continuam primeiro e na mesma ordem\", function () {",
+                  "    const titulos = pm.response.json().slice(0, 3).map(livro => livro.titulo);",
+                  "    pm.expect(titulos).to.eql([\"Clean Code\", \"Eloquent JavaScript\", \"O Hobbit\"]);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "2 - Buscar livro inexistente",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/livros/99999"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "3 - Cadastrar livro",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"O Hobbit\",\n  \"autor\": \"J.R.R. Tolkien\",\n  \"preco\": 39.9,\n  \"estoque\": 10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/livros"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "pm.collectionVariables.set(\"livroId\", pm.response.json().id);",
+                  "pm.test(\"O livro criado veio com o t?tulo enviado\", function () {",
+                  "    pm.expect(pm.response.json().titulo).to.eql(\"O Hobbit\");",
+                  "});",
+                  "pm.test(\"Livro sem categoria recebe categoria_id nulo\", function () {",
+                  "    pm.expect(pm.response.json().categoria_id).to.eql(null);",
+                  "});",
+                  "pm.test(\"Livro sem categoria recebe nome de categoria nulo\", function () {",
+                  "    pm.expect(pm.response.json().categoria).to.eql(null);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "4 - Buscar livro cadastrado",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/livros/{{livroId}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"A busca retornou o livro criado\", function () {",
+                  "    pm.expect(String(pm.response.json().id)).to.eql(String(pm.collectionVariables.get(\"livroId\")));",
+                  "});",
+                  "pm.test(\"O nome da categoria continua nulo\", function () {",
+                  "    pm.expect(pm.response.json().categoria).to.eql(null);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "5 - Alterar só o preço",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"preco\": 35\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/livros/{{livroId}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"O PATCH atualizou o pre?o\", function () {",
+                  "    pm.expect(pm.response.json().preco).to.eql(35);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "6 - Substituir tudo",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"O Hobbit\",\n  \"autor\": \"J.R.R. Tolkien\",\n  \"preco\": 42,\n  \"estoque\": 8\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/livros/{{livroId}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"PUT sem categoria_id limpa a rela??o\", function () {",
+                  "    pm.expect(pm.response.json().categoria_id).to.eql(null);",
+                  "    pm.expect(pm.response.json().categoria).to.eql(null);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "7 - Apagar livro",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/livros/{{livroId}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 204\", function () {",
+                  "    pm.response.to.have.status(204);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "8 - Buscar livro apagado",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/livros/{{livroId}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        }
       ]
     },
     {
@@ -31,43 +280,419 @@
           "name": "Titulo grande demais",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"titulo\": \"A Saga Interminavel do Livro Que Nunca Acabava de Ter Titulo A Saga Interminavel do Livro Que Nunca Acabava de Ter Titulo A Saga Interminavel do Livro Que Nunca Acabava de Ter Titulo\",\n  \"autor\": \"J.R.R. Tolkien\",\n  \"preco\": 39.9,\n  \"estoque\": 8\n}",
-              "options": { "raw": { "language": "json" } }
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": "{{baseUrl}}/livros"
           },
-          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 400\", function () {", "    pm.response.to.have.status(400);", "});"] } }]
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});"
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "Preco grande demais",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{ \"titulo\": \"O Livro Mais Caro\", \"autor\": \"Ninguem\", \"preco\": 123456789012, \"estoque\": 1 }",
-              "options": { "raw": { "language": "json" } }
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": "{{baseUrl}}/livros"
           },
-          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 400\", function () {", "    pm.response.to.have.status(400);", "});"] } }]
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});"
+                ]
+              }
+            }
+          ]
         }
       ]
     },
     {
       "name": "Categorias (extra)",
       "item": [
-        { "name": "1 - Listar categorias", "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/categorias" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 200\", function () {", "    pm.response.to.have.status(200);", "});"] } }] },
-        { "name": "2 - Buscar categoria inexistente", "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/categorias/99999" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 404\", function () {", "    pm.response.to.have.status(404);", "});"] } }] },
-        { "name": "3 - Cadastrar categoria", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Infantil\",\n  \"descricao\": \"Livros para criancas\"\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/categorias" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 201\", function () {", "    pm.response.to.have.status(201);", "});", "pm.collectionVariables.set(\"categoriaId\", pm.response.json().id);"] } }] },
-        { "name": "4 - Buscar categoria cadastrada", "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/categorias/{{categoriaId}}" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 200\", function () {", "    pm.response.to.have.status(200);", "});"] } }] },
-        { "name": "5 - Alterar só a descrição", "request": { "method": "PATCH", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"descricao\": \"De 6 a 10 anos\"\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/categorias/{{categoriaId}}" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 200\", function () {", "    pm.response.to.have.status(200);", "});"] } }] },
-        { "name": "6 - Substituir tudo", "request": { "method": "PUT", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Infantojuvenil\",\n  \"descricao\": \"Criancas e adolescentes\"\n}", "options": { "raw": { "language": "json" } } }, "url": "{{baseUrl}}/categorias/{{categoriaId}}" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 200\", function () {", "    pm.response.to.have.status(200);", "});"] } }] },
-        { "name": "7 - Apagar categoria", "request": { "method": "DELETE", "header": [], "url": "{{baseUrl}}/categorias/{{categoriaId}}" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 204\", function () {", "    pm.response.to.have.status(204);", "});"] } }] },
-        { "name": "8 - Buscar categoria apagada", "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/categorias/{{categoriaId}}" }, "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test(\"Status code is 404\", function () {", "    pm.response.to.have.status(404);", "});"] } }] }
+        {
+          "name": "1 - Listar categorias",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/categorias"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"A carga inicial cont?m Tecnologia e Infantil\", function () {",
+                  "    const nomes = pm.response.json().map(categoria => categoria.nome);",
+                  "    pm.expect(nomes).to.include.members([\"Tecnologia\", \"Infantil\"]);",
+                  "});",
+                  "pm.test(\"A lista inicial tem pelo menos tr?s categorias\", function () {",
+                  "    pm.expect(pm.response.json()).to.have.lengthOf.at.least(3);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "2 - Buscar categoria inexistente",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/categorias/99999"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "3 - Cadastrar categoria",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Categoria temporaria\",\n  \"descricao\": \"Categoria criada pelo Runner\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/categorias"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "pm.collectionVariables.set(\"categoriaId\", pm.response.json().id);",
+                  "pm.test(\"A categoria de teste foi criada\", function () {",
+                  "    pm.expect(pm.response.json().nome).to.eql(\"Categoria temporaria\");",
+                  "});",
+                  "pm.test(\"O id da categoria criada e valido\", function () {",
+                  "    pm.expect(pm.response.json().id).to.be.at.least(4);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "4 - Buscar categoria cadastrada",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/categorias/{{categoriaId}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"A busca retornou a categoria criada\", function () {",
+                  "    pm.expect(pm.response.json().nome).to.eql(\"Categoria temporaria\");",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "5 - Alterar só a descrição",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"descricao\": \"De 6 a 10 anos\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/categorias/{{categoriaId}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "6 - Substituir tudo",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Infantojuvenil\",\n  \"descricao\": \"Criancas e adolescentes\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/categorias/{{categoriaId}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "7 - Apagar categoria",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/categorias/{{categoriaId}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 204\", function () {",
+                  "    pm.response.to.have.status(204);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "8 - Buscar categoria apagada",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/categorias/{{categoriaId}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Relacionamento",
+      "item": [
+        {
+          "name": "Livro vem com a categoria",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/livros/1"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Veio o nome da categoria\", function () {",
+                  "    pm.expect(pm.response.json().categoria).to.eql(\"Tecnologia\");",
+                  "});",
+                  "pm.test(\"O livro exp?e categoria_id\", function () {",
+                  "    pm.expect(pm.response.json().categoria_id).to.eql(2);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Livros de uma categoria",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/livros?categoria=tec"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Livro com categoria inexistente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Livro de teste da FK\",\n  \"autor\": \"Autor de teste\",\n  \"preco\": 25.9,\n  \"estoque\": 3,\n  \"categoria_id\": 99999\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/livros"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "pm.test(\"O erro explica que a categoria nao existe\", function () {",
+                  "    pm.expect(pm.response.json().erro).to.include(\"categoria informada nao existe\");",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Apagar categoria com livros",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/categorias/1"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 409\", function () {",
+                  "    pm.response.to.have.status(409);",
+                  "});",
+                  "pm.test(\"O erro explica o conflito com os livros\", function () {",
+                  "    pm.expect(pm.response.json().erro).to.include(\"nao pode ser apagada\");",
+                  "});"
+                ]
+              }
+            }
+          ]
+        }
       ]
     }
   ]

@@ -120,146 +120,120 @@ Contagem preliminar de baixa complexidade, baseada nas operações atualmente ob
 
 ## Complemento — Orçamento e papéis do projeto
 
-Deixem abertas a estimativa escolhida em 23/10, a lista de recursos do projeto e a matriz de riscos revisada em 16/10. Usem esses registros para preencher o orçamento e distribuir os papéis. Confirmem as decisões com o grupo antes de entregar.
-
-As taxas de referência são iguais para todos os grupos: **desenvolvimento, R$ 40,00 por hora; gestão de projeto/PO, R$ 60,00 por hora.**
+**Base adotada para este orçamento:** estimativa preliminar de Pontos de Função registrada acima. A escolha formal feita pelo grupo em 23/10 não está registrada nos arquivos disponíveis; por isso, este preenchimento usa os 56 PF como base explícita para estimar o produto inteiro. Confirmem essa escolha e os valores com os registros do grupo antes de entregar.
 
 ### Parte 1 — Orçamento do projeto
 
-### 1.1 Base da estimativa
+#### 1.1 Base da estimativa
 
-**Estimativa usada:** ☐ Planning Poker  ☐ Pontos de Função  ☐ Outra: __________________________
+**Estimativa usada:** ☒ Pontos de Função (contagem preliminar)  
+**Total de horas de desenvolvimento:** 56 PF × 8 h/PF = **448 horas**.
 
-**Total de horas de desenvolvimento:** __________ horas
+Foi escolhida como referência por cobrir o escopo funcional contado para livros e categorias, enquanto as 14 horas de Planning Poker acima cobrem apenas tarefas selecionadas. A contagem e a produtividade de 8 h/PF continuam sendo premissas a validar com os requisitos oficiais.
 
-**Por que o grupo escolheu essa estimativa?** Retomem a justificativa registrada em 23/10.
+#### 1.2 Custo de pessoal
 
-____________________________________________________________________________
-
-____________________________________________________________________________
-
-### 1.2 Custo de pessoal
-
-Escolham um percentual de gestão entre 10% e 20%. Calculem as horas de gestão multiplicando as horas de desenvolvimento pelo percentual escolhido. Em cada linha, registrem a conta e o custo.
-
-**Percentual de horas de gestão:** __________ %
+**Percentual de horas de gestão:** 15%.
 
 | Papel | Horas e cálculo | Custo por hora | Custo |
 |---|---:|---:|---:|
-| Desenvolvimento | __________ h | R$ 40,00 | R$ __________ |
-| Gestão (horas de desenvolvimento × percentual) | __________ h | R$ 60,00 | R$ __________ |
-| **Total de pessoal** |  |  | **R$ __________** |
+| Desenvolvimento | 448 h × R$ 40,00 | R$ 40,00 | R$ 17.920,00 |
+| Gestão | 448 h × 15% = 67,2 h | R$ 60,00 | R$ 4.032,00 |
+| **Total de pessoal** |  |  | **R$ 21.952,00** |
 
-### 1.3 Infraestrutura
+#### 1.3 Infraestrutura
 
-Registrem o valor mensal ou único. Para um item mensal, multipliquem o valor mensal pela quantidade de meses de uso. Para um item de custo único, anotem o valor total na coluna de custo.
+Custos incrementais considerados para o projeto acadêmico; computadores, laboratório e internet já disponíveis não têm valor adicional informado.
 
 | Item | Valor mensal ou único | Meses de uso | Custo |
 |---|---:|---:|---:|
-| ______________________________ | R$ __________ | ______ | R$ __________ |
-| ______________________________ | R$ __________ | ______ | R$ __________ |
-| ______________________________ | R$ __________ | ______ | R$ __________ |
-| **Total de infraestrutura** |  |  | **R$ __________** |
+| Computadores/laboratório existentes | R$ 0,00 adicional | — | R$ 0,00 |
+| Rede/internet disponível | R$ 0,00 adicional | — | R$ 0,00 |
+| **Total de infraestrutura** |  |  | **R$ 0,00** |
 
-### 1.4 Software e serviços
+#### 1.4 Software e serviços
+
+Custos considerados zero por uso das edições gratuitas/código aberto ou recursos já disponíveis; não é uma cotação comercial.
 
 | Item | Gratuito ou pago? | Custo |
 |---|---|---:|
-| ______________________________ | __________________ | R$ __________ |
-| ______________________________ | __________________ | R$ __________ |
-| ______________________________ | __________________ | R$ __________ |
-| ______________________________ | __________________ | R$ __________ |
-| **Total de software e serviços** |  | **R$ __________** |
+| GitHub e Projects | Gratuito, conforme conta disponível | R$ 0,00 |
+| Visual Studio Code, Node.js e Express | Gratuito/código aberto | R$ 0,00 |
+| MySQL Community | Gratuito/código aberto | R$ 0,00 |
+| Postman | Plano gratuito | R$ 0,00 |
+| **Total de software e serviços** |  | **R$ 0,00** |
 
-### 1.5 Reserva de contingência
+#### 1.5 Reserva de contingência
 
-Listem os riscos médios e altos da matriz revisada usando o número e o nome de cada risco.
+Riscos médios e altos da matriz de riscos do grupo:
 
 | Número e nome do risco | Classificação |
 |---|---|
-| ______________________________ | __________________ |
-| ______________________________ | __________________ |
-| ______________________________ | __________________ |
-| ______________________________ | __________________ |
+| 1 — Conflitos de integração | Médio |
+| 2 — Atraso na migração | Alto |
+| 3 — Falha na autenticação | Alto |
+| 4 — Ausência de integrante | Médio |
+| 6 — Payload inválido | Médio |
+| 7 — Configuração do ambiente | Médio |
+| 8 — Estimativa imprecisa | Médio |
 
-**Percentual escolhido para a reserva:** __________ %
+**Percentual escolhido para a reserva:** 15%.
 
-**Justificativa ligada aos riscos listados:**
+O percentual fica dentro da faixa definida na atividade e reserva margem para retrabalho de integração, atraso de migração, autenticação, ambiente e estimativa. Os riscos 2 e 3 são altos; os demais listados são médios.
 
-____________________________________________________________________________
-
-____________________________________________________________________________
-
-### 1.6 Resumo do orçamento
+#### 1.6 Resumo do orçamento
 
 | Bloco | Cálculo | Valor |
 |---|---|---:|
-| 1. Pessoal | Conforme seção 1.2 | R$ __________ |
-| 2. Infraestrutura | Conforme seção 1.3 | R$ __________ |
-| 3. Software e serviços | Conforme seção 1.4 | R$ __________ |
-| **Subtotal (1 + 2 + 3)** | R$ __________ + R$ __________ + R$ __________ | **R$ __________** |
-| 4. Reserva de contingência | Subtotal × __________ % | R$ __________ |
-| **Total do projeto** | Subtotal + reserva | **R$ __________** |
+| 1. Pessoal | R$ 17.920,00 + R$ 4.032,00 | R$ 21.952,00 |
+| 2. Infraestrutura | Custos incrementais | R$ 0,00 |
+| 3. Software e serviços | Custos incrementais | R$ 0,00 |
+| **Subtotal (1 + 2 + 3)** | R$ 21.952,00 + R$ 0,00 + R$ 0,00 | **R$ 21.952,00** |
+| 4. Reserva de contingência | R$ 21.952,00 × 15% | R$ 3.292,80 |
+| **Total do projeto** | R$ 21.952,00 + R$ 3.292,80 | **R$ 25.244,80** |
 
 ### Parte 2 — Equipe, papéis e matriz RACI
 
-### 2.1 Papéis de cada integrante
+#### 2.1 Papéis de cada integrante
 
-| Integrante | Papel ou papéis no projeto | Papel no Scrum em 16/10 |
+| Integrante | Papel no projeto | Papel no Scrum registrado no planejamento |
 |---|---|---|
-| Gabriel Nunes Lopes | ______________________________ | ______________________________ |
-| Guilherme de Souza Barbosa | ______________________________ | ______________________________ |
-| Vitor Hugo dos Santos Campos | ______________________________ | ______________________________ |
-| Isadora Costa Campanari | ______________________________ | ______________________________ |
+| Gabriel Nunes Lopes | Desenvolvimento, integração e acompanhamento do projeto | Scrum Master |
+| Guilherme de Souza Barbosa | Desenvolvimento e configuração do banco/ambiente | Desenvolvedor |
+| Vitor Hugo dos Santos Campos | Desenvolvimento e persistência | Desenvolvedor |
+| Isadora Costa Campanari | Requisitos, validação e priorização | Product Owner |
 
-### 2.2 Matriz RACI
+#### 2.2 Matriz RACI
 
-Preencham as células com **R**, **A**, **C** ou **I**. Também podem combinar papéis na mesma célula, como **A/R**. Deixem em branco quando a pessoa não estiver envolvida.
-
-- **R — Responsável:** executa a atividade.
-- **A — Responsável final:** responde pelo resultado e dá a aprovação final. Deve haver exatamente um A por atividade.
-- **C — Consultado:** contribui com informações ou orientação.
-- **I — Informado:** recebe atualizações sobre a atividade.
+**R** executa; **A** responde pelo resultado; **C** é consultado; **I** é informado. Há exatamente um A e pelo menos um R em cada atividade.
 
 | Atividade | Gabriel | Guilherme | Vitor | Isadora |
-|---|---|---|---|---|---|
-| Levantamento e revisão de requisitos |  |  |  |  |  |
-| Modelagem do banco de dados |  |  |  |  |  |
-| Rotas de livros (CRUD e busca) |  |  |  |  |  |
-| Rotas de categorias |  |  |  |  |  |
-| Testes da API |  |  |  |  |  |
-| Gestão do Project no GitHub |  |  |  |  |  |
-| Acompanhamento da matriz de riscos |  |  |  |  |  |
-| Documento de Planejamento do Projeto |  |  |  |  |  |
-| Preparação da defesa oral |  |  |  |  |  |
-| Outra atividade: __________________ |  |  |  |  |  |
+|---|---|---|---|---|
+| Levantamento e revisão de requisitos | C | I | C | A/R |
+| Modelagem do banco de dados | C | A | R | I |
+| Rotas de livros (CRUD e busca) | C | C | A/R | I |
+| Rotas de categorias | I | A/R | C | C |
+| Testes da API | A | R | R | C |
+| Gestão do Project no GitHub | A/R | I | I | C |
+| Acompanhamento da matriz de riscos | C | R | C | A/R |
+| Documento de Planejamento do Projeto | R | C | C | A |
+| Preparação da defesa oral | R | R | R | A |
+| Documentação da instalação e entrega | C | R | I | A |
 
-### 2.3 Conferência da matriz
+#### 2.3 Conferência da matriz
 
-- [ ] Cada atividade tem exatamente um A.
-- [ ] Cada atividade tem pelo menos um R.
-- [ ] Nenhum integrante ficou com R em quase todas as atividades.
-- [ ] O grupo avaliou se alguém ficou sobrecarregado.
+- [x] Cada atividade tem exatamente um A.
+- [x] Cada atividade tem pelo menos um R.
+- [x] A distribuição não deixa uma pessoa como R em quase todas as atividades (Gabriel: 4; Guilherme: 5; Vitor: 3; Isadora: 2, contando A/R como R).
+- [x] A matriz distribui a execução entre os quatro integrantes.
 
-**Algum integrante ficou sobrecarregado? O que o grupo decidiu fazer?**
+**A matriz confere com os assignees das issues no Project?** Não foi possível confirmar: não há issues/assignees disponíveis no repositório consultado. A distribuição acima é uma proposta coerente com os papéis descritos nos documentos de planejamento, e precisa ser comparada com o Project do grupo.
 
-____________________________________________________________________________
+### Conferência do complemento
 
-____________________________________________________________________________
-
-**A matriz confere com os assignees das issues no Project?** ☐ Sim  ☐ Não
-
-**Se não, o que foi ajustado?**
-
-____________________________________________________________________________
-
-### Conferência antes da entrega do complemento
-
-- [ ] A estimativa e sua justificativa são as mesmas escolhidas em 23/10.
-- [ ] As horas de gestão foram incluídas no custo de pessoal.
-- [ ] Cada linha do orçamento mostra a conta usada (quantidade × valor).
-- [ ] O percentual da reserva de contingência está justificado pelos riscos médios e altos.
-- [ ] O total do projeto confere com a soma dos blocos e da reserva.
-- [ ] A matriz RACI tem exatamente um A e pelo menos um R por atividade.
-- [ ] Os papéis da matriz conferem com os assignees das issues no Project.
-- [ ] O orçamento e a matriz foram salvos no espaço compartilhado do grupo.
+- [x] Horas de gestão incluídas no custo de pessoal.
+- [x] As linhas mostram as contas usadas.
+- [x] Reserva justificada pelos riscos médios e altos listados.
+- [x] Total confere: R$ 21.952,00 + R$ 3.292,80 = R$ 25.244,80.
+- [x] Matriz tem exatamente um A e pelo menos um R por atividade.
+- [ ] Confirmar que a estimativa de PF coincide com a escolha formal de 23/10 e validar os assignees no Project antes de entregar.
