@@ -18,11 +18,6 @@ Arquivos preparados conforme `02-guia-alunos-express-mvc.pdf`:
 - `src/controllers/livroController.js`: `listar` e `buscarPorIndice`, com 404
 - `src/services/livroService.js`: operações de livros persistidas no MySQL, incluindo listagem e filtros
 - `src/models/Livro.js`: `toJSON()` expondo `preco` e `estoque`
-- `index-additions.txt`: linhas que devem existir em `src/index.js`
-
-## Importante
-
-Este pacote é uma atualização de referência porque a conexão de escrita com o GitHub ficou indisponível durante a execução. Ele não substitui automaticamente o repositório e não deve apagar `Categoria`, `/sobre`, outros models ou o README existente.
 
 ## Atividade 09 — Entrega Consolidada do Bloco 2
 
@@ -41,9 +36,7 @@ livraria-api-grupo4/
 ├── package.json
 ├── docs/
 │   ├── diagrama-Classes.png
-│   └── superpowers/
-│       ├── specs/
-│       └── plans/
+│   └── atividades e documentos do grupo
 ├── src/
 │   ├── index.js
 │   ├── routes/
